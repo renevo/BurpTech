@@ -68,7 +68,7 @@ foreach ($ZipFile in $ZipFiles)
 ## INSTALL FORGE ##
 write-host "Installing Forge"
 
-start-process -NoNewWindow -Wait -FilePath:"$rootPath\mcp\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\mcp\forge\" -RedirectStandardOutput:"$rootPath\forgeinstall.log" -RedirectStandardOutput:"$rootPath\forgeinstall-errors.log" -ArgumentList "install.py"
+start-process -NoNewWindow -Wait -FilePath:"$rootPath\mcp\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\mcp\forge\" -RedirectStandardOutput:"$rootPath\forgeinstall.log" -RedirectStandardError:"$rootPath\forgeinstall-errors.log" -ArgumentList "install.py"
 
 ## DONE ##
 write-host "Work Complete"
