@@ -30,11 +30,6 @@
 			<type>2</type>
 			<locationURI>PARENT-1-WORKSPACE_LOC/mcp/src/minecraft</locationURI>
 		</link>
-		<link>
-			<name>src</name>
-			<type>2</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/mcp/src/minecraft</locationURI>
-		</link>
 	</linkedResources>
 	<filteredResources>
 		<filter>
