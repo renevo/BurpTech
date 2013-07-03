@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="minecraft"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="jars/bin/jinput.jar"/>
-	<classpathentry kind="lib" path="jars/bin/lwjgl_util.jar"/>
-	<classpathentry kind="lib" path="jars/bin/lwjgl.jar"/>
-	<classpathentry kind="lib" path="jars/bin/minecraft.jar"/>
-	<classpathentry kind="lib" path="lib/asm-debug-all-4.1.jar"/>
-	<classpathentry kind="lib" path="lib/bcprov-debug-jdk15on-148.jar"/>
-	<classpathentry kind="lib" path="lib/guava-14.0-rc3.jar"/>
-	<classpathentry kind="lib" path="lib/scala-library.jar"/>
-	<classpathentry kind="lib" path="lib/argo-3.2-src.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Minecraft/jars/bin/natives"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="jars/bin/jinput.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/bin/lwjgl_util.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/bin/lwjgl.jar"/>
+	<classpathentry exported="true" kind="lib" path="jars/bin/minecraft.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/asm-debug-all-4.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/bcprov-debug-jdk15on-148.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/guava-14.0-rc3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/scala-library.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/argo-3.2-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
