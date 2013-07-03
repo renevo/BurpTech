@@ -4,6 +4,7 @@ bin/
 .indexes/
 .history/
 
+
 *.egit.core.prefs
 *.ui.prefs
 *.lock
