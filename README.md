@@ -36,13 +36,6 @@ Installing the code
 
 Run setup.cmd *(Requires powershell at the moment, someone is more than welcome to create a linux version of this in a pull request)*
 
-**Q**: That didn't work, something about execution of scripts on this system
-
-**A**: Open up powershell (%windir%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe) on 64bit and run: `Set-ExcutionPolicy Unrestricted -Force`
-
-**Q**: Why?
-
-**A**: Because microsoft is silly, it allows you to run ps1 files that you download off of the interwebs.
 
 
 ####Manual####
