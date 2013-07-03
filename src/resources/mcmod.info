@@ -1,0 +1,30 @@
+{
+  "modinfoversion": 2,
+  "modlist" :
+[
+{
+  "modid": "BurpTech|Core",
+  "name": "BurpTech",
+  "description": "BurpTech - it's what for dinner",
+  "version": "1.5.2.0",
+  "mcversion": "1.5.2",
+  "url": "http://renevo.github.io/BurpTech",
+   "logoFile": "/mods/textures/burptech/logo.png",
+  "authorList": 
+  [
+    "RenEvo",
+	"Acatera"
+  ],
+  "credits": "Thanks Burpcrafters!!!",
+  "requiredMods": 
+  [
+    "Forge@[7.8.1,)"
+  ],
+  "dependencies": 
+  [
+    "BuildCraft|Core"
+  ],
+  "useDependencyInformation" : "true"
+}
+]
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BurpTech</name>
+	<name>Buildcraft</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,12 +18,12 @@
 		<link>
 			<name>common</name>
 			<type>2</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/src/common</locationURI>
+			<locationURI>PARENT-1-WORKSPACE_LOC/Buildcraft/common</locationURI>
 		</link>
 		<link>
 			<name>resources</name>
 			<type>2</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/src/resources</locationURI>
+			<locationURI>PARENT-1-WORKSPACE_LOC/Buildcraft/buildcraft_resources</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

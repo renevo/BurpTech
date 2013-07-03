@@ -1,6 +1,3 @@
 [submodule "Buildcraft"]
 	path = Buildcraft
 	url = https://github.com/BuildCraft/BuildCraft.git
-[submodule "Buildcraft-Localization"]
-	path = Buildcraft-Localization
-	url = https://github.com/BuildCraft/BuildCraft-Localization.git

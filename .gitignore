@@ -1,6 +1,7 @@
 mcp/
 .metadata/
 bin/
+*.lnk
 # Package Files #
 *.jar
 *.war
