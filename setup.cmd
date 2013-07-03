@@ -1,4 +1,4 @@
 @echo off 
-powershell.exe .\setup.ps1
+powershell.exe -ExecutionPolicy ByPass -File setup.ps1
 
 pause
