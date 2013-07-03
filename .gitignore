@@ -1,5 +1,5 @@
+downloads/
 mcp/
-.metadata/
 bin/
 *.lnk
 # Package Files #
@@ -7,3 +7,4 @@ bin/
 *.war
 *.ear
 *.class
+*.log
