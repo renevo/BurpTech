@@ -10,13 +10,13 @@ Basically a bunch of random features and tweaks used by Burpcraft Server.
 
 ***
 
- Tools for the code
- ==================
+Tools for the code
+==================
  
-  - [JRE](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-  - [Java](http://www.java.com/en/download/manual.jsp)
-  - [Eclipse](http://www.eclipse.org/downloads/)
-  - [GIT](http://git-scm.com/downloads)
+ - [JRE](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+ - [Java](http://www.java.com/en/download/manual.jsp)
+ - [Eclipse](http://www.eclipse.org/downloads/)
+ - [GIT](http://git-scm.com/downloads)
   
   
   *NOTE: You should run this command in GIT to prevent bad commits*
