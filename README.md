@@ -24,6 +24,7 @@ Basically a bunch of random features and tweaks used by Burpcraft Server.
   <pre><code>
   git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.root\7.tree
   git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources  
+
   </code></pre>
   
 ***
