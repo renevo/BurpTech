@@ -1,8 +1,13 @@
 downloads/
 mcp/
 bin/
+.indexes/
+.history/
+
+*.egit.core.prefs
+*.ui.prefs
+*.lock
 *.lnk
-# Package Files #
 *.jar
 *.war
 *.ear
