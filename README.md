@@ -23,7 +23,9 @@ Tools for the code
   
   <pre><code>
   git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.root\7.tree
-  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources  
+  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources
+  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.debug.ui.prefs
+  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.debug.ui\launchConfigurationHistory.xml 
 
   </code></pre>
   
