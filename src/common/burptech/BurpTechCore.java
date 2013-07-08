@@ -26,6 +26,11 @@ public class BurpTechCore
     public static BurpTechCore Instance;
     
     /**
+     * Instance of the configuration
+     */
+    public static BurpTechConfig Configuration;
+    
+    /**
      * Preinitalization stuff here
      * @param e
      */
@@ -34,7 +39,8 @@ public class BurpTechCore
     {
         // setup logger
         Log = Logger.getLogger(Constants.MOD_ID);
-
+        Configuration = BurpTechConfig.Load(e.getModConfigurationDirectory());
+        
         // load up language translations
         
         // initialize blocks/items
@@ -50,9 +56,13 @@ public class BurpTechCore
     public void Initialization(FMLInitializationEvent e)
     {
         // gui handlers
+    	
         // event handlers
+    	
         // tile entity registrations
+    	
         // recipes
+    	
     }
     
     /**
@@ -62,6 +72,12 @@ public class BurpTechCore
     @PostInit
     public void PostInitialization(FMLPostInitializationEvent e)
     {
+    	// tweaks
+    	if (Configuration.disableEndermanGriefing.getBoolean(true))
+    		burptech.entity.monster.tweaks.EntityEnderman.EnableAntiGriefing();
+
+    	
         // mod integrations
+    	
     }
 }
