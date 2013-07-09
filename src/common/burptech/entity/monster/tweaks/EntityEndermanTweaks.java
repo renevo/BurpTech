@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 /**
  * Enderman tweaks 
  */
-public final class EntityEnderman 
+public final class EntityEndermanTweaks 
 {
 	/**
 	 * Will make Enderman only pickup and carry red and yellow flowers (anti-griefing)

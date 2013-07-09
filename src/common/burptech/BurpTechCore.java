@@ -6,6 +6,7 @@ import burptech.lib.*;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.event.*;
+import net.minecraftforge.common.*;
 
 /**
  * BurpTech core mod but not... a core mod !( . Y . )!
@@ -20,7 +21,7 @@ public class BurpTechCore
     public static Logger Log = null;
     
     /**
-     * Instance of this class
+     * Instance of the mod
      */
     @Instance(Constants.MOD_ID)
     public static BurpTechCore Instance;
@@ -30,10 +31,6 @@ public class BurpTechCore
      */
     public static BurpTechConfig Configuration;
     
-    /**
-     * Preinitalization stuff here
-     * @param e
-     */
     @PreInit
     public void PreInitialization(FMLPreInitializationEvent e)
     {
@@ -48,16 +45,23 @@ public class BurpTechCore
         // register keyboard bindings
     }
     
-    /**
-     * Initialization stuff here
-     * @param e
-     */
     @Init
     public void Initialization(FMLInitializationEvent e)
     {
         // gui handlers
     	
         // event handlers
+    	if (Configuration.enableSlimeSpawningRestrictions.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntitySlimeEventHandler());
+    	
+    	if (Configuration.enablePigZombieSpawningRestrictions.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityPigZombieEventHandler());
+    	
+    	if (Configuration.enableMagmaCubeSpawningRestrictions.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityMagmaCubeEventHandler());
+    	
+    	if (Configuration.enableWitherSkeletonSpawningRestrictions.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityWitherSkeletonEventHandler());
     	
         // tile entity registrations
     	
@@ -65,16 +69,12 @@ public class BurpTechCore
     	
     }
     
-    /**
-     * Post initialization stuff here
-     * @param e
-     */
     @PostInit
     public void PostInitialization(FMLPostInitializationEvent e)
     {
     	// tweaks
     	if (Configuration.disableEndermanGriefing.getBoolean(true))
-    		burptech.entity.monster.tweaks.EntityEnderman.EnableAntiGriefing();
+    		burptech.entity.monster.tweaks.EntityEndermanTweaks.EnableAntiGriefing();
 
     	
         // mod integrations

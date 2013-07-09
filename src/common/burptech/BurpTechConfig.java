@@ -13,10 +13,11 @@ import net.minecraftforge.common.Property;
  */
 public class BurpTechConfig 
 {
-	/*
-	 * Disables Enderman from picking up any blocks other than flowers
-	 */
 	public Property disableEndermanGriefing;
+	public Property enableSlimeSpawningRestrictions;
+	public Property enablePigZombieSpawningRestrictions;
+	public Property enableMagmaCubeSpawningRestrictions;
+	public Property enableWitherSkeletonSpawningRestrictions;
 	
 	/*
 	 * BurpTech Items
@@ -43,6 +44,17 @@ public class BurpTechConfig
 		result.disableEndermanGriefing = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "DisableEndermanGriefing", true);
 		result.disableEndermanGriefing.comment = "Disables Enderman from picking up any blocks other than vanilla flowers";
 		
+		result.enableSlimeSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableSlimeSpawnRestrictions", true);
+		result.enableSlimeSpawningRestrictions.comment = "Restricts Slimes (Green) to only spawn on Stone, Dirt, and Grass";
+		
+		result.enablePigZombieSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnablePigZombieSpawnRestrictions", true);
+		result.enablePigZombieSpawningRestrictions.comment = "Restricts Zombie Pigmen to only spawn on netherrack and nether brick";
+		
+		result.enableMagmaCubeSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableMagmaCubeSpawnRestrictions", true);
+		result.enableMagmaCubeSpawningRestrictions.comment = "Restricts Magma Cubes to only spawn on netherrack and nether brick";
+		
+		result.enableWitherSkeletonSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableWitherSkeletonSpawnRestrictions", true);
+		result.enableWitherSkeletonSpawningRestrictions.comment = "Restricts Wither Skeletons to only spawn on netherrack and nether brick";
 		
 		// Blocks
 		result.Blocks = new Block(configuration);
