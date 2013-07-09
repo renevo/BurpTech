@@ -18,6 +18,7 @@ public class BurpTechConfig
 	public Property enablePigZombieSpawningRestrictions;
 	public Property enableMagmaCubeSpawningRestrictions;
 	public Property enableWitherSkeletonSpawningRestrictions;
+	public Property enableMobsEatingOffOfGround;
 	
 	/*
 	 * BurpTech Items
@@ -55,6 +56,9 @@ public class BurpTechConfig
 		
 		result.enableWitherSkeletonSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableWitherSkeletonSpawnRestrictions", true);
 		result.enableWitherSkeletonSpawningRestrictions.comment = "Restricts Wither Skeletons to only spawn on netherrack and nether brick";
+		
+		result.enableMobsEatingOffOfGround = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsEatingDroppedFood", true);
+		result.enableMobsEatingOffOfGround.comment = "When enabled, Passive Mobs will attempt to eat food tossed on the ground";
 		
 		// Blocks
 		result.Blocks = new Block(configuration);

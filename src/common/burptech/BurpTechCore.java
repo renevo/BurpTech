@@ -63,7 +63,10 @@ public class BurpTechCore
     	if (Configuration.enableWitherSkeletonSpawningRestrictions.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityWitherSkeletonEventHandler());
     	
-        // tile entity registrations
+    	if (Configuration.enableMobsEatingOffOfGround.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.passive.tweaks.EntityAnimalEventHandler());
+
+    	// tile entity registrations
     	
         // recipes
     	
