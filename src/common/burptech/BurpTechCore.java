@@ -43,7 +43,9 @@ public class BurpTechCore
         // load up language translations
         
         // initialize blocks/items
-                
+        configuration.items.create();
+        configuration.blocks.create();
+        
         // register keyboard bindings
     }
     

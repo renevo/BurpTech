@@ -2,8 +2,8 @@ package burptech;
 
 import java.io.File;
 
-import burptech.block.Block;
-import burptech.item.Item;
+import burptech.block.Blocks;
+import burptech.item.Items;
 import burptech.lib.*;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
@@ -24,12 +24,12 @@ public class BurpTechConfig
 	/*
 	 * BurpTech Items
 	 */
-	public Item items;
+	public Items items;
 	
 	/*
 	 * BurpTech Blocks
 	 */
-	public Block blocks;
+	public Blocks blocks;
 	
 	/*
 	 * Loads the burptech configuration file
@@ -65,10 +65,10 @@ public class BurpTechConfig
 		
 		
 		// Blocks
-		result.blocks = new Block(configuration);
+		result.blocks = new Blocks(configuration);
 		
 		// Items
-		result.items = new Item(configuration);
+		result.items = new Items(configuration);
 		
 		// save
 		configuration.save();
