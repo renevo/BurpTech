@@ -36,4 +36,10 @@ public final class Constants
      * Configuration Category for Tweaks
      */
     public static final String CONFIG_CATEGORY_TWEAKS = "Tweaks";
+    
+    /**
+     * Configuration Category for Recipes
+     */
+    public static final String CONFIG_CATEGORY_RECIPES = "Recipes";
+    
 }

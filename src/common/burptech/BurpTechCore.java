@@ -2,6 +2,7 @@ package burptech;
 
 import java.util.logging.Logger;
 
+import burptech.item.crafting.*;
 import burptech.lib.*;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.Mod.*;
@@ -19,25 +20,25 @@ public class BurpTechCore
     /**
      * Default logger instance
      */
-    public static Logger Log = null;
+    public static Logger log = null;
     
     /**
      * Instance of the mod
      */
     @Instance(Constants.MOD_ID)
-    public static BurpTechCore Instance;
+    public static BurpTechCore instance;
     
     /**
      * Instance of the configuration
      */
-    public static BurpTechConfig Configuration;
+    public static BurpTechConfig configuration;
     
     @PreInit
-    public void PreInitialization(FMLPreInitializationEvent e)
+    public void preInitialization(FMLPreInitializationEvent e)
     {
         // setup logger
-        Log = Logger.getLogger(Constants.MOD_ID);
-        Configuration = BurpTechConfig.Load(e.getModConfigurationDirectory());
+        log = Logger.getLogger(Constants.MOD_ID);
+        configuration = BurpTechConfig.load(e.getModConfigurationDirectory());
         
         // load up language translations
         
@@ -47,35 +48,35 @@ public class BurpTechCore
     }
     
     @Init
-    public void Initialization(FMLInitializationEvent e)
+    public void initialization(FMLInitializationEvent e)
     {
         // gui handlers
     	
         // event handlers
-    	if (Configuration.enableSlimeSpawningRestrictions.getBoolean(true))
+    	if (configuration.enableSlimeSpawningRestrictions.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntitySlimeEventHandler());
     	
-    	if (Configuration.enableNetherSpawningRestrictions.getBoolean(true))
+    	if (configuration.enableNetherSpawningRestrictions.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityNetherMonsterEventHandler());
     	
-    	if (Configuration.enableMobsEatingOffOfGround.getBoolean(true))
+    	if (configuration.enableMobsEatingOffOfGround.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.passive.tweaks.EntityAnimalEventHandler());
     	
-    	if (Configuration.enableMobsWandering.getBoolean(true))
+    	if (configuration.enableMobsWandering.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityLivingEventHandler());
     	
     	// tile entity registrations
     	
         // recipes
-    	
+    	(new RecipeManager()).addRecipes();
     }
     
     @PostInit
-    public void PostInitialization(FMLPostInitializationEvent e)
+    public void postInitialization(FMLPostInitializationEvent e)
     {
     	// tweaks
-    	if (Configuration.disableEndermanGriefing.getBoolean(true))
-    		burptech.entity.monster.tweaks.EntityEndermanTweaks.EnableAntiGriefing();
+    	if (configuration.disableEndermanGriefing.getBoolean(true))
+    		burptech.entity.monster.tweaks.EntityEndermanTweaks.enableAntiGriefing();
 
     	
         // mod integrations

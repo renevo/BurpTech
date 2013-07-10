@@ -19,20 +19,22 @@ public class BurpTechConfig
 	public Property enableMobsEatingOffOfGround;
 	public Property enableMobsWandering;
 	
+	public Property recipeCobwebs;
+	
 	/*
 	 * BurpTech Items
 	 */
-	public Item Items;
+	public Item items;
 	
 	/*
 	 * BurpTech Blocks
 	 */
-	public Block Blocks;
+	public Block blocks;
 	
 	/*
 	 * Loads the burptech configuration file
 	 */
-	public static BurpTechConfig Load(File configFolder)
+	public static BurpTechConfig load(File configFolder)
 	{
 		BurpTechConfig result = new BurpTechConfig();
 		
@@ -56,11 +58,17 @@ public class BurpTechConfig
 		result.enableMobsWandering = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsWandering", true);
 		result.enableMobsWandering.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
 		
+		
+		// Recipes
+		result.recipeCobwebs = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobwebs", true);
+		result.recipeCobwebs.comment = "Enables crafting of cobwebs from string";
+		
+		
 		// Blocks
-		result.Blocks = new Block(configuration);
+		result.blocks = new Block(configuration);
 		
 		// Items
-		result.Items = new Item(configuration);
+		result.items = new Item(configuration);
 		
 		// save
 		configuration.save();

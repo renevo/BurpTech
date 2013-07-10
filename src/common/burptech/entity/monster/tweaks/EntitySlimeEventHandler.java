@@ -15,7 +15,7 @@ public class EntitySlimeEventHandler
 {	
 	public EntitySlimeEventHandler()
 	{
-		BurpTechCore.Log.info("Enabling Slime Spawning Restrictions");
+		BurpTechCore.log.info("Enabling Slime Spawning Restrictions");
 	}
 	
 	@ForgeSubscribe

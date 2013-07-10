@@ -13,7 +13,7 @@ public class EntityNetherMonsterEventHandler
 {
 	public EntityNetherMonsterEventHandler()
 	{
-		BurpTechCore.Log.info("Enabling Nether Monster Spawning Restrictions");
+		BurpTechCore.log.info("Enabling Nether Monster Spawning Restrictions");
 	}
 	
 	@ForgeSubscribe

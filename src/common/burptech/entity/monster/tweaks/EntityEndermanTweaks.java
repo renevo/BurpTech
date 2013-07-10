@@ -11,9 +11,9 @@ public final class EntityEndermanTweaks
 	/**
 	 * Will make Enderman only pickup and carry red and yellow flowers (anti-griefing)
 	 */
-	public static void EnableAntiGriefing()
+	public static void enableAntiGriefing()
 	{
-		BurpTechCore.Log.info("Enabling Enderman Anti Griefing");
+		BurpTechCore.log.info("Enabling Enderman Anti Griefing");
 		
 		// TODO: Probably change this to a for each, instead of hard coding the ids, then set the ones we want, will be easier to maintain
         net.minecraft.entity.monster.EntityEnderman.carriableBlocks[Block.grass.blockID] = false;

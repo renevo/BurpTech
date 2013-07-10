@@ -70,7 +70,7 @@ public class EntityAIGroundEater extends EntityAIBase
         			Entity e = (Entity)nearbyItems.get(itemId);
         			if ((e instanceof EntityItem) && entity.isBreedingItem(((EntityItem)e).getEntityItem()))
         			{
-	    				burptech.BurpTechCore.Log.info("FOOD ME!!!");
+	    				burptech.BurpTechCore.log.info("FOOD ME!!!");
 	    				
         				if (((EntityItem)e).getEntityItem().stackSize >= 1)
         				{
