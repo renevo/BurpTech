@@ -1,5 +1,6 @@
 package burptech.item;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.*;
 
@@ -11,7 +12,7 @@ public class Items
 {
 	Configuration configuration;
 	
-	public Item portableCraftingBench;
+	public Item portableWorkbench;
 	
 	/*
 	 * Default constructor
@@ -26,7 +27,7 @@ public class Items
 	 */
 	public void create()
 	{
-		portableCraftingBench = new Item(configuration.getItem("PortableCraftingBench", 18258).getInt());
+		portableWorkbench = new ItemPortableWorkbench(configuration.getItem("PortableWorkbench", 18002).getInt()).setUnlocalizedName("portableWorkbench").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);;
 	}
 	
 }

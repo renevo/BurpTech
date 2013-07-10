@@ -14,7 +14,7 @@ public final class Constants
     /**
      * MOD ID
      */
-    public static final String MOD_ID = "BurpTech|Core";
+    public static final String MOD_ID = "BurpTechCore";
     
     /**
      * MOD VERSION
@@ -41,5 +41,10 @@ public final class Constants
      * Configuration Category for Recipes
      */
     public static final String CONFIG_CATEGORY_RECIPES = "Recipes";
+    
+    /**
+     * GUI ID for Portable Workbench
+     */
+    public static final int GUI_PORTABLE_WORKBECH_ID = 1;
     
 }

@@ -2,11 +2,14 @@ package burptech;
 
 import java.util.logging.Logger;
 
+import burptech.gui.GuiHandler;
 import burptech.item.crafting.*;
 import burptech.lib.*;
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraftforge.common.*;
 
 /**
@@ -15,6 +18,7 @@ import net.minecraftforge.common.*;
  * Acatera: OMG lol  ----------------------- |
  */
 @Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION)
+@NetworkMod(clientSideRequired = true)
 public class BurpTechCore
 {
     /**
@@ -33,12 +37,20 @@ public class BurpTechCore
      */
     public static BurpTechConfig configuration;
     
+    /**
+     * GUI handler
+     */
+    public static GuiHandler guiHandler; 
+    
     @PreInit
     public void preInitialization(FMLPreInitializationEvent e)
     {
         // setup logger
         log = Logger.getLogger(Constants.MOD_ID);
         configuration = BurpTechConfig.load(e.getModConfigurationDirectory());
+        
+        //gui handler
+        guiHandler = new GuiHandler();
         
         // load up language translations
         
@@ -53,6 +65,7 @@ public class BurpTechCore
     public void initialization(FMLInitializationEvent e)
     {
         // gui handlers
+    	NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
     	
         // event handlers
     	if (configuration.enableSlimeSpawningRestrictions.getBoolean(true))
