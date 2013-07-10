@@ -47,4 +47,14 @@ public final class Constants
      */
     public static final int GUI_PORTABLE_WORKBECH_ID = 1;
     
+    /**
+     * GUI ID for rucksacks
+     */
+    public static final int GUI_RUCKSACK_ID = 2;
+    
+    /**
+     * GUI ID for Ender rucksack
+     */
+    public static final int GUI_ENDER_RUCKSACK_ID = 3;
+    
 }

@@ -20,6 +20,9 @@ public class BurpTechConfig
 	public Property enableMobsWandering;
 	
 	public Property recipeCobwebs;
+	public Property recipePortableWorkbench;
+	public Property recipeRucksack;
+	public Property recipeEnderRucksack;
 	
 	/*
 	 * BurpTech Items
@@ -63,6 +66,14 @@ public class BurpTechConfig
 		result.recipeCobwebs = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobwebs", true);
 		result.recipeCobwebs.comment = "Enables crafting of cobwebs from string";
 		
+		result.recipePortableWorkbench = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "PortableWorkbench", true);
+		result.recipePortableWorkbench.comment = "Enables crafting of PortableWorkbench";
+		
+		result.recipeRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Rucksack", true);
+		result.recipeRucksack.comment = "Enables crafting of Rucksacks";
+		
+		result.recipeEnderRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "EnderRucksack", true);
+		result.recipeEnderRucksack.comment = "Enables crafting of EnderRucksacks";
 		
 		// Blocks
 		result.blocks = new Blocks(configuration);

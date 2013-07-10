@@ -52,11 +52,12 @@ public class BurpTechCore
         //gui handler
         guiHandler = new GuiHandler();
         
-        // load up language translations
-        
         // initialize blocks/items
         configuration.items.create();
         configuration.blocks.create();
+        
+        // load up language translations
+        LocalizationManager.addLocalization();
         
         // register keyboard bindings
     }
