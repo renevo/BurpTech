@@ -13,7 +13,7 @@ import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.transformers.ForgeAccessTransformer;
 
-public class EntityLivingTweaks 
+public class EntityLivingEventHandler 
 {
 	//TODO Add an entity type - moveSpeed table to reduce reflection usage
 	

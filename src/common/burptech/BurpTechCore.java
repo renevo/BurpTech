@@ -55,20 +55,14 @@ public class BurpTechCore
     	if (Configuration.enableSlimeSpawningRestrictions.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntitySlimeEventHandler());
     	
-    	if (Configuration.enablePigZombieSpawningRestrictions.getBoolean(true))
-    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityPigZombieEventHandler());
-    	
-    	if (Configuration.enableMagmaCubeSpawningRestrictions.getBoolean(true))
-    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityMagmaCubeEventHandler());
-    	
-    	if (Configuration.enableWitherSkeletonSpawningRestrictions.getBoolean(true))
-    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityWitherSkeletonEventHandler());
+    	if (Configuration.enableNetherSpawningRestrictions.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.monster.tweaks.EntityNetherMonsterEventHandler());
     	
     	if (Configuration.enableMobsEatingOffOfGround.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.passive.tweaks.EntityAnimalEventHandler());
     	
     	if (Configuration.enableMobsWandering.getBoolean(true))
-    		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityLivingTweaks());
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityLivingEventHandler());
     	
     	// tile entity registrations
     	

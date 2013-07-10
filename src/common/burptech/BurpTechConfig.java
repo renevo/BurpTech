@@ -15,9 +15,7 @@ public class BurpTechConfig
 {
 	public Property disableEndermanGriefing;
 	public Property enableSlimeSpawningRestrictions;
-	public Property enablePigZombieSpawningRestrictions;
-	public Property enableMagmaCubeSpawningRestrictions;
-	public Property enableWitherSkeletonSpawningRestrictions;
+	public Property enableNetherSpawningRestrictions;
 	public Property enableMobsEatingOffOfGround;
 	public Property enableMobsWandering;
 	
@@ -49,20 +47,14 @@ public class BurpTechConfig
 		result.enableSlimeSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableSlimeSpawnRestrictions", true);
 		result.enableSlimeSpawningRestrictions.comment = "Restricts Slimes (Green) to only spawn on Stone, Dirt, and Grass";
 		
-		result.enablePigZombieSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnablePigZombieSpawnRestrictions", true);
-		result.enablePigZombieSpawningRestrictions.comment = "Restricts Zombie Pigmen to only spawn on netherrack and nether brick";
-		
-		result.enableMagmaCubeSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableMagmaCubeSpawnRestrictions", true);
-		result.enableMagmaCubeSpawningRestrictions.comment = "Restricts Magma Cubes to only spawn on netherrack and nether brick";
-		
-		result.enableWitherSkeletonSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableWitherSkeletonSpawnRestrictions", true);
-		result.enableWitherSkeletonSpawningRestrictions.comment = "Restricts Wither Skeletons to only spawn on netherrack and nether brick";
-		
+		result.enableNetherSpawningRestrictions = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS,  "EnableNetherSpawnRestrictions", true);
+		result.enableNetherSpawningRestrictions.comment = "Restricts Nether Mobs to only spawn on netherrack, nether brick, and soul sand";
+
 		result.enableMobsEatingOffOfGround = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsEatingDroppedFood", true);
-		result.enableMobsEatingOffOfGround.comment = "When enabled, Passive Mobs will attempt to eat food tossed on the ground";
+		result.enableMobsEatingOffOfGround.comment = "Adds a new AI for mobs eating breeding food from the ground near them";
 		
 		result.enableMobsWandering = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsWandering", true);
-		result.enableMobsEatingOffOfGround.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
+		result.enableMobsWandering.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
 		
 		// Blocks
 		result.Blocks = new Block(configuration);
