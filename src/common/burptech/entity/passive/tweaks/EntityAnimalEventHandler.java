@@ -27,7 +27,7 @@ public class EntityAnimalEventHandler
 
 		EntityAnimal animal = (EntityAnimal)event.entity;
 		
-		// add same as mate
-		animal.tasks.addTask(2, new EntityAIGroundEater(animal));
+		// add
+		animal.tasks.addTask(0, new EntityAIGroundEater(animal));
 	}
 }
