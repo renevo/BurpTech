@@ -19,6 +19,7 @@ public class BurpTechConfig
 	public Property enableMagmaCubeSpawningRestrictions;
 	public Property enableWitherSkeletonSpawningRestrictions;
 	public Property enableMobsEatingOffOfGround;
+	public Property enableMobsWandering;
 	
 	/*
 	 * BurpTech Items
@@ -59,6 +60,9 @@ public class BurpTechConfig
 		
 		result.enableMobsEatingOffOfGround = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsEatingDroppedFood", true);
 		result.enableMobsEatingOffOfGround.comment = "When enabled, Passive Mobs will attempt to eat food tossed on the ground";
+		
+		result.enableMobsWandering = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsWandering", true);
+		result.enableMobsEatingOffOfGround.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
 		
 		// Blocks
 		result.Blocks = new Block(configuration);

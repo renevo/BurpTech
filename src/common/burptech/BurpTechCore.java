@@ -10,7 +10,8 @@ import net.minecraftforge.common.*;
 
 /**
  * BurpTech core mod but not... a core mod !( . Y . )!
- *
+ * 										     ^
+ * Acatera: OMG lol  ----------------------- |
  */
 @Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION)
 public class BurpTechCore
@@ -65,7 +66,10 @@ public class BurpTechCore
     	
     	if (Configuration.enableMobsEatingOffOfGround.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.passive.tweaks.EntityAnimalEventHandler());
-
+    	
+    	if (Configuration.enableMobsWandering.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityLivingTweaks());
+    	
     	// tile entity registrations
     	
         // recipes
