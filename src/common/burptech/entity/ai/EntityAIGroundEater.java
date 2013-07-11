@@ -70,8 +70,6 @@ public class EntityAIGroundEater extends EntityAIBase
         			Entity e = (Entity)nearbyItems.get(itemId);
         			if ((e instanceof EntityItem) && entity.isBreedingItem(((EntityItem)e).getEntityItem()))
         			{
-	    				burptech.BurpTechCore.log.info("FOOD ME!!!");
-	    				
         				if (((EntityItem)e).getEntityItem().stackSize >= 1)
         				{
         					// making the love time higher, due to the fact that other AI might need to catch up

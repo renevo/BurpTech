@@ -2,10 +2,11 @@ package burptech.entity.living.tweaks;
 
 import java.lang.reflect.Field;
 
+import cpw.mods.fml.relauncher.ReflectionHelper;
 import scala.Console;
-
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAITaskEntry;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -42,7 +43,16 @@ public class EntityLivingEventHandler
 		{
 			entity.tasks.taskEntries.remove(wanderTask);
 			float moveSpeed = 2.0F;
-			moveSpeed = burptech.lib.ReflectionHelper.getFloatFieldFromObject(wanderTask.action, "speed");
+			
+			try
+			{
+				// The second param has to be updated for each build of MC from fields.csv in MCP -> pro tip, start with first param, then go a,b,c,d,e, speed is the 5th param, which is e
+				moveSpeed = (float)ReflectionHelper.getPrivateValue(EntityAIWander.class, (EntityAIWander)(wanderTask.action), "speed", "e");
+			} catch (Exception ex)
+			{
+				ex.printStackTrace();
+				moveSpeed = 2.0F;
+			}
 			
 			entity.tasks.addTask(((EntityAITaskEntry)wanderTask).priority, new burptech.entity.ai.EntityAITweakedWandering((EntityCreature)entity, moveSpeed));
 		}
