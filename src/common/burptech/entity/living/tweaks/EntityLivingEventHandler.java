@@ -42,8 +42,9 @@ public class EntityLivingEventHandler
 		if (wanderTask != null)
 		{
 			entity.tasks.taskEntries.remove(wanderTask);
-			float moveSpeed = 2.0F;
+			float moveSpeed = 0.2F;
 			
+			/* TODO: Fix this later, it doesn't compile (with mcp, it does with eclipse)
 			try
 			{
 				// The second param has to be updated for each build of MC from fields.csv in MCP -> pro tip, start with first param, then go a,b,c,d,e, speed is the 5th param, which is e
@@ -51,8 +52,9 @@ public class EntityLivingEventHandler
 			} catch (Exception ex)
 			{
 				ex.printStackTrace();
-				moveSpeed = 2.0F;
+				moveSpeed = 0.2F;
 			}
+			*/
 			
 			entity.tasks.addTask(((EntityAITaskEntry)wanderTask).priority, new burptech.entity.ai.EntityAITweakedWandering((EntityCreature)entity, moveSpeed));
 		}
