@@ -60,29 +60,31 @@ public class BurpTechConfig
 		
 		result.enableMobsWandering = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsWandering", true);
 		result.enableMobsWandering.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
-		
-		
+				
 		// Recipes
 		result.recipeCobwebs = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobwebs", true);
 		result.recipeCobwebs.comment = "Enables crafting of cobwebs from string";
 		
 		result.recipePortableWorkbench = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "PortableWorkbench", true);
-		result.recipePortableWorkbench.comment = "Enables crafting of PortableWorkbench";
+		result.recipePortableWorkbench.comment = "Enables crafting of Portable Workbench";
 		
 		result.recipeRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Rucksack", true);
 		result.recipeRucksack.comment = "Enables crafting of Rucksacks";
 		
 		result.recipeEnderRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "EnderRucksack", true);
-		result.recipeEnderRucksack.comment = "Enables crafting of EnderRucksacks";
-		
-		// Blocks
-		result.blocks = new Blocks(configuration);
+		result.recipeEnderRucksack.comment = "Enables crafting of Ender Rucksacks";
 		
 		// Items
 		result.items = new Items(configuration);
+		result.items.create();
+						
+		// Blocks
+		result.blocks = new Blocks(configuration);
+		result.blocks.create();
 		
-		// save
-		configuration.save();
+		// save only if modified
+		if (configuration.hasChanged())
+			configuration.save();
 		
 		// return
 		return result;

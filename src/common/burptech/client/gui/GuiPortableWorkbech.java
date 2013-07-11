@@ -21,6 +21,7 @@ public class GuiPortableWorkbech extends GuiContainer
     @Override
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
+    	// TODO: Localize
         this.fontRenderer.drawString("Portable Workbench", 8, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
@@ -31,7 +32,6 @@ public class GuiPortableWorkbech extends GuiContainer
     @Override
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
-//        int backgroundTexture = this.mc.renderEngine.getTexture("/gui/crafting.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.renderEngine.bindTexture("/gui/crafting.png");
         

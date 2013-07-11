@@ -51,7 +51,7 @@ public class GuiRucksack extends GuiContainer
     		name = StatCollector.translateToLocal(container.getInvName());
     	
         this.fontRenderer.drawString(name == null || name == "" ? "Container" : name, 8, 6, 4210752);
-        this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 2, 4210752);
+        this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 
     /**
@@ -60,7 +60,6 @@ public class GuiRucksack extends GuiContainer
     @Override
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
-//        int var4 = this.mc.renderEngine.getTexture("/gui/container.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.renderEngine.bindTexture("/gui/container.png");
         int var5 = (this.width - this.xSize) / 2;

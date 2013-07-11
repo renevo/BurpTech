@@ -21,9 +21,11 @@ public class GuiHandler implements IGuiHandler
 			case Constants.GUI_PORTABLE_WORKBECH_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().itemID == BurpTechCore.configuration.items.portableWorkbench.itemID)
 					return new ContainerPortableWorkbench(player.inventory, world);
+				
 			case Constants.GUI_RUCKSACK_ID:	
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new ContainerRucksack(player.inventory, (RucksackInventory) ((ItemRucksack) player.getCurrentEquippedItem().getItem()).getInventory(player, player.getCurrentEquippedItem()));
+			
 			case Constants.GUI_ENDER_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new ContainerRucksack(player.inventory, player.getInventoryEnderChest());
@@ -41,9 +43,11 @@ public class GuiHandler implements IGuiHandler
 			case Constants.GUI_PORTABLE_WORKBECH_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().itemID == BurpTechCore.configuration.items.portableWorkbench.itemID)
 					return new GuiPortableWorkbech(player.inventory, world);
+				
 			case Constants.GUI_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new GuiRucksack(player.inventory, (RucksackInventory) ((ItemRucksack)player.getCurrentEquippedItem().getItem()).getInventory(player,  player.getCurrentEquippedItem()));
+			
 			case Constants.GUI_ENDER_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new GuiRucksack(player.inventory, player.getInventoryEnderChest());

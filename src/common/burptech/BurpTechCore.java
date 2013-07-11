@@ -21,25 +21,10 @@ import net.minecraftforge.common.*;
 @NetworkMod(clientSideRequired = true)
 public class BurpTechCore
 {
-    /**
-     * Default logger instance
-     */
-    public static Logger log = null;
-    
-    /**
-     * Instance of the mod
-     */
-    @Instance(Constants.MOD_ID)
+	@Instance(Constants.MOD_ID)
     public static BurpTechCore instance;
-    
-    /**
-     * Instance of the configuration
-     */
+    public static Logger log = null;
     public static BurpTechConfig configuration;
-    
-    /**
-     * GUI handler
-     */
     public static GuiHandler guiHandler; 
     
     @PreInit
@@ -51,10 +36,6 @@ public class BurpTechCore
         
         //gui handler
         guiHandler = new GuiHandler();
-        
-        // initialize blocks/items
-        configuration.items.create();
-        configuration.blocks.create();
         
         // load up language translations
         LocalizationManager.addLocalization();
