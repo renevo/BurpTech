@@ -8,6 +8,8 @@ $rootPath = $rootLocation.path
 
 write-host "Cleaning Environment"
 
+## TODO: Add the Git commands here to ignore /elipse/ file changes
+
 ### CLEAN ###
 if (Test-Path .\forgeinstall.log)
 {

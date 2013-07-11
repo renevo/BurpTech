@@ -1,0 +1,67 @@
+<?xml version="1.0" ?> 
+<!-- Totally using the EE3 build script as a base. Thanks pahimar! https://github.com/pahimar  -->
+<project name="BurpTech" default="build">
+
+	<property file="build.properties" prefix="build"/>
+
+	<target name="clean">
+		<delete file="mcp\src\minecraft\mcmod.info" />
+		<delete dir="mcp\src\minecraft\burptech" />
+		<delete dir="mcp\reobf\minecraft" />
+	</target>
+
+	<target name="increment_build_number">
+		<propertyfile file="build.properties">
+			<entry key="release.number" type="int" operation="+" default="1"/>
+		</propertyfile>
+	</target>
+
+	<target name="prep">
+		<copy todir="mcp\src\minecraft">
+			<fileset dir="src\common\" />
+		</copy>
+	</target>
+
+	<target name="replace_tokens">
+		<replace dir="mcp\src\minecraft" token="@VERSION@" value="${build.release.minecraft.version}.${build.release.number}" />
+	</target>
+
+	<target name="recompile">
+		<exec dir="mcp" executable="cmd" osfamily="windows">
+			<arg line="/c recompile.bat" />
+		</exec>
+		<exec dir="mcp" executable="bash" osfamily="unix">
+			<arg line="recompile.sh" />
+		</exec>
+	</target>
+
+	<target name="reobfuscate">
+		<exec dir="mcp" executable="cmd" osfamily="windows">
+			<arg line="/c reobfuscate_srg.bat" />
+		</exec>
+		<exec dir="mcp" executable="bash" osfamily="unix">
+			<arg line="reobfuscate_srg.sh" />
+		</exec>
+	</target>
+
+	<target name="build">
+		<!-- Prep for the build -->
+		<antcall target="clean" />
+		<antcall target="increment_build_number" />
+		<antcall target="prep" />
+		<antcall target="replace_tokens" />
+		<antcall target="recompile" />		
+		<antcall target="reobfuscate" />
+
+		<!-- Build the jar -->
+		<mkdir dir="bin\${build.release.minecraft.version}\" />
+		<jar destfile="bin\${build.release.minecraft.version}\burptech-${build.release.minecraft.version}.${build.release.number}.jar">
+			<fileset dir="mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="mcp\reobf\minecraft" />
+			<fileset dir="src\resources" excludes="**/xcf/**" />
+		</jar>
+
+		<!-- Clean up the MCP source now that we are done -->
+		<antcall target="clean" />
+	</target>
+</project>
