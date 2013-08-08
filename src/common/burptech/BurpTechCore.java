@@ -1,8 +1,12 @@
 package burptech;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import burptech.client.gui.GuiPortableWorkbech;
+import burptech.gui.ContainerPortableWorkbench;
 import burptech.gui.GuiHandler;
+import burptech.integration.NeiIntegration;
 import burptech.item.crafting.*;
 import burptech.lib.*;
 import cpw.mods.fml.common.*;
@@ -10,6 +14,7 @@ import cpw.mods.fml.common.Mod.*;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import net.minecraft.inventory.ContainerWorkbench;
 import net.minecraftforge.common.*;
 
 /**
@@ -77,6 +82,10 @@ public class BurpTechCore
 
     	
         // mod integrations
-    	
+    	if (configuration.recipePortableWorkbench.getBoolean(true))
+    	{
+//    		Nei.registerCraftingContainers(GuiPortableWorkbech.class);
+    		NeiIntegration.registerCraftingContainers();
+    	}
     }
 }
