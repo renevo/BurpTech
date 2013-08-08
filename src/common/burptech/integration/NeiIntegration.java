@@ -10,8 +10,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 
 public class NeiIntegration 
 {
-//	public static void registerCraftingContainers(Class<? extends GuiContainer> craftingContainer)
-	public static void registerCraftingContainers()
+	public static void registerCraftingContainers(Class<? extends GuiContainer> craftingContainer)
 	{
 		try
         {
@@ -22,13 +21,13 @@ public class NeiIntegration
             Method registerGuiOverlayMethod = API.getMethod("registerGuiOverlay", new Class[] { Class.class, String.class });
             Method registerGuiOverlayHandlerMethod = API.getMethod("registerGuiOverlayHandler", new Class[] { Class.class, IOverlayHandler, String.class });
             
-            registerGuiOverlayMethod.invoke((Object)null, new Object[]{ burptech.client.gui.GuiPortableWorkbech.class, "crafting" });
-            registerGuiOverlayHandlerMethod.invoke((Object)null, new Object[]{ burptech.client.gui.GuiPortableWorkbech.class, defaultOverlayHandler.newInstance(), "crafting" });
-            BurpTechCore.log.log(Level.INFO, "NEI integration successful");
+            registerGuiOverlayMethod.invoke((Object)null, new Object[]{ craftingContainer, "crafting" });
+            registerGuiOverlayHandlerMethod.invoke((Object)null, new Object[]{ craftingContainer, defaultOverlayHandler.newInstance(), "crafting" });
+            BurpTechCore.log.log(Level.INFO, "NEI integration of " + craftingContainer.getName() + " was successful");
         }
         catch (Throwable ex)
         {
-        	BurpTechCore.log.log(Level.INFO, "NEI integration failed:" + ex.getMessage());
+        	BurpTechCore.log.log(Level.INFO, "NEI integration of " + craftingContainer.getName() + " failed:" + ex.getMessage());
         }
 		
 	}

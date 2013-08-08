@@ -3,6 +3,7 @@ package burptech;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import burptech.client.gui.GuiPortableWorkbech;
 import burptech.gui.GuiHandler;
 import burptech.integration.*;
 import burptech.item.crafting.*;
@@ -81,7 +82,7 @@ public class BurpTechCore
         // mod integrations
     	if (configuration.recipePortableWorkbench.getBoolean(true))
     	{
-    		NeiIntegration.registerCraftingContainers();
+    		NeiIntegration.registerCraftingContainers(GuiPortableWorkbech.class);
     	}
     }
 }
