@@ -30,6 +30,10 @@ public class BurpTechCore
     public static BurpTechConfig configuration;
     public static GuiHandler guiHandler; 
     
+    @SidedProxy(clientSide = "burptech.client.ClientProxy", serverSide = "burptech.CommonProxy")
+    public static CommonProxy proxy;
+
+    
     @PreInit
     public void preInitialization(FMLPreInitializationEvent e)
     {
@@ -51,6 +55,7 @@ public class BurpTechCore
     {
         // gui handlers
     	NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
+//    	NetworkRegistry.instance().registerGuiHandler(instance, proxy); 
     	
         // event handlers
     	if (configuration.enableSlimeSpawningRestrictions.getBoolean(true))
@@ -80,9 +85,6 @@ public class BurpTechCore
 
     	
         // mod integrations
-    	if (configuration.recipePortableWorkbench.getBoolean(true))
-    	{
-    		NeiIntegration.registerCraftingContainers(GuiPortableWorkbech.class);
-    	}
+    	proxy.addNeiSupport();
     }
 }
