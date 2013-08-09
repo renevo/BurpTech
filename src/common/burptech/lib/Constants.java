@@ -19,7 +19,7 @@ public final class Constants
     /**
      * MOD VERSION
      */
-    public static final String MOD_VERSION = "1.5.2.0";
+    public static final String MOD_VERSION = "@VERSION@";
     
     /**
      * MOD NAME

@@ -19,6 +19,7 @@
 	<target name="prep">
 		<copy todir="mcp\src\minecraft">
 			<fileset dir="src\common\" />
+			<fileset dir="src\resources" includes="mcmod.info" />
 		</copy>
 	</target>
 
@@ -56,9 +57,9 @@
 		<!-- Build the jar -->
 		<mkdir dir="bin\${build.release.minecraft.version}\" />
 		<jar destfile="bin\${build.release.minecraft.version}\burptech-${build.release.minecraft.version}.${build.release.number}.jar">
+			<fileset dir="src\resources" excludes="**/xcf/**,mcmod.info" />
 			<fileset dir="mcp\src\minecraft\" includes="mcmod.info" />
 			<fileset dir="mcp\reobf\minecraft" />
-			<fileset dir="src\resources" excludes="**/xcf/**" />
 		</jar>
 
 		<!-- Clean up the MCP source now that we are done -->
