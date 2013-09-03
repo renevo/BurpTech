@@ -5,9 +5,9 @@
 	<property file="build.properties" prefix="build"/>
 
 	<target name="clean">
-		<delete file="mcp\src\minecraft\mcmod.info" />
-		<delete dir="mcp\src\minecraft\burptech" />
-		<delete dir="mcp\reobf\minecraft" />
+		<delete file="mcp\forge\mcp\src\minecraft\mcmod.info" />
+		<delete dir="mcp\forge\mcp\src\minecraft\burptech" />
+		<delete dir="mcp\forge\mcp\reobf\minecraft" />
 	</target>
 
 	<target name="increment_build_number">
@@ -17,30 +17,30 @@
 	</target>
 
 	<target name="prep">
-		<copy todir="mcp\src\minecraft">
+		<copy todir="mcp\forge\mcp\src\minecraft">
 			<fileset dir="src\common\" />
 			<fileset dir="src\resources" includes="mcmod.info" />
 		</copy>
 	</target>
 
 	<target name="replace_tokens">
-		<replace dir="mcp\src\minecraft" token="@VERSION@" value="${build.release.minecraft.version}.${build.release.number}" />
+		<replace dir="mcp\forge\mcp\src\minecraft" token="@VERSION@" value="${build.release.minecraft.version}.${build.release.number}" />
 	</target>
 
 	<target name="recompile">
-		<exec dir="mcp" executable="cmd" osfamily="windows">
+		<exec dir="mcp\forge\mcp" executable="cmd" osfamily="windows">
 			<arg line="/c recompile.bat" />
 		</exec>
-		<exec dir="mcp" executable="bash" osfamily="unix">
+		<exec dir="mcp\forge\mcp" executable="bash" osfamily="unix">
 			<arg line="recompile.sh" />
 		</exec>
 	</target>
 
 	<target name="reobfuscate">
-		<exec dir="mcp" executable="cmd" osfamily="windows">
+		<exec dir="mcp\forge\mcp" executable="cmd" osfamily="windows">
 			<arg line="/c reobfuscate_srg.bat" />
 		</exec>
-		<exec dir="mcp" executable="bash" osfamily="unix">
+		<exec dir="mcp\forge\mcp" executable="bash" osfamily="unix">
 			<arg line="reobfuscate_srg.sh" />
 		</exec>
 	</target>
@@ -58,8 +58,8 @@
 		<mkdir dir="bin\${build.release.minecraft.version}\" />
 		<jar destfile="bin\${build.release.minecraft.version}\burptech-${build.release.minecraft.version}.${build.release.number}.jar">
 			<fileset dir="src\resources" excludes="**/xcf/**,mcmod.info" />
-			<fileset dir="mcp\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="mcp\reobf\minecraft" />
+			<fileset dir="mcp\forge\mcp\src\minecraft\" includes="mcmod.info" />
+			<fileset dir="mcp\forge\mcp\reobf\minecraft" />
 		</jar>
 
 		<!-- Clean up the MCP source now that we are done -->

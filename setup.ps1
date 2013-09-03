@@ -1,7 +1,7 @@
 ## Environmental Setup Script ##
-$forgeVersion = "7.8.1.737"
-$mcVersion = "1.5.2"
-$mcpVersion = "751"
+$forgeVersion = "9.10.0.804"
+$mcVersion = "1.6.2"
+$mcpVersion = "804"
 
 $rootLocation = get-location
 $rootPath = $rootLocation.path
@@ -70,7 +70,7 @@ foreach ($ZipFile in $ZipFiles)
 ## INSTALL FORGE ##
 write-host "Installing Forge"
 
-start-process -NoNewWindow -Wait -FilePath:"$rootPath\mcp\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\mcp\forge\" -RedirectStandardOutput:"$rootPath\forgeinstall.log" -RedirectStandardError:"$rootPath\forgeinstall-errors.log" -ArgumentList "install.py"
+start-process -Wait -FilePath:"$rootPath\mcp\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\mcp\forge\" -ArgumentList "install.py"
 
 ## DONE ##
 write-host "Work Complete"

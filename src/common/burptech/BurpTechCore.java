@@ -34,7 +34,7 @@ public class BurpTechCore
     public static CommonProxy proxy;
 
     
-    @PreInit
+    @EventHandler
     public void preInitialization(FMLPreInitializationEvent e)
     {
         // setup logger
@@ -50,7 +50,7 @@ public class BurpTechCore
         // register keyboard bindings
     }
     
-    @Init
+    @EventHandler
     public void initialization(FMLInitializationEvent e)
     {
         // gui handlers
@@ -76,7 +76,7 @@ public class BurpTechCore
     	(new RecipeManager()).addRecipes();
     }
     
-    @PostInit
+    @EventHandler
     public void postInitialization(FMLPostInitializationEvent e)
     {
     	// tweaks

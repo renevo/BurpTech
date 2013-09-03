@@ -9,9 +9,12 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
+import net.minecraft.util.ResourceLocation;
 
 public class GuiRucksack extends GuiContainer
 {
+	protected static final ResourceLocation resourceLocation = new ResourceLocation("textures/gui/container/generic_54.png");
+
 	/**
      * window height is calculated with these values, the more rows, the higher
      */
@@ -61,7 +64,7 @@ public class GuiRucksack extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture("/gui/container.png");
+        this.mc.func_110434_K().func_110577_a(resourceLocation);
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.inventoryRows * 18 + 17);

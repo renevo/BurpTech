@@ -7,9 +7,12 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import net.minecraft.util.ResourceLocation;
 
 public class GuiPortableWorkbech extends GuiContainer
 {
+	private static final ResourceLocation resourceLocation = new ResourceLocation("textures/gui/container/crafting_table.png");
+
 	public GuiPortableWorkbech(InventoryPlayer par1InventoryPlayer, World world)
     {
         super(new ContainerPortableWorkbench(par1InventoryPlayer, world));
@@ -33,7 +36,7 @@ public class GuiPortableWorkbech extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture("/gui/crafting.png");
+        this.mc.func_110434_K().func_110577_a(resourceLocation);
         
         int j = (this.width - this.xSize) / 2;
         int k = (this.height - this.ySize) / 2;

@@ -25,7 +25,7 @@ public class EntityAIGroundEater extends EntityAIBase
     @Override
     public boolean shouldExecute()
     {
-    	return entity.getHealth() > 0 && !entity.isInLove() && entity.getGrowingAge() == 0;
+    	return entity.isEntityAlive() && !entity.isInLove() && entity.getGrowingAge() == 0;
     }
     
     /**
@@ -34,7 +34,7 @@ public class EntityAIGroundEater extends EntityAIBase
     @Override
     public boolean continueExecuting()
     {
-    	if (entity.getHealth() > 0 && !entity.isInLove() && entity.getGrowingAge() == 0)
+    	if (entity.isEntityAlive()&& !entity.isInLove() && entity.getGrowingAge() == 0)
     	{
 	    	List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(1.0D, 0.0D, 1.0D));
 	    	
@@ -60,7 +60,7 @@ public class EntityAIGroundEater extends EntityAIBase
     @Override
     public void startExecuting()
     {
-    	if (entity.getHealth() > 0 && !entity.isInLove() && entity.getGrowingAge() == 0)
+    	if (entity.isEntityAlive() && !entity.isInLove() && entity.getGrowingAge() == 0)
         {
         	List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(2.0D, 0.0D, 2.0D));
         	if (nearbyItems != null && nearbyItems.size() > 0)

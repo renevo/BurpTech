@@ -36,6 +36,8 @@ Installing the code
 
 ####Automatic####
 
+Run Minecraft Launcher - and login to the appropriate version of Minecraft (REQUIRED)
+
 Run setup.cmd *(Requires powershell at the moment, someone is more than welcome to create a linux version of this in a pull request)*
 
 
@@ -43,9 +45,9 @@ Run setup.cmd *(Requires powershell at the moment, someone is more than welcome 
 ####Manual####
 
  - 1. Create Directory (/mcp/)
- - 2. Download Forge (minecraftforge-src-1.5.2-7.8.1.737)
+ - 2. Download Forge
  - 3. Extract zip into /mcp/
- - 4. Download MCP (mcp751)
+ - 4. Download MCP
  - 5. Extract zip into /mcp/
  - 6. Run /mcp/forge/install.cmd
  - 7. Wait for days

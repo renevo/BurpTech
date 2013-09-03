@@ -3,7 +3,7 @@ package burptech.item.crafting;
 import java.util.ArrayList;
 
 import burptech.item.ItemRucksack;
-import net.minecraft.block.BlockCloth;
+import net.minecraft.block.BlockColored;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
@@ -106,7 +106,7 @@ public class RecipesRucksackDyes implements IRecipe
 						return null;
 					}
 
-					float[] var14 = EntitySheep.fleeceColorTable[BlockCloth.getBlockFromDye(var8.getItemDamage())];
+					float[] var14 = EntitySheep.fleeceColorTable[BlockColored.getBlockFromDye(var8.getItemDamage())];
 					int var16 = (int)(var14[0] * 255.0F);
 					int var15 = (int)(var14[1] * 255.0F);
 					var17 = (int)(var14[2] * 255.0F);
