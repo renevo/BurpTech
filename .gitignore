@@ -2,7 +2,8 @@ downloads/
 mcp/
 forge/
 bin/
-eclipse/
+
+.metadata/
 
 *.lnk
 *.log
