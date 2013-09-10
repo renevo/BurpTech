@@ -5,7 +5,7 @@ Basically a bunch of random features and tweaks used by Burpcraft Server.
 
 [Website](http://renevo.github.io/BurpTech)
 
-[Minecraft Forum Post](http://www.minecraftforum.net/topic/1966632-162152burptech-its-that-nasty-smell-after-dinner/]
+[Minecraft Forum Post](http://www.minecraftforum.net/topic/1966632-162152burptech-its-that-nasty-smell-after-dinner/)
 
 [Feedback/Support](http://burptech.uservoice.com/)
 
