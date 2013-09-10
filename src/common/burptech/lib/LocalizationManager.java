@@ -1,7 +1,6 @@
 package burptech.lib;
 
 import burptech.BurpTechCore;
-import burptech.item.Items;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class LocalizationManager 

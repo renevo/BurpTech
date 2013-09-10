@@ -1,6 +1,5 @@
 package burptech.gui;
 
-import burptech.BurpTechConfig;
 import burptech.BurpTechCore;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

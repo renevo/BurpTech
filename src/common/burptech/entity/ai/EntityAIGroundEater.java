@@ -1,7 +1,6 @@
 package burptech.entity.ai;
 
 import java.util.List;
-import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -36,7 +35,8 @@ public class EntityAIGroundEater extends EntityAIBase
     {
     	if (entity.isEntityAlive()&& !entity.isInLove() && entity.getGrowingAge() == 0)
     	{
-	    	List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(1.0D, 0.0D, 1.0D));
+	    	@SuppressWarnings("rawtypes")
+			List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(1.0D, 0.0D, 1.0D));
 	    	
 	    	if (nearbyItems != null && nearbyItems.size() > 0)
 	    	{
@@ -62,7 +62,8 @@ public class EntityAIGroundEater extends EntityAIBase
     {
     	if (entity.isEntityAlive() && !entity.isInLove() && entity.getGrowingAge() == 0)
         {
-        	List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(2.0D, 0.0D, 2.0D));
+        	@SuppressWarnings("rawtypes")
+			List nearbyItems = entity.worldObj.getEntitiesWithinAABBExcludingEntity(entity, entity.boundingBox.expand(2.0D, 0.0D, 2.0D));
         	if (nearbyItems != null && nearbyItems.size() > 0)
         	{
         		for (int itemId = 0; itemId < nearbyItems.size(); itemId++)

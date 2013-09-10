@@ -1,11 +1,8 @@
 package burptech;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import burptech.client.gui.GuiPortableWorkbech;
 import burptech.gui.GuiHandler;
-import burptech.integration.*;
 import burptech.item.crafting.*;
 import burptech.lib.*;
 import cpw.mods.fml.common.*;
@@ -20,7 +17,7 @@ import net.minecraftforge.common.*;
  * 										     ^
  * Acatera: OMG lol  ----------------------- |
  */
-@Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION)
+@Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION, acceptedMinecraftVersions = Constants.MC_VERSIONS)
 @NetworkMod(clientSideRequired = true)
 public class BurpTechCore
 {

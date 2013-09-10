@@ -7,9 +7,9 @@
   "name": "BurpTech",
   "description": "BurpTech - it's what for dinner... Rather that noise after dinner",
   "version": "@VERSION@",
-  "mcversion": "1.5.2",
+  "mcversion": "1.6.2",
   "url": "http://renevo.github.io/BurpTech",
-   "logoFile": "/mods/BurpTechCore/textures/logo.png",
+   "logoFile": "/assets/BurpTechCore/textures/logo.png",
   "authorList": 
   [
     "RenEvo",
@@ -18,11 +18,11 @@
   "credits": "Thanks Burpcrafters and fans!!!",
   "requiredMods": 
   [
-    "Forge@[7.8.1,)"
+    "Forge@[9.10.0,)"
   ],
   "dependencies": 
   [
-    "BuildCraft|Core"
+    "required-after:Forge@[9.10.0]"
   ],
   "useDependencyInformation" : "true"
 }

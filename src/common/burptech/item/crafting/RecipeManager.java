@@ -1,7 +1,5 @@
 package burptech.item.crafting;
 
-import net.minecraft.item.crafting.CraftingManager;
-
 public class RecipeManager 
 {
     public void addRecipes()

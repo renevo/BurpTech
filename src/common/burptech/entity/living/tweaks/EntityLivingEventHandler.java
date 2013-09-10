@@ -1,9 +1,5 @@
 package burptech.entity.living.tweaks;
 
-import java.lang.reflect.Field;
-
-import cpw.mods.fml.relauncher.ReflectionHelper;
-import scala.Console;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.boss.*;
@@ -11,7 +7,6 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.transformers.ForgeAccessTransformer;
 
 public class EntityLivingEventHandler 
 {

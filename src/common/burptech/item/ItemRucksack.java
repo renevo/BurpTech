@@ -7,7 +7,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,7 +15,6 @@ import net.minecraft.world.World;
 
 public class ItemRucksack extends Item
 {
-	private ItemStack[] inventoryContents;
 	private int inventorySize;
 	public boolean isLinkedWithEnderChest;
 	private Icon overlay;
@@ -27,7 +25,6 @@ public class ItemRucksack extends Item
 		setMaxStackSize(1);
 		this.inventorySize = 27;
 		this.isLinkedWithEnderChest = isLinkedWithEnderChest;
-		inventoryContents = new ItemStack[inventorySize];
 	}
 
     @Override
