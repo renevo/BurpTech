@@ -4,20 +4,17 @@ import java.lang.reflect.Field;
 
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import scala.Console;
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAIMate;
-import net.minecraft.entity.ai.EntityAITaskEntry;
-import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.*;
+import net.minecraft.entity.boss.*;
+import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.*;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.transformers.ForgeAccessTransformer;
 
 public class EntityLivingEventHandler 
 {
-	//TODO Add an entity type - moveSpeed table to reduce reflection usage
-	
 	@ForgeSubscribe
 	public void entitySpawning(EntityJoinWorldEvent event)
 	{
@@ -42,19 +39,39 @@ public class EntityLivingEventHandler
 		if (wanderTask != null)
 		{
 			entity.tasks.taskEntries.remove(wanderTask);
-			float moveSpeed = 0.2F;
-			
-			/* TODO: Fix this later, it doesn't compile (with mcp, it does with eclipse)
-			try
-			{
-				// The second param has to be updated for each build of MC from fields.csv in MCP -> pro tip, start with first param, then go a,b,c,d,e, speed is the 5th param, which is e
-				moveSpeed = (float)ReflectionHelper.getPrivateValue(EntityAIWander.class, (EntityAIWander)(wanderTask.action), "speed", "e");
-			} catch (Exception ex)
-			{
-				ex.printStackTrace();
-				moveSpeed = 0.2F;
-			}
-			*/
+			float moveSpeed = 1.0F;
+			if (entity instanceof EntityChicken)
+				moveSpeed = 1.0F;
+			else if	(entity instanceof EntityCow)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntityCreeper)
+				moveSpeed = 0.8F;
+			else if (entity instanceof EntityHorse)
+				moveSpeed = 0.7F;
+			else if (entity instanceof EntityIronGolem)
+				moveSpeed = 0.6F;
+			else if (entity instanceof EntityOcelot)
+				moveSpeed = 0.8F;
+			else if (entity instanceof EntityPig)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntitySheep)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntitySkeleton)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntitySnowman)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntityVillager)
+				moveSpeed = 0.6F;
+			else if (entity instanceof EntityWitch)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntityWither)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntityWolf)
+				moveSpeed = 1.0F;
+			else if (entity instanceof EntityZombie)
+				moveSpeed = 1.0F;
+			else
+				moveSpeed = 0.85F;
 			
 			entity.tasks.addTask(((EntityAITaskEntry)wanderTask).priority, new burptech.entity.ai.EntityAITweakedWandering((EntityCreature)entity, moveSpeed));
 		}
