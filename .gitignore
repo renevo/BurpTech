@@ -1,16 +1,8 @@
 downloads/
 mcp/
+forge/
 bin/
-.indexes/
-.history/
+eclipse/
 
-.metadata/
-*.egit.core.prefs
-*.ui.prefs
-*.lock
 *.lnk
-*.jar
-*.war
-*.ear
-*.class
 *.log

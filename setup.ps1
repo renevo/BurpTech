@@ -1,76 +1,51 @@
 ## Environmental Setup Script ##
 $forgeVersion = "9.10.0.804"
 $mcVersion = "1.6.2"
-$mcpVersion = "804"
 
 $rootLocation = get-location
 $rootPath = $rootLocation.path
 
-write-host "Cleaning Environment"
-
 ## TODO: Add the Git commands here to ignore /elipse/ file changes
 
-### CLEAN ###
-if (Test-Path .\forgeinstall.log)
+### CREATE DOWNLOADS DIR ###
+if ((Test-Path .\downloads) -eq $False)
 {
-    Remove-Item .\forgeinstall.log -Force
+	New-Item -ItemType Directory -Force -Path .\downloads
 }
 
-if (Test-Path .\forgeinstall-errors.log)
+if ((Test-Path .\downloads\minecraftforge-src-$mcVersion-$forgeVersion.zip) -eq $False)
 {
-    Remove-Item .\forgeinstall-errors.log -Force
-}
+    Remove-Item .\forge -Force -Recurse
+	
+	### DOWNLOAD FILES ###
+	write-host "Downloading Files"
 
-if (Test-Path .\downloads)
-{
-    Remove-Item .\downloads -Force -Recurse
-}
-New-Item -ItemType Directory -Force -Path .\downloads
+	$webclient = New-Object System.Net.WebClient
 
+	write-host "Downloading forge $forgeVersion"
+	$webclient.DownloadFile("http://files.minecraftforge.net/minecraftforge/minecraftforge-src-$mcVersion-$forgeVersion.zip", ".\downloads\minecraftforge-src-$mcVersion-$forgeVersion.zip")
 
-if (Test-Path .\mcp)
-{
-    Remove-Item .\mcp -Force -Recurse
-}
-New-Item -ItemType Directory -Force -Path .\mcp
+	### EXTRACT FILES ###
+	write-host "Extracting Files"
 
+	$shell=new-object -com shell.application
 
-### DOWNLOAD FILES ###
-write-host "Downloading Files"
+	$Output = $shell.namespace("$rootPath")
 
-$webclient = New-Object System.Net.WebClient
+	write-host "Extracting $ZipFile"
 
-write-host "Downloading forge $forgeVersion"
-$webclient.DownloadFile("http://files.minecraftforge.net/minecraftforge/minecraftforge-src-$mcVersion-$forgeVersion.zip", ".\downloads\minecraftforge-src-$mcVersion-$forgeVersion.zip")
+	$ZipFolder = $shell.namespace(".\downloads\minecraftforge-src-$mcVersion-$forgeVersion.zip")
 
-write-host "Downloading mcp $mcpVersion"
-$webclient.DownloadFile("http://mcp.ocean-labs.de/files/archive/mcp$mcpVersion.zip", ".\downloads\mcp$mcpVersion.zip")
+	# 0x4 will hide the UI 0x10 will overwrite files, 0x14 will do both
+	$Output.Copyhere($ZipFolder.items(), 0x14) 
 
+	## INSTALL FORGE ##
+	write-host "Installing Forge"
 
-### EXTRACT FILES ###
-write-host "Extracting Files"
-
-$shell=new-object -com shell.application
-
-$Output = $shell.namespace("$rootPath\mcp")
-
-$ZipFiles = get-childitem downloads/*.zip
-
-foreach ($ZipFile in $ZipFiles)
-{
-    write-host "Extracting $ZipFile"
-    
-    $ZipFolder = $shell.namespace($ZipFile.fullname)
-    
-    # 0x4 will hide the UI 0x10 will overwrite files, 0x14 will do both
-    $Output.Copyhere($ZipFolder.items(), 0x14) 
+	start-process -Wait -FilePath:"$rootPath\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\forge\" -ArgumentList "install.py"
 }
 
 
-## INSTALL FORGE ##
-write-host "Installing Forge"
-
-start-process -Wait -FilePath:"$rootPath\mcp\forge\fml\python\python_fml.exe" -WorkingDirectory:"$rootPath\mcp\forge\" -ArgumentList "install.py"
 
 ## DONE ##
 write-host "Work Complete"

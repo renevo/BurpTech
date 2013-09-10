@@ -3,8 +3,9 @@ BurpTech
 
 Basically a bunch of random features and tweaks used by Burpcraft Server.
 
-
 [Website](http://renevo.github.io/BurpTech)
+
+[Minecraft Forum Post](http://www.minecraftforum.net/topic/1966632-162152burptech-its-that-nasty-smell-after-dinner/]
 
 [Feedback/Support](http://burptech.uservoice.com/)
 
@@ -18,17 +19,6 @@ Tools for the code
  - [Eclipse](http://www.eclipse.org/downloads/)
  - [GIT](http://git-scm.com/downloads)
   
-  
-  *NOTE: You should run this command in GIT to prevent eclipse workspace commits*
-  
-  <pre><code>
-  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.root\7.tree
-  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.resources\.safetable\org.eclipse.core.resources
-  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.core.runtime\.settings\org.eclipse.debug.ui.prefs
-  git update-index --assume-unchanged eclipse\.metadata\.plugins\org.eclipse.debug.ui\launchConfigurationHistory.xml 
-
-  </code></pre>
-  
 ***
 
 Installing the code
@@ -40,18 +30,7 @@ Run Minecraft Launcher - and login to the appropriate version of Minecraft (REQU
 
 Run setup.cmd *(Requires powershell at the moment, someone is more than welcome to create a linux version of this in a pull request)*
 
-
-
-####Manual####
-
- - 1. Create Directory (/mcp/)
- - 2. Download Forge
- - 3. Extract zip into /mcp/
- - 4. Download MCP
- - 5. Extract zip into /mcp/
- - 6. Run /mcp/forge/install.cmd
- - 7. Wait for days
- - 8. Open Eclipse to /eclipse/ folder
+See [Setting Up Development Environment - By Pahimar)[http://www.youtube.com/watch?v=XU3MmJGnqSc] to setup eclipse
  
    
 ***
@@ -61,7 +40,7 @@ Run setup.cmd *(Requires powershell at the moment, someone is more than welcome 
 
 ####Ants####
 
- - 1. Download `Apache Ant` (found [here](http://ant.apache.org/))
+ - 1. Download `Apache Ant` - [found here](http://ant.apache.org/)
  - 2. Run ant on the `/` directory.
  - 3. Outputs will be in the `bin` directory
  
