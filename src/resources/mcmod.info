@@ -18,11 +18,11 @@
   "credits": "Thanks Burpcrafters and fans!!!",
   "requiredMods": 
   [
-    "Forge@[9.10.0,)"
+    "Forge@[9.10.1,)"
   ],
   "dependencies": 
   [
-    "required-after:Forge@[9.10.0]"
+    "required-after:Forge@[9.10.1]"
   ],
   "useDependencyInformation" : "true"
 }

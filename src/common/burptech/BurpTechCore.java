@@ -17,7 +17,7 @@ import net.minecraftforge.common.*;
  * 										     ^
  * Acatera: OMG lol  ----------------------- |
  */
-@Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION, acceptedMinecraftVersions = Constants.MC_VERSIONS)
+@Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION)
 @NetworkMod(clientSideRequired = true)
 public class BurpTechCore
 {

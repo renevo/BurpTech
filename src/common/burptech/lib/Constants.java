@@ -27,16 +27,10 @@ public final class Constants
     public static final String MOD_NAME = "BurpTech";
     
     /**
-     * Minecraft Versions we can run under
-     */
-    public static final String MC_VERSIONS = "[1.6,1.7]";
-    
-    /**
      * MOD CHANNEL NAME - used for networking
      */
     public static final String MOD_CHANNEL_NAME = MOD_ID;
- 
-    
+     
     /**
      * Configuration Category for Tweaks
      */
