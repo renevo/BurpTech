@@ -60,6 +60,6 @@ public final class Constants
     /**
      * Block starting ID for defaults
      */
-    public static final int BLOCK_START = 900;
+    public static final int BLOCK_START = 600;
     
 }
