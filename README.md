@@ -30,7 +30,7 @@ Run Minecraft Launcher - and login to the appropriate version of Minecraft (REQU
 
 Run setup.cmd *(Requires powershell at the moment, someone is more than welcome to create a linux version of this in a pull request)*
 
-See [Setting Up Development Environment - By Pahimar)[http://www.youtube.com/watch?v=XU3MmJGnqSc] to setup eclipse
+See (Setting Up Development Environment - By Pahimar)[http://www.youtube.com/watch?v=XU3MmJGnqSc] to setup eclipse
  
    
 ***
