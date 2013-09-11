@@ -18,6 +18,7 @@ public class BurpTechConfig
 	public Property enableNetherSpawningRestrictions;
 	public Property enableMobsEatingOffOfGround;
 	public Property enableMobsWandering;
+	public Property enableGreedyVillagers;
 	
 	public Property recipeCobwebs;
 	public Property recipePortableWorkbench;
@@ -60,7 +61,10 @@ public class BurpTechConfig
 		
 		result.enableMobsWandering = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableMobsWandering", true);
 		result.enableMobsWandering.comment = "When enabled, mobs will keep wandering past the 32 block vanilla limit";
-				
+		
+		result.enableGreedyVillagers = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableGreedyVillagers", true);
+		result.enableGreedyVillagers.comment = "When enabled, villagers will follow players with diamonds and emeralds in there hands";
+		
 		// Recipes
 		result.recipeCobwebs = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobwebs", true);
 		result.recipeCobwebs.comment = "Enables crafting of cobwebs from string";

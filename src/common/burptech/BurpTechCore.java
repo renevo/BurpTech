@@ -52,7 +52,6 @@ public class BurpTechCore
     {
         // gui handlers
     	NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
-//    	NetworkRegistry.instance().registerGuiHandler(instance, proxy); 
     	
         // event handlers
     	if (configuration.enableSlimeSpawningRestrictions.getBoolean(true))
@@ -66,6 +65,9 @@ public class BurpTechCore
     	
     	if (configuration.enableMobsWandering.getBoolean(true))
     		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityLivingEventHandler());
+    	
+    	if (configuration.enableGreedyVillagers.getBoolean(true))
+    		MinecraftForge.EVENT_BUS.register(new burptech.entity.living.tweaks.EntityVillagerEventHandler());    		
     	
     	// tile entity registrations
     	

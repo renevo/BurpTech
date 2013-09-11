@@ -13,13 +13,11 @@ public class EntityLivingEventHandler
 	@ForgeSubscribe
 	public void entitySpawning(EntityJoinWorldEvent event)
 	{
-		if (!(event.entity instanceof EntityLiving)) 
-			return;
-
-		updateAI((EntityLiving)event.entity);
+		if (event.entity instanceof EntityLiving) 
+			updateLivingAI((EntityLiving)event.entity);
 	}
-  
-	private void updateAI(EntityLiving entity)
+	
+	private void updateLivingAI(EntityLiving entity)
 	{
 		EntityAITaskEntry wanderTask = null;
 		
