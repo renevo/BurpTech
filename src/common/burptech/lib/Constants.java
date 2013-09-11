@@ -56,4 +56,10 @@ public final class Constants
      */
     public static final int GUI_ENDER_RUCKSACK_ID = 3;
     
+    
+    /**
+     * Block starting ID for defaults
+     */
+    public static final int BLOCK_START = 900;
+    
 }
