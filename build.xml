@@ -59,7 +59,7 @@
 		<jar destfile="bin\${build.release.minecraft.version}\burptech-${build.release.minecraft.version}.${build.release.number}.jar">
 			<fileset dir="src\resources" excludes="**/xcf/**,mcmod.info" />
 			<fileset dir="forge\mcp\src\minecraft\" includes="mcmod.info" />
-			<fileset dir="forge\mcp\reobf\minecraft" />
+			<fileset dir="forge\mcp\reobf\minecraft" excludes="**/invtweaks/**" />
 		</jar>
 
 		<!-- Clean up the source now that we are done -->

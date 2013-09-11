@@ -1,5 +1,6 @@
 package burptech.gui;
 
+import invtweaks.api.container.ChestContainer;
 import burptech.item.RucksackInventory;
 import burptech.item.ItemRucksack;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,6 +10,7 @@ import net.minecraft.inventory.InventoryEnderChest;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
+@ChestContainer(rowSize=9, isLargeChest=false) /** inventory tweaks support **/
 public class ContainerRucksack extends Container
 {
 	private int numRows;
