@@ -9,6 +9,8 @@ Basically a bunch of random features and tweaks used by Burpcraft Server.
 
 [FTB Forum Post](http://forum.feed-the-beast.com/threads/burptech-mod-tweaks-and-things.31287/)
 
+[RenEvo's 1.6.2.13 Spotlight](http://www.youtube.com/watch?v=p2qBFDCzyGA)
+
 [Feedback/Support](http://burptech.uservoice.com/)
 
 ***
