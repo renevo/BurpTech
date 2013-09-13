@@ -7,6 +7,8 @@ Basically a bunch of random features and tweaks used by Burpcraft Server.
 
 [Minecraft Forum Post](http://www.minecraftforum.net/topic/1966632-162152burptech-its-that-nasty-smell-after-dinner/)
 
+[FTB Forum Post](http://forum.feed-the-beast.com/threads/burptech-mod-tweaks-and-things.31287/)
+
 [Feedback/Support](http://burptech.uservoice.com/)
 
 ***
