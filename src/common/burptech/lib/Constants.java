@@ -62,4 +62,9 @@ public final class Constants
      */
     public static final int BLOCK_START = 600;
     
+    /**
+     * Item starting ID for defaults
+     */
+    public static final int ITEM_START = 18000;
+    
 }
