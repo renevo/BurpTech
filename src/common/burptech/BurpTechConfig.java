@@ -25,6 +25,8 @@ public class BurpTechConfig
 	public Property recipeRucksack;
 	public Property recipeEnderRucksack;
 	
+	public Property recipeCookedEgg;
+		
 	/*
 	 * BurpTech Items
 	 */
@@ -77,6 +79,9 @@ public class BurpTechConfig
 		
 		result.recipeEnderRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "EnderRucksack", true);
 		result.recipeEnderRucksack.comment = "Enables crafting of Ender Rucksacks";
+		
+		result.recipeCookedEgg = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "CookedEggs", true);
+		result.recipeCookedEgg.comment = "Enables cooked eggs for food";
 		
 		// Items
 		result.items = new Items(configuration);

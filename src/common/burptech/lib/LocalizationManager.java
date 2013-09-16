@@ -12,5 +12,7 @@ public class LocalizationManager
 		LanguageRegistry.addName(BurpTechCore.configuration.items.portableWorkbench, "Portable Workbench");
 		LanguageRegistry.addName(BurpTechCore.configuration.items.rucksack, "Rucksack");
     	LanguageRegistry.addName(BurpTechCore.configuration.items.enderRucksack, "Ender Rucksack");
+    	
+    	LanguageRegistry.addName(BurpTechCore.configuration.items.cookedEgg, "Cooked Egg");
 	}
 }

@@ -38,5 +38,10 @@ public class RecipesBurpTech
     		GameRegistry.addShapelessRecipe(new ItemStack(BurpTechCore.configuration.items.portableWorkbench),
     				new Object[] { Block.workbench, Item.silk });
     	}
+    	
+    	if (BurpTechCore.configuration.recipeCookedEgg.getBoolean(true))
+    	{
+    		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(BurpTechCore.configuration.items.cookedEgg), 0.35F); // xp matches standard food cooking xp
+    	}
     }
 }
