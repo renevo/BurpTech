@@ -42,6 +42,11 @@ public final class Constants
     public static final String CONFIG_CATEGORY_RECIPES = "Recipes";
     
     /**
+     * Configuration Category for Nether Tech
+     */
+    public static final String CONFIG_CATEGORY_NETHERTECH = "NetherTech";
+    
+    /**
      * GUI ID for Portable Workbench
      */
     public static final int GUI_PORTABLE_WORKBECH_ID = 1;

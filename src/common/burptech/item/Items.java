@@ -1,43 +1,42 @@
 package burptech.item;
 
-import burptech.lib.Constants;
+import burptech.*;
+import burptech.lib.*;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
-import net.minecraftforge.common.*;
-
+import net.minecraft.item.*;
+import net.minecraftforge.oredict.OreDictionary;
 
 /*
  * Item definitions for BurpTech 
  */
 public class Items 
 {
-	Configuration configuration;
-	
 	public Item portableWorkbench;
 	public Item rucksack;
 	public Item enderRucksack;
 
 	public Item cookedEgg;
 	
-	/*
-	 * Default constructor
-	 */
-	public Items(Configuration configuration)
-	{
-		this.configuration = configuration;
-	}
-		
+	public Item netherDust;
+	public Item netherCoal;
+	
 	/*
 	 * Creates all of the item instances
 	 */
-	public void create()
+	public void create(BurpTechConfig configuration)
 	{
-		enderRucksack = new ItemRucksack(configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0).getInt(), true).setUnlocalizedName("enderRucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
-		rucksack = new ItemRucksack(configuration.getItem("Rucksack", burptech.lib.Constants.ITEM_START + 1).getInt(), false).setUnlocalizedName("rucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
-		portableWorkbench = new ItemPortableWorkbench(configuration.getItem("PortableWorkbench", burptech.lib.Constants.ITEM_START + 2).getInt()).setUnlocalizedName("portableWorkbench").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);;
+		enderRucksack = new ItemRucksack(configuration.itemEnderRucksack.getInt(), true).setUnlocalizedName("enderRucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
+		rucksack = new ItemRucksack(configuration.itemRucksack.getInt(), false).setUnlocalizedName("rucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
+		portableWorkbench = new ItemPortableWorkbench(configuration.itemPortableWorkbench.getInt()).setUnlocalizedName("portableWorkbench").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);;
 		
-		cookedEgg = new ItemFood(configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3).getInt(), 2, .1F, false).setUnlocalizedName("cookedEgg").setTextureName(Constants.MOD_ID + ":" + "egg_cooked").setMaxStackSize(16);
+		cookedEgg = new ItemFood(configuration.itemCookedEgg.getInt(), 2, .1F, false).setUnlocalizedName("cookedEgg").setTextureName(Constants.MOD_ID + ":" + "egg_cooked").setMaxStackSize(16);
+		
+		netherDust = new Item(configuration.itemNetherDust.getInt()).setUnlocalizedName("netherDust").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_dust");
+		// ore dictionary (pulled from: http://minecraftmodcustomstuff.wikia.com/wiki/Ore_Dictionary - more here: http://www.minecraftforge.net/wiki/Common_Oredict_names)
+		OreDictionary.registerOre("dustNetherrack", netherDust);
+		OreDictionary.registerOre("itemDustNetherrack", netherDust);
+		
+		netherCoal = new Item(configuration.itemNetherCoal.getInt()).setUnlocalizedName("netherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal");
     }
 	
 }

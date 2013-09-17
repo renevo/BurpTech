@@ -2,11 +2,10 @@ package burptech;
 
 import java.io.File;
 
-import burptech.block.Blocks;
-import burptech.item.Items;
+import burptech.block.*;
+import burptech.item.*;
 import burptech.lib.*;
-import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.Property;
+import net.minecraftforge.common.*;
 
 /*
  * All config for BurpTech here
@@ -19,6 +18,7 @@ public class BurpTechConfig
 	public Property enableMobsEatingOffOfGround;
 	public Property enableMobsWandering;
 	public Property enableGreedyVillagers;
+	public Property enableIlluminatedCocoa;
 	
 	public Property recipeCobwebs;
 	public Property recipePortableWorkbench;
@@ -26,7 +26,19 @@ public class BurpTechConfig
 	public Property recipeEnderRucksack;
 	
 	public Property recipeCookedEgg;
+	
+	public Property enableNetherTechSolidFuels;
 		
+	public Property blockIlluminatedCocoa;
+	public Property blockNetherCoal;
+	
+	public Property itemEnderRucksack;
+	public Property itemRucksack;
+	public Property itemPortableWorkbench;
+	public Property itemCookedEgg;
+	public Property itemNetherDust;
+	public Property itemNetherCoal;
+	
 	/*
 	 * BurpTech Items
 	 */
@@ -67,6 +79,9 @@ public class BurpTechConfig
 		result.enableGreedyVillagers = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "EnableGreedyVillagers", true);
 		result.enableGreedyVillagers.comment = "When enabled, villagers will follow players with diamonds and emeralds in there hands";
 		
+		result.enableIlluminatedCocoa = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "IlluminatedCocoaPlants", true);
+		result.enableIlluminatedCocoa.comment = "When enabled, allows you to right click a grown cocoa plant with glowstone to turn it into a lamp";
+				
 		// Recipes
 		result.recipeCobwebs = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobwebs", true);
 		result.recipeCobwebs.comment = "Enables crafting of cobwebs from string";
@@ -83,13 +98,27 @@ public class BurpTechConfig
 		result.recipeCookedEgg = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "CookedEggs", true);
 		result.recipeCookedEgg.comment = "Enables cooked eggs for food";
 		
+		// Nether Tech
+		result.enableNetherTechSolidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "SolidFuels", true);
+		result.enableNetherTechSolidFuels.comment = "Enables Nether Tech Solid Fuels";
+		
 		// Items
-		result.items = new Items(configuration);
-		result.items.create();
+		result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);
+		result.itemRucksack = configuration.getItem("Rucksack", burptech.lib.Constants.ITEM_START + 1);
+		result.itemPortableWorkbench = configuration.getItem("PortableWorkbench", burptech.lib.Constants.ITEM_START + 2);
+		result.itemCookedEgg = configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3);
+		result.itemNetherDust = configuration.getItem("NetherDust", burptech.lib.Constants.ITEM_START + 4);
+		result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
+		
+		result.items = new Items();
+		result.items.create(result);
 						
 		// Blocks
-		result.blocks = new Blocks(configuration);
-		result.blocks.create();
+		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);
+		result.blockNetherCoal = configuration.getBlock("BlockNetherCoal", Constants.BLOCK_START + 1);
+		
+		result.blocks = new Blocks();
+		result.blocks.create(result);
 		
 		// save only if modified
 		if (configuration.hasChanged())

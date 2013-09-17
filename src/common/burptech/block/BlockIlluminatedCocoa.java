@@ -25,7 +25,7 @@ public class BlockIlluminatedCocoa extends BlockCocoa
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
 	{
-		if (blockID == BurpTechCore.configuration.blocks.illuminatedCocoaOn.blockID)
+		if (blockID == BurpTechCore.configuration.blocks.blockIlluminatedCocoaOn.blockID)
 			return true;
 		
 		int meta = world.getBlockMetadata(x, y, z);
@@ -37,7 +37,7 @@ public class BlockIlluminatedCocoa extends BlockCocoa
 		
 		if (currentItem.itemID == Item.glowstone.itemID && ((meta & 12) >> 2) == 2)
 		{
-			world.setBlock(x, y, z, BurpTechCore.configuration.blocks.illuminatedCocoaOn.blockID, meta, 1 | 2 | 4);
+			world.setBlock(x, y, z, BurpTechCore.configuration.blocks.blockIlluminatedCocoaOn.blockID, meta, 1 | 2 | 4);
 			if (!player.capabilities.isCreativeMode)
 			{
 				currentItem.stackSize--;
