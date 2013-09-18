@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="1.6.2 Natives">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/forge/mcp/jars/versions/1.6.2/1.6.2-natives" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
