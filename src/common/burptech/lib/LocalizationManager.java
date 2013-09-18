@@ -14,5 +14,9 @@ public class LocalizationManager
     	LanguageRegistry.addName(BurpTechCore.configuration.items.enderRucksack, "Ender Rucksack");
     	
     	LanguageRegistry.addName(BurpTechCore.configuration.items.cookedEgg, "Cooked Egg");
+    	
+    	LanguageRegistry.addName(BurpTechCore.configuration.items.netherCoal, "Nether Infused Coal");
+    	LanguageRegistry.addName(BurpTechCore.configuration.items.netherDust, "Nether Dust");
+    	LanguageRegistry.addName(BurpTechCore.configuration.blocks.blockNetherCoal, "Block of Nether Infused Coal");
 	}
 }

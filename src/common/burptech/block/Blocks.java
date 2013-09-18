@@ -1,53 +1,41 @@
 package burptech.block;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+import burptech.BurpTechConfig;
 import burptech.BurpTechCore;
 import burptech.lib.Constants;
 import net.minecraft.block.Block;
-import net.minecraftforge.common.*;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 
 /*
  * Block definitions for BurpTech
  */
 public class Blocks 
 {
-	Configuration configuration;
+	public Block blockIlluminatedCocoaOn;
+	public Block blockIlluminatedCocoaOff;
+	public Block blockNetherCoal;
 	
-	public Block illuminatedCocoaOn;
-	public Block illuminatedCocoaOff;
-	
-	public Property enableIlluminatedCocoa;
-	
-	/*
-	 * Default constructor
-	 */
-	public Blocks(Configuration configuration)
+	public void create(BurpTechConfig configuration)
 	{
-		this.configuration = configuration;
+		addIlluminatedCocoa(configuration);
+		
+		blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
+		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
 	}
 	
-	public void create()
+	private void addIlluminatedCocoa(BurpTechConfig configuration)
 	{
-		enableIlluminatedCocoa = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "IlluminatedCocoaPlants", true);
-		enableIlluminatedCocoa.comment = "When enabled, allows you to right click a grown cocoa plant with glowstone to turn it into a lamp";
+		if (!configuration.enableIlluminatedCocoa.getBoolean(true))
+			return;
 		
-		if (enableIlluminatedCocoa.getBoolean(true))
-		{
-			BurpTechCore.log.info("Adding Illuminated Cocoa Plants");
-			AddIlluminatedCocoa(Constants.BLOCK_START + 0);
-		}
-	}
-	
-	private void AddIlluminatedCocoa(int defaultBlockID)
-	{
-		Property illuminatedCocoaOnBlockId = configuration.getBlock("IlluminatedCocoa",	defaultBlockID, "The ID for the Illuminated Cocoa Plants. (Replaces default BlockCocoa)");
+		int illuminatedCocoaPlantID = configuration.blockIlluminatedCocoa.getInt();
 		
-		int illuminatedCocoaPlantID = illuminatedCocoaOnBlockId.getInt();
-		if (illuminatedCocoaPlantID != 0)
-		{
-			illuminatedCocoaOn = new BlockIlluminatedCocoa(illuminatedCocoaPlantID, true).setHardness(0.2F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa").setTextureName("cocoa");
-			int cocoaPlantID = Block.cocoaPlant.blockID;
-			Block.blocksList[cocoaPlantID] = null;
-			illuminatedCocoaOff = new BlockIlluminatedCocoa(cocoaPlantID, false).setHardness(0.2F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa").setTextureName("cocoa");
-		}
+		BurpTechCore.log.info("Enabling Illuminated Cocoa Blocks");
+		blockIlluminatedCocoaOn = new BlockIlluminatedCocoa(illuminatedCocoaPlantID, true).setHardness(0.2F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa").setTextureName("cocoa");
+		int cocoaPlantID = Block.cocoaPlant.blockID;
+		Block.blocksList[cocoaPlantID] = null;
+		blockIlluminatedCocoaOff = new BlockIlluminatedCocoa(cocoaPlantID, false).setHardness(0.2F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa").setTextureName("cocoa");
 	}
 }
