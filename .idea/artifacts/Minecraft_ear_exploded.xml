@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="Minecraft:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Minecraft_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Minecraft/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>
