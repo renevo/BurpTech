@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BurpTech.iml" filepath="$PROJECT_DIR$/BurpTech.iml" />
-      <module fileurl="file://$PROJECT_DIR$/forge/mcp/src/minecraft/Minecraft.iml" filepath="$PROJECT_DIR$/forge/mcp/src/minecraft/Minecraft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Minecraft.iml" filepath="$PROJECT_DIR$/Minecraft.iml" />
     </modules>
   </component>
 </project>

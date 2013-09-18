@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="BurpTech">
+    <output-path>$PROJECT_DIR$/forge/mcp/jars/mods/BurpTech</output-path>
+    <root id="root">
+      <element id="module-output" name="BurpTech" />
+    </root>
+  </artifact>
+</component>

@@ -2,13 +2,12 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/common" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/resources" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/eclipse" />
+    <content url="file://$MODULE_DIR$/forge/mcp/src/minecraft">
+      <sourceFolder url="file://$MODULE_DIR$/forge/mcp/src/minecraft" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="1.6.2 Natives" level="project" />
     <orderEntry type="library" name="1.6.2" level="project" />
     <orderEntry type="library" name="argo-2.25_fixed" level="project" />
     <orderEntry type="library" name="asm-debug-all-4.1" level="project" />
@@ -29,7 +28,6 @@
     <orderEntry type="library" name="lwjgl_util-2.9.0" level="project" />
     <orderEntry type="library" name="lzma-0.0.1" level="project" />
     <orderEntry type="library" name="soundsystem-20120107" level="project" />
-    <orderEntry type="module" module-name="Minecraft" />
   </component>
 </module>
 
