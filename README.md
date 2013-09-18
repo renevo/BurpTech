@@ -20,7 +20,7 @@ Tools for the code
  
  - [JRE](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
  - [Java](http://www.java.com/en/download/manual.jsp)
- - [Eclipse](http://www.eclipse.org/downloads/)
+ - [Eclipse](http://www.eclipse.org/downloads/) or [IntelliJ IDEA](http://www.jetbrains.com/idea/)
  - [GIT](http://git-scm.com/downloads)
   
 ***
@@ -34,8 +34,10 @@ Run Minecraft Launcher - and login to the appropriate version of Minecraft (REQU
 
 Run setup.cmd *(Requires powershell at the moment, someone is more than welcome to create a linux version of this in a pull request)*
 
-See [Setting Up Development Environment - By Pahimar](http://www.youtube.com/watch?v=XU3MmJGnqSc) to setup eclipse
- 
+Open root directory with IntelliJ IDEA
+
+For ecplise, we recommend [Setting Up Development Environment - By Pahimar](http://www.youtube.com/watch?v=XU3MmJGnqSc)
+
    
 ***
  
