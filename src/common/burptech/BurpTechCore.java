@@ -30,7 +30,6 @@ public class BurpTechCore
     @SidedProxy(clientSide = "burptech.client.ClientProxy", serverSide = "burptech.CommonProxy")
     public static CommonProxy proxy;
 
-    
     @EventHandler
     public void preInitialization(FMLPreInitializationEvent e)
     {
@@ -42,9 +41,12 @@ public class BurpTechCore
         guiHandler = new GuiHandler();
         
         // load up language translations
-        LocalizationManager.addLocalization();
+        TranslationHelper.loadLanguages("/assets/" + Constants.MOD_ID + "/languages/", new String[] { "en_US" });
         
         // register keyboard bindings
+
+        // register the bronze age with BasicComponents
+        burptech.integration.BasicComponentsIntegration.registerBronzeAge();
     }
     
     @EventHandler

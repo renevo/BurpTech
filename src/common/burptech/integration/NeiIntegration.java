@@ -25,7 +25,7 @@ public class NeiIntegration
         }
         catch (Throwable ex)
         {
-        	BurpTechCore.log.log(Level.INFO, "NEI integration of " + craftingContainer.getName() + " failed:" + ex.getMessage());
+        	BurpTechCore.log.log(Level.FINEST, "NEI integration of " + craftingContainer.getName() + " failed:" + ex.getMessage());
         }
 		
 	}

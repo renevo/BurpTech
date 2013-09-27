@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Minecraft Natives">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/forge/mcp/jars/versions/1.6.4/1.6.4-natives" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

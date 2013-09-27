@@ -1,6 +1,6 @@
 ## Environmental Setup Script ##
-$forgeVersion = "9.10.1.859"
-$mcVersion = "1.6.2"
+$forgeVersion = "9.11.0.897"
+$mcVersion = "1.6.4"
 
 $rootLocation = get-location
 $rootPath = $rootLocation.path

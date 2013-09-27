@@ -7,22 +7,23 @@
   "name": "BurpTech",
   "description": "BurpTech - it's what for dinner... Rather that noise after dinner",
   "version": "@VERSION@",
-  "mcversion": "1.6.2",
+  "mcversion": "1.6.4",
   "url": "http://renevo.github.io/BurpTech",
    "logoFile": "/assets/BurpTechCore/textures/logo.png",
   "authorList": 
   [
     "RenEvo",
-	"Acatera"
+	"Acatera",
+	"Maikar"
   ],
   "credits": "Thanks Burpcrafters and fans!!!",
   "requiredMods": 
   [
-    "Forge@[9.10.1,)"
+    "Forge@[9.11.0,)"
   ],
   "dependencies": 
   [
-    "required-after:Forge@[9.10.1]"
+    "after:*"
   ],
   "useDependencyInformation" : "true"
 }
