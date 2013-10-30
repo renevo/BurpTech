@@ -1,5 +1,6 @@
 package burptech.block;
 
+import burptech.integration.BuildcraftIntegration;
 import burptech.item.ItemBlockOres;
 import cpw.mods.fml.common.registry.GameRegistry;
 import burptech.BurpTechConfig;
@@ -28,10 +29,23 @@ public class Blocks
 		addIlluminatedCocoa(configuration);
 		
 		blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
-        blockOres = (new BlockOres(configuration.blockOres.getInt())).setUnlocalizedName("blockOres");
 
         // block registry
 		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
+
+        // harvesting
+        MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
+
+        // facades
+        BuildcraftIntegration.addFacade(blockNetherCoal.blockID, 0);
+
+        // multi part??? not sure how to do this tbh or if you even need to with solid blocks.
+	}
+
+    private void addOres(BurpTechConfig configuration)
+    {
+        blockOres = (new BlockOres(configuration.blockOres.getInt())).setUnlocalizedName("blockOres");
+
         GameRegistry.registerBlock(blockOres, ItemBlockOres.class, "blockOres");
 
         // ore dictionary (pulled from: http://minecraftmodcustomstuff.wikia.com/wiki/Ore_Dictionary - more here: http://www.minecraftforge.net/wiki/Common_Oredict_names)
@@ -40,17 +54,13 @@ public class Blocks
             OreDictionary.registerOre(BlockOres.ORES[i], new ItemStack(blockOres, 1, i));
         }
 
-        // harvesting
-
         MinecraftForge.setBlockHarvestLevel(blockOres, 0, "pickaxe", 1);
         MinecraftForge.setBlockHarvestLevel(blockOres, 1, "pickaxe", 1);
         MinecraftForge.setBlockHarvestLevel(blockOres, 2, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(blockOres, 3, "pickaxe", 2);
         MinecraftForge.setBlockHarvestLevel(blockOres, 4, "pickaxe", 2);
+    }
 
-        MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
-	}
-	
 	private void addIlluminatedCocoa(BurpTechConfig configuration)
 	{
 		if (!configuration.enableIlluminatedCocoa.getBoolean(true))

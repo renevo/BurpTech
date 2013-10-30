@@ -2,27 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f80225f9-a55b-499d-a446-839463ce8cd7" name="Default" comment="">
-      <change type="DELETED" beforePath="F:\Documents\GitHub\BurpTech\.idea\libraries\1_6_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\Documents\GitHub\BurpTech\.idea\libraries\1_6_2_Natives.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\Documents\GitHub\BurpTech\.idea\libraries\launchwrapper_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="F:\Documents\GitHub\BurpTech\src\common\burptech\lib\LocalizationManager.java" afterPath="" />
-      <change type="DELETED" beforePath="F:\Documents\GitHub\BurpTech\src\resources\lang\burptech\en_US.properties" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" afterPath="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BurpTech.iml" afterPath="$PROJECT_DIR$/BurpTech.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" afterPath="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" afterPath="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/item/Items.java" afterPath="$PROJECT_DIR$/src/common/burptech/item/Items.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Minecraft.iml" afterPath="$PROJECT_DIR$/Minecraft.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/integration/NeiIntegration.java" afterPath="$PROJECT_DIR$/src/common/burptech/integration/NeiIntegration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java" afterPath="$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/integration/RailcraftIntegration.java" afterPath="$PROJECT_DIR$/src/common/burptech/integration/RailcraftIntegration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" afterPath="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.properties" afterPath="$PROJECT_DIR$/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/mcmod.info" afterPath="$PROJECT_DIR$/src/resources/mcmod.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.ps1" afterPath="$PROJECT_DIR$/setup.ps1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BurpTech.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380258757847" ignored="false" />
+    <file path="/Dummy.txt" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383090243989" ignored="false" />
     <file path="$PROJECT_DIR$/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379366488355" ignored="false" />
     <file path="$PROJECT_DIR$/forge/mcp/src/minecraft/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379531282863" ignored="false" />
     <file path="$PROJECT_DIR$/forge/mcp/jars/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379432300150" ignored="false" />
@@ -31,15 +23,18 @@
     <file path="/BasicComponentsIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380262619488" ignored="false" />
     <file path="/BurpTechCore.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380258860647" ignored="false" />
     <file path="/Items.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380261160393" ignored="false" />
-    <file path="/Blocks.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380267662914" ignored="false" />
+    <file path="/Blocks.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383100114260" ignored="false" />
     <file path="/NeiIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380261472274" ignored="false" />
     <file path="/BlockOres.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380263756651" ignored="false" />
     <file path="/BurpTechConfig.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380264183039" ignored="false" />
     <file path="/ItemBlockOres.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380264534682" ignored="false" />
-    <file path="/RecipesBurpTech.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380265086882" ignored="false" />
+    <file path="/RecipesBurpTech.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383098592077" ignored="false" />
     <file path="/LocalizationManager.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380266542834" ignored="false" />
     <file path="/en_US.properties" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380267070467" ignored="false" />
     <file path="/TranslationHelper.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380266443200" ignored="false" />
+    <file path="/RailcraftIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383091013144" ignored="false" />
+    <file path="/IndustrialcraftIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383091696152" ignored="false" />
+    <file path="/BuildcraftIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383099428325" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,19 +120,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/resources/mcmod.info" />
-        <option value="$PROJECT_DIR$/src/common/burptech/item/Items.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/integration/NeiIntegration.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/integration/BasicComponentsIntegration.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/ItemBlockOres.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/lib/TranslationHelper.java" />
         <option value="$PROJECT_DIR$/src/resources/lang/burptech/en_US.properties" />
         <option value="$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties" />
         <option value="$PROJECT_DIR$/src/common/burptech/lib/LocalizationManager.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/block/BlockOres.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/integration/RailcraftIntegration.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
+        <option value="$PROJECT_DIR$/src/resources/mcmod.info" />
+        <option value="$PROJECT_DIR$/src/common/burptech/integration/BuildcraftIntegration.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" />
       </list>
     </option>
@@ -175,7 +172,7 @@
     </ignored-problems>
   </component>
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -187,9 +184,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -201,9 +195,19 @@
               <option name="myItemId" value="Minecraft" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Minecraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -214,6 +218,36 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Minecraft" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="minecraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Minecraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="minecraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tileentity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -268,7 +302,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
       </pane>
     </panes>
   </component>
@@ -277,11 +324,11 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/forge/mcp/jars/versions/1.6.4/1.6.4.jar!/" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="burptech" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -290,6 +337,7 @@
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/common" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -297,8 +345,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.Minecraft Client">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -313,19 +361,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -354,6 +389,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -507,19 +555,19 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6726058" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.6726058" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17662753" sideWeight="0.6002227" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39924315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3997773" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3997773" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.6703786" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24439701" sideWeight="0.6703786" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22678763" sideWeight="0.6002227" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32516703" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -609,116 +657,120 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/gen/MapGenBase.java">
+    <entry file="file://$PROJECT_DIR$/src/common/mods/railcraft/api/crafting/IRockCrusherCraftingManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="156" selection-end="156" vertical-scroll-proportion="0.11764706">
+        <state line="11" column="38" selection-start="233" selection-end="248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/gen/feature/WorldGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/common/mods/railcraft/api/crafting/IRockCrusherRecipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="124" selection-end="124" vertical-scroll-proportion="-0.5882353">
+        <state line="10" column="17" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockStone.java">
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/integration/RailcraftIntegration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="0.11805555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/util/WeightedRandom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="288" selection-end="288" vertical-scroll-proportion="-2.0069444">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/util/WeightedRandomItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="27" selection-start="290" selection-end="290" vertical-scroll-proportion="0.38368055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="32" selection-start="7079" selection-end="7086" vertical-scroll-proportion="0.3321492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/biome/BiomeDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="459" column="22" selection-start="19593" selection-end="19593" vertical-scroll-proportion="12.986111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockOre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="421" selection-end="421" vertical-scroll-proportion="0.3321492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/gen/feature/WorldGenMinable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="38" selection-start="999" selection-end="999" vertical-scroll-proportion="-0.796875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraftforge/event/terraingen/TerrainGen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="51" selection-start="2181" selection-end="2196" vertical-scroll-proportion="0.46875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraftforge/event/terraingen/OreGenEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="15" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.5868056">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/block/BlockOres.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="0.20659722">
+        <state line="16" column="35" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/cpw/mods/fml/common/registry/GameRegistry.java">
+    <entry file="file://$PROJECT_DIR$/src/common/ic2/api/recipe/IMachineRecipeManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="8" selection-start="2941" selection-end="2941" vertical-scroll-proportion="-12.0746">
+        <state line="24" column="16" selection-start="662" selection-end="662" vertical-scroll-proportion="0.33333334">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/integration/Integration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="42" selection-start="901" selection-end="901" vertical-scroll-proportion="0.6296296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="35" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2982456">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/ic2/api/recipe/Recipes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="99" selection-end="99" vertical-scroll-proportion="0.12865497">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="44" selection-start="475" selection-end="475" vertical-scroll-proportion="0.2357019">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="515" selection-end="515" vertical-scroll-proportion="0.46896553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/mcmod.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="16" selection-start="489" selection-end="489" vertical-scroll-proportion="0.6448276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="18" selection-start="5209" selection-end="5209" vertical-scroll-proportion="0.58965516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/cpw/mods/fml/common/event/FMLInterModComms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="26" selection-start="4762" selection-end="4762" vertical-scroll-proportion="0.33275864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/integration/AppliedEnergisticsIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="146" selection-end="146" vertical-scroll-proportion="0.08793104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/integration/BuildcraftIntegration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="50" selection-start="260" selection-end="260" vertical-scroll-proportion="0.2637931">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/burptech/block/Blocks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="19" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.42984015">
+        <state line="43" column="72" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.95943564">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/gen/ChunkProviderHell.java">
+    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/tileentity/TileEntityHopper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="543" column="39" selection-start="21051" selection-end="21066" vertical-scroll-proportion="-2.321492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="40" selection-start="2891" selection-end="2891" vertical-scroll-proportion="1.7083334">
+        <state line="319" column="48" selection-start="9669" selection-end="9693" vertical-scroll-proportion="-5.846561">
           <folding />
         </state>
       </provider>

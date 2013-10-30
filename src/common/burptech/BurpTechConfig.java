@@ -117,7 +117,7 @@ public class BurpTechConfig
 		// Blocks
 		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);
 		result.blockNetherCoal = configuration.getBlock("BlockNetherCoal", Constants.BLOCK_START + 1);
-        result.blockOres = configuration.getBlock("BlockOres", Constants.BLOCK_START + 2); // TE is 2001 by default
+        //result.blockOres = configuration.getBlock("BlockOres", Constants.BLOCK_START + 2); // TE is 2001 by default
 
 		result.blocks = new Blocks();
 		result.blocks.create(result);

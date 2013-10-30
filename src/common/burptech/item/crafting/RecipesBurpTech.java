@@ -49,12 +49,15 @@ public class RecipesBurpTech
     		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(BurpTechCore.configuration.items.cookedEgg), 0.35F); // xp matches standard food cooking xp
     	}
 
-        for (int i = 0; i < BlockOres.ORES.length; i++)
+        if (BurpTechCore.configuration.blocks.blockOres != null)
         {
-            ArrayList<ItemStack> ingot = OreDictionary.getOres(BlockOres.INGOTS[i]);
-            if (ingot.size() > 0)
+            for (int i = 0; i < BlockOres.ORES.length; i++)
             {
-                GameRegistry.addSmelting(new ItemStack(BurpTechCore.configuration.blocks.blockOres, 1, i).itemID, ingot.get(0), FurnaceRecipes.smelting().getExperience(ingot.get(0)));
+                ArrayList<ItemStack> ingot = OreDictionary.getOres(BlockOres.INGOTS[i]);
+                if (ingot.size() > 0)
+                {
+                    GameRegistry.addSmelting(new ItemStack(BurpTechCore.configuration.blocks.blockOres, 1, i).itemID, ingot.get(0), FurnaceRecipes.smelting().getExperience(ingot.get(0)));
+                }
             }
         }
     }

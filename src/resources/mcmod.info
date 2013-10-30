@@ -19,7 +19,7 @@
   "credits": "Thanks Burpcrafters and fans!!!",
   "requiredMods": 
   [
-    "Forge@[9.11.0,)"
+    "Forge@[9.11.1,)"
   ],
   "dependencies": 
   [
