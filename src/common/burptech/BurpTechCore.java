@@ -41,7 +41,7 @@ public class BurpTechCore
         guiHandler = new GuiHandler();
         
         // load up language translations
-        TranslationHelper.loadLanguages("/assets/" + Constants.MOD_ID + "/languages/", new String[] { "en_US" });
+        TranslationHelper.loadLanguages("/assets/" + Constants.MOD_ID.toLowerCase() + "/languages/", new String[] { "en_US" });
         
         // register keyboard bindings
 
