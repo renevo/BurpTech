@@ -8,4 +8,9 @@ public class RecipeManager
     	(new RecipesBurpTech()).addRecipes();
     	(new RecipesNetherTech()).addRecipes();
     }
+
+    public void postInitialization()
+    {
+        (new RecipesNetherTech()).postInitialization();
+    }
 }

@@ -43,7 +43,8 @@ public class BurpTechConfig
 	public Property itemNetherCoal;
     public Property itemInfusedNetherDust;
     public Property itemBucketNetherFluid;
-	
+    public Property itemCellNetherFluid;
+
 	/*
 	 * BurpTech Items
 	 */
@@ -119,6 +120,7 @@ public class BurpTechConfig
         result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
         result.itemInfusedNetherDust = configuration.getItem("InfusedNetherDust", burptech.lib.Constants.ITEM_START + 6);
         result.itemBucketNetherFluid = configuration.getItem("BucketNetherFluid", burptech.lib.Constants.ITEM_START + 7);
+        result.itemCellNetherFluid = configuration.getItem("CellNetherFluid", burptech.lib.Constants.ITEM_START + 8);
 
         // Blocks
 		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);

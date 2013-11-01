@@ -90,5 +90,7 @@ public class BurpTechCore
     	
         // mod integrations
     	proxy.addNeiSupport();
+
+        (new RecipeManager()).postInitialization();
     }
 }

@@ -22,6 +22,7 @@ public class Items
 	public Item netherCoal;
 	public Item infusedNetherDust;
     public Item bucketNetherFluid;
+    public Item cellNetherFluid;
 
 	/*
 	 * Creates all of the item instances
@@ -36,7 +37,8 @@ public class Items
 		netherDust = new Item(configuration.itemNetherDust.getInt()).setUnlocalizedName("netherDust").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_dust");
 		netherCoal = new Item(configuration.itemNetherCoal.getInt()).setUnlocalizedName("netherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal");
         infusedNetherDust = new Item(configuration.itemInfusedNetherDust.getInt()).setUnlocalizedName("infusedNetherDust").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_infused_dust");
-        bucketNetherFluid = new ItemBucket(configuration.itemBucketNetherFluid.getInt(), configuration.blockNetherFluid.getInt()).setUnlocalizedName("bucketNetherFluid").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_fluid_bucket").setContainerItem(Item.bucketEmpty);
+        bucketNetherFluid = new ItemBucket(configuration.itemBucketNetherFluid.getInt(), configuration.blockNetherFluid.getInt()).setUnlocalizedName("bucketNetherFluid").setCreativeTab(CreativeTabs.tabMisc).setTextureName(Constants.MOD_ID + ":" + "nether_fluid_bucket").setContainerItem(Item.bucketEmpty);
+        cellNetherFluid = new Item(configuration.itemCellNetherFluid.getInt()).setUnlocalizedName("cellNetherFluid").setCreativeTab(CreativeTabs.tabMisc).setTextureName(Constants.MOD_ID + ":" + "nether_fluid_cell");
 
         // item registry
         GameRegistry.registerItem(enderRucksack, "enderRucksack");
@@ -47,6 +49,7 @@ public class Items
         GameRegistry.registerItem(netherCoal, "netherCoal");
         GameRegistry.registerItem(infusedNetherDust, "infusedNetherDust");
         GameRegistry.registerItem(bucketNetherFluid, "bucketNetherFluid");
+        GameRegistry.registerItem(cellNetherFluid, "cellNetherFluid");
 
         // ore dictionary (pulled from: http://minecraftmodcustomstuff.wikia.com/wiki/Ore_Dictionary - more here: http://www.minecraftforge.net/wiki/Common_Oredict_names)
         OreDictionary.registerOre("dustNetherrack", netherDust);

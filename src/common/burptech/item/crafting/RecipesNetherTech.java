@@ -2,6 +2,9 @@ package burptech.item.crafting;
 
 import java.util.ArrayList;
 
+import cpw.mods.fml.common.LoaderState;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLStateEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -46,6 +49,7 @@ public class RecipesNetherTech
 
         MinecraftForge.EVENT_BUS.register(this);
     }
+
     private void addSolidFuels()
     {
     	if (!BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
@@ -84,15 +88,36 @@ public class RecipesNetherTech
         // reverse nether coal block recipe
 		GameRegistry.addShapelessRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal, 9), BurpTechCore.configuration.blocks.blockNetherCoal);
 
+        // torches
+        GameRegistry.addRecipe(new ItemStack(Block.torchWood, 8),
+                new Object[]{"#", "S", '#', BurpTechCore.configuration.items.netherCoal, 'S', Item.stick});
+
         GameRegistry.registerFuelHandler(new NetherTechSolidFuelHandler());
     }
 
+    public void postInitialization()
+    {
+        Item ic2Cell = GameRegistry.findItem("IC2", "itemCellEmpty");
+        if (ic2Cell != null)
+        {
+            FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.cellNetherFluid), new ItemStack(ic2Cell));
+        }
+
+        Item forestryCell = GameRegistry.findItem("Forestry", "item.canEmpty");
+        if (forestryCell != null)
+        {
+            // TODO: After refactoring the cell item to be a damage based multi-item, add support for this one
+            // FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.canNetherFluid), new ItemStack(forestryCell));
+        }
+    }
 
     @ForgeSubscribe
-    @SideOnly(Side.CLIENT)
+    @SideOnly(Side.CLIENT)  // TODO: Move this, this is so that the fluids render properly in tanks and things
     public void textureHook(TextureStitchEvent.Post event) {
         if (event.map.textureType == 0) {
             BurpTechCore.configuration.blocks.fluidNetherFluid.setIcons(BurpTechCore.configuration.blocks.blockNetherFluid.getBlockTextureFromSide(1), BurpTechCore.configuration.blocks.blockNetherFluid.getBlockTextureFromSide(2));
         }
     }
+
+
 }
