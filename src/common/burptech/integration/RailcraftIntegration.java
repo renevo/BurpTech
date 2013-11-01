@@ -3,7 +3,9 @@ package burptech.integration;
 import burptech.BurpTechCore;
 import cpw.mods.fml.common.Loader;
 import mods.railcraft.api.crafting.*;
+import mods.railcraft.api.fuel.FuelManager;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 
 public class RailcraftIntegration 
 {
@@ -23,4 +25,14 @@ public class RailcraftIntegration
 
 		return true;
 	}
+
+    public static boolean addBoilerFuel(Fluid fluid, int heatValuePerBucket)
+    {
+        if (!Loader.isModLoaded("Railcraft"))
+            return false;
+
+        FuelManager.addBoilerFuel(fluid, heatValuePerBucket);
+
+        return true;
+    }
 }

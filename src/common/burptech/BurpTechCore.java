@@ -3,6 +3,7 @@ package burptech;
 import java.util.logging.Logger;
 
 import burptech.gui.GuiHandler;
+import burptech.item.BucketHandler;
 import burptech.item.crafting.*;
 import burptech.lib.*;
 import cpw.mods.fml.common.*;
@@ -47,6 +48,8 @@ public class BurpTechCore
 
         // register the bronze age with BasicComponents
         burptech.integration.BasicComponentsIntegration.registerBronzeAge();
+
+        MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
     }
     
     @EventHandler

@@ -1,8 +1,10 @@
 package burptech.integration;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
-public class Integration 
+public class Integration
 {
 	/*
 	 * Adds a basic crushable item to mods that we integrate with. Returns true if any of them worked
@@ -20,4 +22,33 @@ public class Integration
 		
 		return isAddedToMod;
 	}
+
+    public static boolean addCompressedItem(ItemStack input, ItemStack output)
+    {
+        boolean isAddedToMod = false;
+
+        isAddedToMod = isAddedToMod | IndustrialcraftIntegration.addCompressorRecipe(input, output);
+
+        return isAddedToMod;
+    }
+
+    public static boolean addFluidEnrichment(ItemStack itemInput, FluidStack fluidInput, FluidStack output)
+    {
+        boolean isAddedToMod = false;
+
+        isAddedToMod = isAddedToMod | IndustrialcraftIntegration.addEnrichmentRecipe(itemInput, fluidInput, output);
+
+        return isAddedToMod;
+    }
+
+    public static boolean addFuel(String fluidName, int amount, double euPower, int heat, int mjPower, int burnDuration)
+    {
+        boolean isAddedToMod = false;
+
+        isAddedToMod = isAddedToMod | IndustrialcraftIntegration.addSemiFlueGeneratorFuel(fluidName, amount, euPower);
+        isAddedToMod = isAddedToMod | RailcraftIntegration.addBoilerFuel(FluidRegistry.getFluid(fluidName), heat);
+        isAddedToMod = isAddedToMod | BuildcraftIntegration.addEngineFuel(FluidRegistry.getFluid(fluidName), mjPower, burnDuration);
+
+        return isAddedToMod;
+    }
 }

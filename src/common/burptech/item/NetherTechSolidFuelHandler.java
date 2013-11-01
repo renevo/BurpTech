@@ -20,8 +20,11 @@ public class NetherTechSolidFuelHandler implements IFuelHandler
 			return 1600 * 2; // coal * 2
 		
 		if (fuel.itemID == BurpTechCore.configuration.blocks.blockNetherCoal.blockID)
-			return (1600 * 2) * 9; // (coal * 2) * 9
-		
+			return 16000 * 2; // (coal block * 2)   apparently a coal block = 10 x coal not 9x as you would expect
+
+/*        if (fuel.itemID == BurpTechCore.configuration.items.bucketNetherFluid.itemID)
+            return 30000; // lava bucket * 1.5
+*/
 		return 0;
 	}
 }

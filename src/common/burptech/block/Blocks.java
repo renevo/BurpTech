@@ -11,6 +11,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 /*
@@ -22,6 +24,9 @@ public class Blocks
 	public Block blockIlluminatedCocoaOff;
 	public Block blockNetherCoal;
 	public Block blockOres;
+    public Block blockNetherFluid;
+
+    public Fluid fluidNetherFluid;
 
 	public void create(BurpTechConfig configuration)
 	{
@@ -30,8 +35,14 @@ public class Blocks
 		
 		blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
 
+        fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
+        FluidRegistry.registerFluid(fluidNetherFluid);
+
+        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
+
         // block registry
 		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
+        GameRegistry.registerBlock(blockNetherFluid, "blockNetherFluid");
 
         // harvesting
         MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);

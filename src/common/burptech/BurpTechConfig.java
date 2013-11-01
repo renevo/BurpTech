@@ -28,10 +28,12 @@ public class BurpTechConfig
 	public Property recipeCookedEgg;
 	
 	public Property enableNetherTechSolidFuels;
-		
+    public Property enableNetherTechLiquidFuels;
+
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
     public Property blockOres;
+    public Property blockNetherFluid;
 	
 	public Property itemEnderRucksack;
 	public Property itemRucksack;
@@ -39,6 +41,8 @@ public class BurpTechConfig
 	public Property itemCookedEgg;
 	public Property itemNetherDust;
 	public Property itemNetherCoal;
+    public Property itemInfusedNetherDust;
+    public Property itemBucketNetherFluid;
 	
 	/*
 	 * BurpTech Items
@@ -103,6 +107,9 @@ public class BurpTechConfig
 		result.enableNetherTechSolidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "SolidFuels", true);
 		result.enableNetherTechSolidFuels.comment = "Enables Nether Tech Solid Fuels";
 
+        result.enableNetherTechLiquidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "LiquidFuels", true);
+        result.enableNetherTechLiquidFuels.comment = "Enables Nether Tech Liquid Fuels";
+
         // Items
         result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);
         result.itemRucksack = configuration.getItem("Rucksack", burptech.lib.Constants.ITEM_START + 1);
@@ -110,16 +117,18 @@ public class BurpTechConfig
         result.itemCookedEgg = configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3);
         result.itemNetherDust = configuration.getItem("NetherDust", burptech.lib.Constants.ITEM_START + 4);
         result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
+        result.itemInfusedNetherDust = configuration.getItem("InfusedNetherDust", burptech.lib.Constants.ITEM_START + 6);
+        result.itemBucketNetherFluid = configuration.getItem("BucketNetherFluid", burptech.lib.Constants.ITEM_START + 7);
 
-        result.items = new Items();
-        result.items.create(result);
-
-		// Blocks
+        // Blocks
 		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);
 		result.blockNetherCoal = configuration.getBlock("BlockNetherCoal", Constants.BLOCK_START + 1);
-        //result.blockOres = configuration.getBlock("BlockOres", Constants.BLOCK_START + 2); // TE is 2001 by default
+        result.blockNetherFluid = configuration.getBlock("BlockNetherFluid", Constants.BLOCK_START + 2);
 
-		result.blocks = new Blocks();
+        result.items = new Items();
+        result.blocks = new Blocks();
+
+        result.items.create(result);
 		result.blocks.create(result);
 		
 		// save only if modified
