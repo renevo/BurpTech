@@ -50,4 +50,14 @@ public class IndustrialcraftIntegration
 
         return true;
     }
+
+    public static ItemStack getItem(String itemName)
+    {
+        if (!Loader.isModLoaded("IC2"))
+        {
+            return null;
+        }
+
+        return ic2.api.item.Items.getItem(itemName).copy();
+    }
 }
