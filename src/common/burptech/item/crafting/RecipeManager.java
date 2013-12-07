@@ -12,5 +12,6 @@ public class RecipeManager
     public void postInitialization()
     {
         (new RecipesNetherTech()).postInitialization();
+        (new RecipesIntegration()).postInitialization();
     }
 }

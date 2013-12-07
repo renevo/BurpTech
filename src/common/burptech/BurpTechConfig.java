@@ -29,6 +29,7 @@ public class BurpTechConfig
 	
 	public Property enableNetherTechSolidFuels;
     public Property enableNetherTechLiquidFuels;
+    public Property enableCreosoteToIndustrialcraftEnergy;
 
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
@@ -110,6 +111,10 @@ public class BurpTechConfig
 
         result.enableNetherTechLiquidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "LiquidFuels", true);
         result.enableNetherTechLiquidFuels.comment = "Enables Nether Tech Liquid Fuels";
+
+        // integration
+        result.enableCreosoteToIndustrialcraftEnergy = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "SemiFluid.Generator.Creosote.Enabled", true);
+        result.enableCreosoteToIndustrialcraftEnergy.comment = "Enables Creosote to be used in a Semi-Fluid Generator";
 
         // Items
         result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);

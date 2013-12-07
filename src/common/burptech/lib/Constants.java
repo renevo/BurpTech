@@ -45,6 +45,11 @@ public final class Constants
      * Configuration Category for Nether Tech
      */
     public static final String CONFIG_CATEGORY_NETHERTECH = "NetherTech";
+
+    /**
+     * Configuration category for integrating mods together.
+     */
+    public static final String CONFIG_CATEGORY_INTEGRATION = "Integration";
     
     /**
      * GUI ID for Portable Workbench
