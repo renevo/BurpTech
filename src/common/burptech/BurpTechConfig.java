@@ -31,6 +31,7 @@ public class BurpTechConfig
     public Property enableNetherTechLiquidFuels;
     public Property enableCreosoteToIndustrialcraftEnergy;
     public Property enableStoneDustCompression;
+    public Property enableCompressedPlantBallEnrichment;
 
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
@@ -119,6 +120,9 @@ public class BurpTechConfig
 
         result.enableStoneDustCompression = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Compressor.StoneDust.Enabled", true);
         result.enableStoneDustCompression.comment = "Enables Compressing 8x Industrialcraft Stone Dust into Stone";
+
+        result.enableCompressedPlantBallEnrichment = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Enrichment.CompressedPlantBall.Enabled", true);
+        result.enableCompressedPlantBallEnrichment.comment = "Enables using the canning machine to enrich compressed plant balls to biomass";
 
         // Items
         result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);
