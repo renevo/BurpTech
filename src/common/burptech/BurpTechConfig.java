@@ -30,7 +30,7 @@ public class BurpTechConfig
 	public Property enableNetherTechSolidFuels;
     public Property enableNetherTechLiquidFuels;
     public Property enableCreosoteToIndustrialcraftEnergy;
-    public Property enableStoneDustToStoneSmelting;
+    public Property enableStoneDustCompression;
 
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
@@ -117,8 +117,8 @@ public class BurpTechConfig
         result.enableCreosoteToIndustrialcraftEnergy = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "SemiFluid.Generator.Creosote.Enabled", true);
         result.enableCreosoteToIndustrialcraftEnergy.comment = "Enables Creosote to be used in a Semi-Fluid Generator";
 
-        result.enableStoneDustToStoneSmelting = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Smelting.StoneDust.Enabled", true);
-        result.enableStoneDustToStoneSmelting.comment = "Enables smelting Industrialcraft Stone Dust into Stone";
+        result.enableStoneDustCompression = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Compressor.StoneDust.Enabled", true);
+        result.enableStoneDustCompression.comment = "Enables Compressing 8x Industrialcraft Stone Dust into Stone";
 
         // Items
         result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);

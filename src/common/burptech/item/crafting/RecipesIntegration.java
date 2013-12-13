@@ -2,10 +2,8 @@ package burptech.item.crafting;
 
 import burptech.BurpTechCore;
 import burptech.integration.IndustrialcraftIntegration;
-import burptech.integration.Integration;
 import cpw.mods.fml.common.Loader;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -26,14 +24,18 @@ public class RecipesIntegration {
             }
         }
 
-        if (BurpTechCore.configuration.enableStoneDustToStoneSmelting.getBoolean(true))
+        if (BurpTechCore.configuration.enableStoneDustCompression.getBoolean(true))
         {
-            ItemStack stoneDust = IndustrialcraftIntegration.getItem("stoneDust");
-            if (stoneDust != null)
+            if (Loader.isModLoaded("IC2"))
             {
-                FurnaceRecipes.smelting().addSmelting(stoneDust.itemID, stoneDust.getItemDamage(), new ItemStack(net.minecraft.block.Block.stone), 0);
-                BurpTechCore.log.info("Added Smelting Recipe for IC2 Stone Dust to Stone");
+                ItemStack stoneDust = IndustrialcraftIntegration.getItem("stoneDust");
+                if (stoneDust != null)
+                {
+                    stoneDust.stackSize = 8;
+                    IndustrialcraftIntegration.addCompressorRecipe(stoneDust, new ItemStack(net.minecraft.block.Block.stone));
+                    BurpTechCore.log.info("Added Compressor Recipe for IC2 Stone Dust to Stone");
 
+                }
             }
         }
     }
