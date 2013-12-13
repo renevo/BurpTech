@@ -101,19 +101,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RecipesBurpTech.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="RecipesBurpTech.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="42" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
+            <state line="32" column="85" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.55829227">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BurpTechConfig.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BurpTechConfig.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="114" selection-start="5905" selection-end="5905" vertical-scroll-proportion="0.5862069">
+            <state line="105" column="65" selection-start="4445" selection-end="4445" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipeManager.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesIntegration.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
       </list>
     </option>
   </component>
@@ -953,16 +953,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java">
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="42" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
+        <state line="105" column="65" selection-start="4445" selection-end="4445" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="114" selection-start="5905" selection-end="5905" vertical-scroll-proportion="0.5862069">
+        <state line="32" column="85" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.55829227">
           <folding />
         </state>
       </provider>

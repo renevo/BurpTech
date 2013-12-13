@@ -34,7 +34,7 @@ public class RecipesBurpTech
     		GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.enderRucksack),
     				new Object[] { "#s#", "scs", "#s#", '#', Item.leather, 's', Item.silk, 'c', Block.enderChest });
     		
-    		GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.rucksack),
+    		GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.enderRucksack),
     				new Object[] { "s#s", "#c#", "s#s", '#', Item.leather, 's', Item.silk, 'c', Block.enderChest });
     	}
     	
