@@ -2,6 +2,7 @@ package burptech.block;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.*;
 import burptech.client.render.EntityDropParticleFX;
 import net.minecraft.client.particle.EntityFX;
@@ -27,6 +28,7 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
     protected Icon[] theIcon;
     protected boolean flammable;
     protected int flammability = 0;
+    protected boolean canSetFires;
 
     @Override
     public Icon getIcon(int side, int meta) {
@@ -46,6 +48,13 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
             world.newExplosion(null, x, y, z, 4F, true, true);
             world.setBlockToAir(x, y, z);
         }
+    }
+
+    public BlockBurpTechFluid setBurning(boolean burning)
+    {
+        canSetFires = burning;
+        setTickRandomly(burning);
+        return this;
     }
 
     public BlockBurpTechFluid setFlammable(boolean flammable) {
@@ -114,4 +123,58 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
         return super.displaceIfPossible(world, x, y, z);
     }
 
+    @Override
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    {
+        // if this block can set fires, lets do the same logic that the lava does here
+        if (!canSetFires)
+            return;
+
+        int l = par5Random.nextInt(3);
+        int i1;
+        int j1;
+
+        for (i1 = 0; i1 < l; ++i1)
+        {
+            par2 += par5Random.nextInt(3) - 1;
+            ++par3;
+            par4 += par5Random.nextInt(3) - 1;
+            j1 = par1World.getBlockId(par2, par3, par4);
+
+            if (j1 == 0)
+            {
+                if (this.isFlammable(par1World, par2 - 1, par3, par4) || this.isFlammable(par1World, par2 + 1, par3, par4) || this.isFlammable(par1World, par2, par3, par4 - 1) || this.isFlammable(par1World, par2, par3, par4 + 1) || this.isFlammable(par1World, par2, par3 - 1, par4) || this.isFlammable(par1World, par2, par3 + 1, par4))
+                {
+                    par1World.setBlock(par2, par3, par4, Block.fire.blockID);
+                    return;
+                }
+            }
+            else if (Block.blocksList[j1].blockMaterial.blocksMovement())
+            {
+                return;
+            }
+        }
+
+        if (l == 0)
+        {
+            i1 = par2;
+            j1 = par4;
+
+            for (int k1 = 0; k1 < 3; ++k1)
+            {
+                par2 = i1 + par5Random.nextInt(3) - 1;
+                par4 = j1 + par5Random.nextInt(3) - 1;
+
+                if (par1World.isAirBlock(par2, par3 + 1, par4) && this.isFlammable(par1World, par2, par3, par4))
+                {
+                    par1World.setBlock(par2, par3 + 1, par4, Block.fire.blockID);
+                }
+            }
+        }
+    }
+
+    private boolean isFlammable(World par1World, int par2, int par3, int par4)
+    {
+        return par1World.getBlockMaterial(par2, par3, par4).getCanBurn();
+    }
 }

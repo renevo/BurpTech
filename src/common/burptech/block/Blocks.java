@@ -38,7 +38,7 @@ public class Blocks
         fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
         FluidRegistry.registerFluid(fluidNetherFluid);
 
-        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
+        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
 
         // block registry
 		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
