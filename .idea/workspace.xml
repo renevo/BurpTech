@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f80225f9-a55b-499d-a446-839463ce8cd7" name="Default" comment="" />
+    <list default="true" id="f80225f9-a55b-499d-a446-839463ce8cd7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" afterPath="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" afterPath="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Tom.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Tom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties" afterPath="$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties" />
+    </list>
     <ignored path="BurpTech.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386967846759" ignored="false" />
+    <file path="/Dummy.txt" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386979682931" ignored="false" />
     <file path="$PROJECT_DIR$/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379366488355" ignored="false" />
     <file path="$PROJECT_DIR$/forge/mcp/src/minecraft/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379531282863" ignored="false" />
     <file path="$PROJECT_DIR$/forge/mcp/jars/META-INF/application.xml" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1379432300150" ignored="false" />
@@ -13,14 +18,14 @@
     <file path="/BasicComponentsIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380262619488" ignored="false" />
     <file path="/BurpTechCore.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383294277309" ignored="false" />
     <file path="/Items.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383295063662" ignored="false" />
-    <file path="/Blocks.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386962931426" ignored="false" />
+    <file path="/Blocks.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386981258404" ignored="false" />
     <file path="/NeiIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380261472274" ignored="false" />
     <file path="/BlockOres.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380263756651" ignored="false" />
-    <file path="/BurpTechConfig.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386959880006" ignored="false" />
+    <file path="/BurpTechConfig.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386979761600" ignored="false" />
     <file path="/ItemBlockOres.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380264534682" ignored="false" />
     <file path="/RecipesBurpTech.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383098592077" ignored="false" />
     <file path="/LocalizationManager.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380266542834" ignored="false" />
-    <file path="/en_US.properties" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383294798243" ignored="false" />
+    <file path="/en_US.properties" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386981351530" ignored="false" />
     <file path="/TranslationHelper.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380266443200" ignored="false" />
     <file path="/RailcraftIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383270454311" ignored="false" />
     <file path="/IndustrialcraftIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1386377813323" ignored="false" />
@@ -124,20 +129,20 @@
       <list>
         <option value="$PROJECT_DIR$/src/common/burptech/integration/Integration.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" />
-        <option value="$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/Items.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesNetherTech.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/lib/Constants.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipeManager.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/integration/IndustrialcraftIntegration.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesIntegration.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/gui/ContainerPortableWorkbench.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/block/BlockBurpTechFluid.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/tileentity/TileEntityAdvancedWorkbench.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/block/BlockAdvancedWorkbench.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
+        <option value="$PROJECT_DIR$/src/common/burptech/block/Blocks.java" />
+        <option value="$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties" />
       </list>
     </option>
   </component>
@@ -148,10 +153,10 @@
     </ignored-facets>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1874" />
-    <option name="height" value="1096" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -204,7 +209,202 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptechcore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptechcore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blocks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptechcore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="languages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BurpTech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="burptech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="block" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
       </pane>
       <pane id="PackagesPane">
         <subPane>
@@ -316,22 +516,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/forge/mcp/jars/versions/1.6.4/1.6.4.jar!/" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/forge/mcp/jars/versions/1.6.4/1.6.4.jar!/" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="burptech" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -348,8 +545,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.Minecraft Client">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -364,6 +561,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -392,19 +602,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -552,16 +749,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6726058" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17604856" sideWeight="0.60170394" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39829606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32374868" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32293987" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39829606" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -569,8 +766,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.6703786" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23399559" sideWeight="0.67625135" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32374868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23372465" sideWeight="0.6770601" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32293987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -660,41 +857,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/item/crafting/RecipesBurpTech.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="49" selection-start="2084" selection-end="2084" vertical-scroll-proportion="0.4669967">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/inventory/IInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="19" selection-start="1239" selection-end="1239" vertical-scroll-proportion="0.5049505">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/inventory/ContainerPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="51" selection-start="2421" selection-end="2421" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/inventory/InventoryCrafting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="134" selection-end="134" vertical-scroll-proportion="0.11221122">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="100" selection-start="852" selection-end="855" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/world/World.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4470" column="16" selection-start="146014" selection-end="146014" vertical-scroll-proportion="0.0">
@@ -704,9 +866,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/util/Facing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.05610561">
-          <folding />
-        </state>
+        <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.05610561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/burptech/block/BlockBurpTechFluid.java">
@@ -730,47 +890,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/block/BlockAdvancedWorkbench.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="21" selection-start="694" selection-end="694" vertical-scroll-proportion="0.51602024">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/tileentity/TileEntityAdvancedWorkbench.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="496" selection-end="496" vertical-scroll-proportion="0.40134907">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13261#13285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockFurnace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="4" selection-start="4113" selection-end="4268" vertical-scroll-proportion="0.48735243">
-          <folding />
-        </state>
+        <state line="126" column="4" selection-start="4113" selection-end="4268" vertical-scroll-proportion="0.48735243" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/tileentity/TileEntityHopper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="45" selection-start="12917" selection-end="12930" vertical-scroll-proportion="-2.5632377">
-          <folding />
-        </state>
+        <state line="420" column="45" selection-start="12917" selection-end="12930" vertical-scroll-proportion="-2.5632377" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockHopper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="4" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-1.920742">
-          <folding />
-        </state>
+        <state line="40" column="4" selection-start="1365" selection-end="1365" vertical-scroll-proportion="-1.920742" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/block/BlockPistonBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="577" column="21" selection-start="21617" selection-end="21617" vertical-scroll-proportion="2.8060708">
+        <state line="577" column="21" selection-start="21617" selection-end="21617" vertical-scroll-proportion="2.8060708" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraftforge/common/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="30" selection-start="5696" selection-end="5696" vertical-scroll-proportion="0.39108062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/lib/TranslationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="414" selection-end="414" vertical-scroll-proportion="-1.3367697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/assets/burptechcore/languages/en_US.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="32" selection-start="402" selection-end="402" vertical-scroll-proportion="0.35051546">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/block/Blocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="24" selection-start="2255" selection-end="2255" vertical-scroll-proportion="1.1054481">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="52" selection-start="1196" selection-end="1196" vertical-scroll-proportion="-2.1907218">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/src/ModLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="702" column="21" selection-start="21268" selection-end="21268" vertical-scroll-proportion="0.599297">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/cpw/mods/fml/common/registry/GameRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="264" column="22" selection-start="9637" selection-end="9637" vertical-scroll-proportion="0.39015818">
           <folding />
         </state>
       </provider>

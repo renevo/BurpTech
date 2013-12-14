@@ -37,6 +37,7 @@ public class BurpTechConfig
 	public Property blockNetherCoal;
     public Property blockOres;
     public Property blockNetherFluid;
+    public Property blockAdvancedWorkbench;
 	
 	public Property itemEnderRucksack;
 	public Property itemRucksack;
@@ -139,6 +140,7 @@ public class BurpTechConfig
 		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);
 		result.blockNetherCoal = configuration.getBlock("BlockNetherCoal", Constants.BLOCK_START + 1);
         result.blockNetherFluid = configuration.getBlock("BlockNetherFluid", Constants.BLOCK_START + 2);
+        result.blockAdvancedWorkbench = configuration.getBlock("BlockAdvancedWorkbench", Constants.BLOCK_START + 3);
 
         result.items = new Items();
         result.blocks = new Blocks();

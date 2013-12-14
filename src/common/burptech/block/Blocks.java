@@ -2,6 +2,7 @@ package burptech.block;
 
 import burptech.integration.BuildcraftIntegration;
 import burptech.item.ItemBlockOres;
+import burptech.tileentity.TileEntityAdvancedWorkbench;
 import cpw.mods.fml.common.registry.GameRegistry;
 import burptech.BurpTechConfig;
 import burptech.BurpTechCore;
@@ -25,6 +26,7 @@ public class Blocks
 	public Block blockNetherCoal;
 	public Block blockOres;
     public Block blockNetherFluid;
+    public Block blockAdvancedWorkbench;
 
     public Fluid fluidNetherFluid;
 
@@ -32,7 +34,9 @@ public class Blocks
 	{
         // create blocks
 		addIlluminatedCocoa(configuration);
-		
+
+        blockAdvancedWorkbench = new BlockAdvancedWorkbench(configuration.blockAdvancedWorkbench.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("blockAdvancedWorkbench");
+
 		blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
 
         fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
@@ -41,8 +45,12 @@ public class Blocks
         blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
 
         // block registry
+        GameRegistry.registerBlock(blockAdvancedWorkbench, "blockAdvancedWorkbench");
 		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
         GameRegistry.registerBlock(blockNetherFluid, "blockNetherFluid");
+
+        // tile entities
+        GameRegistry.registerTileEntity(TileEntityAdvancedWorkbench.class, "AdvancedWorkbench");
 
         // harvesting
         MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
