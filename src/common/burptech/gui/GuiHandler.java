@@ -1,11 +1,10 @@
 package burptech.gui;
 
-import burptech.BurpTechCore;
-import burptech.client.gui.GuiPortableWorkbech;
-import burptech.client.gui.GuiRucksack;
-import burptech.item.ItemRucksack;
-import burptech.item.RucksackInventory;
+import burptech.*;
+import burptech.client.gui.*;
+import burptech.item.*;
 import burptech.lib.Constants;
+import burptech.tileentity.TileEntityAdvancedWorkbench;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -29,6 +28,9 @@ public class GuiHandler implements IGuiHandler
 			case Constants.GUI_ENDER_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new ContainerRucksack(player.inventory, player.getInventoryEnderChest());
+
+            case Constants.GUI_ADVANCED_WORKBENCH_ID:
+                return new ContainerAdvancedWorkbench((TileEntityAdvancedWorkbench)world.getBlockTileEntity(x,y,z));
 		}
 		
 		
@@ -42,7 +44,7 @@ public class GuiHandler implements IGuiHandler
 		{
 			case Constants.GUI_PORTABLE_WORKBECH_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().itemID == BurpTechCore.configuration.items.portableWorkbench.itemID)
-					return new GuiPortableWorkbech(player.inventory, world);
+					return new GuiPortableWorkbench(player.inventory, world);
 				
 			case Constants.GUI_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
@@ -51,6 +53,10 @@ public class GuiHandler implements IGuiHandler
 			case Constants.GUI_ENDER_RUCKSACK_ID:
 				if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ItemRucksack)
 					return new GuiRucksack(player.inventory, player.getInventoryEnderChest());
+
+            case Constants.GUI_ADVANCED_WORKBENCH_ID:
+                return new GuiAdvancedWorkbench((TileEntityAdvancedWorkbench)world.getBlockTileEntity(x, y, z));
+
 		}
 		return null;
 	}

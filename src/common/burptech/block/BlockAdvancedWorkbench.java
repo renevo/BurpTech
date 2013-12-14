@@ -1,5 +1,6 @@
 package burptech.block;
 
+import burptech.BurpTechCore;
 import burptech.lib.Constants;
 import burptech.tileentity.TileEntityAdvancedWorkbench;
 import cpw.mods.fml.relauncher.*;
@@ -68,9 +69,9 @@ public class BlockAdvancedWorkbench extends BlockContainer
         if (world.isRemote)
             return true;
 
-        // TODO: Open the GUI
+        player.openGui(BurpTechCore.instance, Constants.GUI_ADVANCED_WORKBENCH_ID, world, x, y, z);
 
-        return false;
+        return true;
     }
 
     @Override

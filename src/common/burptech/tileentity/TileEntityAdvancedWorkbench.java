@@ -357,7 +357,7 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements IInventor
     @Override
     public String getInvName()
     {
-        return this.isInvNameLocalized() ? this.inventoryName :  "container.advancedworkbench";
+        return this.isInvNameLocalized() ? this.inventoryName :  "container.crafting.advanced";
     }
 
     @Override

@@ -65,6 +65,11 @@ public final class Constants
      * GUI ID for Ender rucksack
      */
     public static final int GUI_ENDER_RUCKSACK_ID = 3;
+
+    /**
+     * GUI ID for Advanced Workbench
+     */
+    public static final int GUI_ADVANCED_WORKBENCH_ID = 4;
     
     
     /**
