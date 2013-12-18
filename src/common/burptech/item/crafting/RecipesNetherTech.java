@@ -2,6 +2,7 @@ package burptech.item.crafting;
 
 import java.util.ArrayList;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.LoaderState;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLStateEvent;
@@ -38,49 +39,14 @@ public class RecipesNetherTech
             return;
 
         FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.bucketNetherFluid), new ItemStack(Item.bucketEmpty));
-
         BucketHandler.INSTANCE.buckets.put(BurpTechCore.configuration.blocks.blockNetherFluid, BurpTechCore.configuration.items.bucketNetherFluid);
-
-        Integration.addFluidEnrichment(BurpTechCore.configuration.items.netherDust.copy(), FluidRegistry.getFluidStack("lava", FluidContainerRegistry.BUCKET_VOLUME), FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME));
-
-        Integration.addFuel("nether", 10, 32, 32000, 5, 20000);
-
-        GameRegistry.registerFuelHandler(new NetherTechLiquidFuelHandler());
-
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void addSolidFuels()
     {
     	if (!BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
     		return;
-    	
-		if (!Integration.addCrushableItem(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy()))
-		{
-			// add vanilla recipe for nether coal if no mods are present to support it
-			GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal), 
-					new Object[] { "###", "#C#", "###", '#', new ItemStack(Block.netherrack), 'C', new ItemStack(Item.coal, 1, 1) });
-		} else {
-			// find out if we have charcoal dust, if so, use it for our recipe
-			ArrayList<ItemStack> charcoals = OreDictionary.getOres("dustCharcoal");
 
-            if (!Integration.addCompressedItem(BurpTechCore.configuration.items.infusedNetherDust.copy(), new ItemStack(BurpTechCore.configuration.items.netherCoal)))
-            {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal),
-                        new Object[] {"###", "#C#", "###", '#', "dustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
-
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal),
-                        new Object[] {"###", "#C#", "###", '#', "itemDustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
-            } else
-            {
-                GameRegistry.addRecipe(new ShapedOreRecipe(BurpTechCore.configuration.items.infusedNetherDust.copy(),
-                        new Object[] {"###", "#C#", "###", '#', "dustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
-
-                GameRegistry.addRecipe(new ShapedOreRecipe(BurpTechCore.configuration.items.infusedNetherDust.copy(),
-                        new Object[] {"###", "#C#", "###", '#', "itemDustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
-            }
-		}
-		
 		// nether coal block
 		GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.blocks.blockNetherCoal),
 				new Object[] { "###", "###", "###", '#', BurpTechCore.configuration.items.netherCoal });
@@ -92,32 +58,81 @@ public class RecipesNetherTech
         GameRegistry.addRecipe(new ItemStack(Block.torchWood, 8),
                 new Object[]{"#", "S", '#', BurpTechCore.configuration.items.netherCoal, 'S', Item.stick});
 
-        GameRegistry.registerFuelHandler(new NetherTechSolidFuelHandler());
     }
 
     public void postInitialization()
     {
-        Item ic2Cell = GameRegistry.findItem("IC2", "itemCellEmpty");
-        if (ic2Cell != null)
+        // add fuel handler
+        if (BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
+            GameRegistry.registerFuelHandler(new NetherTechSolidFuelHandler());
+
+        if (BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            GameRegistry.registerFuelHandler(new NetherTechLiquidFuelHandler());
+
+        // vanilla recipes for nether coal
+        if (BurpTechCore.configuration.enableNetherTechVanillaRecipes.getBoolean(true))
         {
-            FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.cellNetherFluid), new ItemStack(ic2Cell));
+            // add vanilla recipe for nether coal if no mods are present to support it
+            GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal),
+                    new Object[] { "###", "#C#", "###", '#', new ItemStack(Block.netherrack), 'C', new ItemStack(Item.coal, 1, 1) });
         }
 
-        Item forestryCell = GameRegistry.findItem("Forestry", "item.canEmpty");
-        if (forestryCell != null)
+        // ic2 recipes for nether dust
+        if (Loader.isModLoaded("IC2") && BurpTechCore.configuration.enableNetherTechIndustrialcraftRecipes.getBoolean(true))
         {
-            // TODO: After refactoring the cell item to be a damage based multi-item, add support for this one
-            // FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.canNetherFluid), new ItemStack(forestryCell));
+            if (BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            {
+                IndustrialcraftIntegration.addSemiFlueGeneratorFuel("nether", 10, 32);
+                IndustrialcraftIntegration.addMaceratorRecipe(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy());
+                IndustrialcraftIntegration.addEnrichmentRecipe(BurpTechCore.configuration.items.netherDust.copy(), FluidRegistry.getFluidStack("lava", FluidContainerRegistry.BUCKET_VOLUME), FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME));
+
+                Item ic2Cell = GameRegistry.findItem("IC2", "itemCellEmpty");
+                if (ic2Cell != null)
+                {
+                    FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(BurpTechCore.configuration.items.cellNetherFluid), new ItemStack(ic2Cell));
+                }
+            }
+
+            if (BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
+            {
+                IndustrialcraftIntegration.addMaceratorRecipe(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy());
+                ItemStack netherDust = BurpTechCore.configuration.items.netherDust.copy();
+                netherDust.stackSize = 8;
+                IndustrialcraftIntegration.addCompressorRecipe(netherDust, new ItemStack(BurpTechCore.configuration.items.netherCoal));
+            }
+        }
+
+        if (Loader.isModLoaded("Railcraft") && BurpTechCore.configuration.enableNetherTechRailcraftRecipes.getBoolean(true))
+        {
+            if (BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true) && BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            {
+                RailcraftIntegration.addBoilerFuel(FluidRegistry.getFluid("nether"), 32000);
+                RailcraftIntegration.addRockCrusherRecipe(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy(), null, 0);
+                RailcraftIntegration.addBlastFurnaceRecipe(BurpTechCore.configuration.items.netherDust.copy(), true, false, 600, BurpTechCore.configuration.items.infusedNetherDust.copy());
+                RailcraftIntegration.addCokeOvenRecipe(BurpTechCore.configuration.items.infusedNetherDust.copy(), true, false, new ItemStack(BurpTechCore.configuration.items.netherCoal), FluidRegistry.getFluidStack("nether", 250), 600);
+            }
+
+            if (BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true) && !BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            {
+                RailcraftIntegration.addRockCrusherRecipe(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy(), null, 0);
+                RailcraftIntegration.addBlastFurnaceRecipe(BurpTechCore.configuration.items.netherDust.copy(), true, false, 600, new ItemStack(BurpTechCore.configuration.items.netherCoal));
+            }
+
+            if (!BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true) && BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            {
+                RailcraftIntegration.addBoilerFuel(FluidRegistry.getFluid("nether"), 32000);
+                RailcraftIntegration.addRockCrusherRecipe(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy(), null, 0);
+                RailcraftIntegration.addCokeOvenRecipe(BurpTechCore.configuration.items.netherDust.copy(), true, false, BurpTechCore.configuration.items.tinyCharcoalDust.copy(), FluidRegistry.getFluidStack("nether", 250), 600);
+            }
+        }
+
+        if (Loader.isModLoaded("BuildCraft|Silicon") && BurpTechCore.configuration.enableNetherTechBuildcraftRecipes.getBoolean(true))
+        {
+            if (BurpTechCore.configuration.enableNetherTechLiquidFuels.getBoolean(true))
+                BuildcraftIntegration.addEngineFuel(FluidRegistry.getFluid("nether"), 5, 20000);
+
+            if (BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
+                BuildcraftIntegration.addFacade(BurpTechCore.configuration.blocks.blockNetherCoal.blockID, 0);
         }
     }
-
-    @ForgeSubscribe
-    @SideOnly(Side.CLIENT)  // TODO: Move this, this is so that the fluids render properly in tanks and things
-    public void textureHook(TextureStitchEvent.Post event) {
-        if (event.map.textureType == 0) {
-            BurpTechCore.configuration.blocks.fluidNetherFluid.setIcons(BurpTechCore.configuration.blocks.blockNetherFluid.getBlockTextureFromSide(1), BurpTechCore.configuration.blocks.blockNetherFluid.getBlockTextureFromSide(2));
-        }
-    }
-
-
 }

@@ -13,9 +13,9 @@ import java.util.List;
 public class ItemDust extends Item
 {
     @SideOnly(Side.CLIENT)
-    private Icon[] icons = new Icon[4];
+    private Icon[] icons;
 
-    public static final String[] dusts = {"dustNetherrack", "dustIron", "dustGold", "dustInfusedNetherrack"};
+    public static final String[] dusts = {"dustNetherrack", "dustIron", "dustGold", "dustInfusedNetherrack", "dustTinyCharcoal"};
 
     public ItemDust(int itemId)
     {
@@ -31,7 +31,7 @@ public class ItemDust extends Item
     @Override
     public Icon getIconFromDamage(int damage)
     {
-        if (damage >= 0 && damage < dusts.length)
+        if (damage >= 0 && damage < dusts.length && icons != null)
             return icons[damage];
 
         return super.getIconFromDamage(damage);
@@ -51,10 +51,10 @@ public class ItemDust extends Item
     @Override
     public void getSubItems(int itemId, CreativeTabs creativeTab, List itemList)
     {
-        itemList.add(new ItemStack(itemId, 1, 0));
-        itemList.add(new ItemStack(itemId, 1, 1));
-        itemList.add(new ItemStack(itemId, 1, 2));
-        itemList.add(new ItemStack(itemId, 1, 3));
+        for (int i = 0; i < dusts.length; i++)
+        {
+            itemList.add(new ItemStack(itemId, 1, i));
+        }
     }
 
     @SideOnly(Side.CLIENT)
@@ -63,9 +63,11 @@ public class ItemDust extends Item
     {
         super.registerIcons(par1IconRegister);
 
-        icons[0] = par1IconRegister.registerIcon(Constants.MOD_ID + ":" + dusts[0]);
-        icons[1] = par1IconRegister.registerIcon(Constants.MOD_ID + ":" + dusts[1]);
-        icons[2] = par1IconRegister.registerIcon(Constants.MOD_ID + ":" + dusts[2]);
-        icons[3] = par1IconRegister.registerIcon(Constants.MOD_ID + ":" + dusts[3]);
+        icons = new Icon[dusts.length];
+
+        for (int i = 0; i < dusts.length; i++)
+        {
+            icons[i] = par1IconRegister.registerIcon(Constants.MOD_ID + ":" + dusts[i]);
+        }
     }
 }

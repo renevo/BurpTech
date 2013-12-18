@@ -13,11 +13,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraftforge.common.*;
 
-/**
- * BurpTech core mod but not... a core mod !( . Y . )!
- * 										     ^
- * Acatera: OMG lol  ----------------------- |
- */
 @Mod(modid = Constants.MOD_ID, name = Constants.MOD_NAME, version = Constants.MOD_VERSION)
 @NetworkMod(clientSideRequired = true)
 public class BurpTechCore
@@ -40,16 +35,15 @@ public class BurpTechCore
         
         //gui handler
         guiHandler = new GuiHandler();
-        
+
+        MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
+        MinecraftForge.EVENT_BUS.register(proxy);
+
         // load up language translations
         TranslationHelper.loadLanguages("/assets/" + Constants.MOD_ID.toLowerCase() + "/languages/", new String[] { "en_US" });
         
         // register keyboard bindings
 
-        // register the bronze age with BasicComponents
-        burptech.integration.BasicComponentsIntegration.registerBronzeAge();
-
-        MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
     }
     
     @EventHandler
@@ -87,10 +81,7 @@ public class BurpTechCore
     	if (configuration.disableEndermanGriefing.getBoolean(true))
     		burptech.entity.monster.tweaks.EntityEndermanTweaks.enableAntiGriefing();
 
-    	
         // mod integrations
-    	proxy.addNeiSupport();
-
         (new RecipeManager()).postInitialization();
     }
 }

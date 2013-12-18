@@ -3,6 +3,7 @@ package burptech.item.crafting;
 import burptech.BurpTechCore;
 import burptech.integration.IndustrialcraftIntegration;
 import burptech.integration.Integration;
+import burptech.integration.RailcraftIntegration;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -10,6 +11,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.*;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class RecipesIntegration {
 
@@ -28,6 +34,27 @@ public class RecipesIntegration {
             }
         }
 
+        if (BurpTechCore.configuration.enableSaplingCokeOvenProcessing.getBoolean(true))
+        {
+            if (Loader.isModLoaded("Railcraft"))
+            {
+                Fluid creosote = FluidRegistry.getFluid("creosote");
+                if (creosote != null)
+                {
+                    // get all saplings from ore dictionary
+                    ArrayList<ItemStack> saplings = OreDictionary.getOres("treeSapling");
+                    saplings.addAll(OreDictionary.getOres("saplingTree"));
+
+                    for (Iterator<ItemStack> i = saplings.iterator(); i.hasNext();)
+                    {
+                        ItemStack item = i.next().copy();
+
+                        // 16x saplings = 1 charcoal and a bit of creosote
+                        RailcraftIntegration.addCokeOvenRecipe(item, true, true, BurpTechCore.configuration.items.tinyCharcoalDust.copy(), FluidRegistry.getFluidStack("creosote", 30), 200);
+                    }
+                }
+            }
+        }
         if (BurpTechCore.configuration.enableStoneDustCompression.getBoolean(true))
         {
             if (Loader.isModLoaded("IC2"))
@@ -85,6 +112,17 @@ public class RecipesIntegration {
 
             if (Integration.addCrushableItem(new ItemStack(Block.oreGold), goldDust))
                 FurnaceRecipes.smelting().addSmelting(goldDust.itemID, goldDust.getItemDamage(), new ItemStack(Item.ingotGold), 1F);
+        }
+
+        if (Loader.isModLoaded("Railcraft"))
+        {
+            GameRegistry.addRecipe(new ShapedOreRecipe(OreDictionary.getOres("dustCharcoal").get(0),
+                    new Object[] {"###", "###", "###", '#', BurpTechCore.configuration.items.tinyCharcoalDust.copy() }));
+        }
+        else
+        {
+            GameRegistry.addRecipe(new ItemStack(Item.coal, 1, 1),
+                    new Object[] {"###", "###", "###", '#', BurpTechCore.configuration.items.tinyCharcoalDust.copy() });
         }
     }
 }

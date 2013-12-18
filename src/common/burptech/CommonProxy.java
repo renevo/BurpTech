@@ -1,6 +1,13 @@
 package burptech;
 
-public class CommonProxy 
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+
+public class CommonProxy
 {
-	public void addNeiSupport() { }
+    @EventHandler
+    public void postInitialization(FMLPostInitializationEvent e)
+    {
+
+    }
 }

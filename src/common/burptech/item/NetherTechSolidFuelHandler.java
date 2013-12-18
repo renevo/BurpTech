@@ -1,6 +1,9 @@
 package burptech.item;
 
 import burptech.BurpTechCore;
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
@@ -10,21 +13,31 @@ import cpw.mods.fml.common.IFuelHandler;
  */
 public class NetherTechSolidFuelHandler implements IFuelHandler
 {
+    private int baseBurnValue = 1600;
+
+    public NetherTechSolidFuelHandler()
+    {
+        baseBurnValue = net.minecraft.tileentity.TileEntityFurnace.getItemBurnTime(new ItemStack(Item.coal, 1, 0));
+    }
+
 	@Override
 	public int getBurnTime(ItemStack fuel) 
 	{
 		if (fuel == null)
 			return 0;
-		
+
+        int multiplier = 2;
+
+
+        if (Loader.isModLoaded("Railcraft"))
+            multiplier = 6;
+
 		if (fuel.itemID == BurpTechCore.configuration.items.netherCoal.itemID)
-			return 1600 * 2; // coal * 2
+			return baseBurnValue * multiplier;
 		
 		if (fuel.itemID == BurpTechCore.configuration.blocks.blockNetherCoal.blockID)
-			return 16000 * 2; // (coal block * 2)   apparently a coal block = 10 x coal not 9x as you would expect
+			return (baseBurnValue * multiplier) * 9;
 
-/*        if (fuel.itemID == BurpTechCore.configuration.items.bucketNetherFluid.itemID)
-            return 30000; // lava bucket * 1.5
-*/
 		return 0;
 	}
 }

@@ -6,6 +6,7 @@ import mods.railcraft.api.crafting.*;
 import mods.railcraft.api.fuel.FuelManager;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidStack;
 
 public class RailcraftIntegration 
 {
@@ -32,6 +33,26 @@ public class RailcraftIntegration
             return false;
 
         FuelManager.addBoilerFuel(fluid, heatValuePerBucket);
+
+        return true;
+    }
+
+    public static boolean addCokeOvenRecipe(ItemStack input, boolean matchDamage, boolean matchNBT, ItemStack output, FluidStack liquidOutput, int cookTime)
+    {
+        if (!Loader.isModLoaded("Railcraft"))
+            return false;
+
+        RailcraftCraftingManager.cokeOven.addRecipe(input, matchDamage, matchNBT, output, liquidOutput, cookTime);
+
+        return true;
+    }
+
+    public static boolean addBlastFurnaceRecipe(ItemStack input, boolean matchDamage, boolean matchNBT, int cookTime, ItemStack output)
+    {
+        if (!Loader.isModLoaded("Railcraft"))
+            return false;
+
+        RailcraftCraftingManager.blastFurnace.addRecipe(input, matchDamage, matchNBT, cookTime, output);
 
         return true;
     }

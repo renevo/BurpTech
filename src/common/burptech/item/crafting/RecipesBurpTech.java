@@ -8,6 +8,7 @@ import burptech.block.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import java.util.ArrayList;
 
@@ -48,17 +49,5 @@ public class RecipesBurpTech
     	{
     		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(BurpTechCore.configuration.items.cookedEgg), 0.35F); // xp matches standard food cooking xp
     	}
-
-        if (BurpTechCore.configuration.blocks.blockOres != null)
-        {
-            for (int i = 0; i < BlockOres.ORES.length; i++)
-            {
-                ArrayList<ItemStack> ingot = OreDictionary.getOres(BlockOres.INGOTS[i]);
-                if (ingot.size() > 0)
-                {
-                    GameRegistry.addSmelting(new ItemStack(BurpTechCore.configuration.blocks.blockOres, 1, i).itemID, ingot.get(0), FurnaceRecipes.smelting().getExperience(ingot.get(0)));
-                }
-            }
-        }
     }
 }

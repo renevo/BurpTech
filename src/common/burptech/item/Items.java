@@ -14,12 +14,13 @@ import java.util.ArrayList;
  */
 public class Items 
 {
+    // TODO: Don't create items if they are not enabled
+
 	public Item portableWorkbench;
 	public Item rucksack;
 	public Item enderRucksack;
 
 	public Item cookedEgg;
-	
 
 	public Item netherCoal;
     public Item genericDust;
@@ -28,6 +29,7 @@ public class Items
     public ItemStack ironDust;
     public ItemStack netherDust;
     public ItemStack infusedNetherDust;
+    public ItemStack tinyCharcoalDust;
 
     public Item bucketNetherFluid;
     public Item cellNetherFluid;
@@ -102,8 +104,10 @@ public class Items
         }
         else
         {
-            infusedNetherDust = netherDusts.get(0);
+            infusedNetherDust = infusedNetherDusts.get(0);
         }
+
+        tinyCharcoalDust = new ItemStack(genericDust, 1, 4);
 
     }
 	

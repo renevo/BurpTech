@@ -1,7 +1,5 @@
 package burptech.block;
 
-import burptech.integration.BuildcraftIntegration;
-import burptech.item.ItemBlockOres;
 import burptech.tileentity.TileEntityAdvancedWorkbench;
 import cpw.mods.fml.common.registry.GameRegistry;
 import burptech.BurpTechConfig;
@@ -10,11 +8,9 @@ import burptech.lib.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 /*
  * Block definitions for BurpTech
@@ -23,61 +19,48 @@ public class Blocks
 {
 	public Block blockIlluminatedCocoaOn;
 	public Block blockIlluminatedCocoaOff;
-	public Block blockNetherCoal;
-	public Block blockOres;
-    public Block blockNetherFluid;
-    public Block blockAdvancedWorkbench;
 
+    public Block blockNetherCoal;
+    public Block blockNetherFluid;
     public Fluid fluidNetherFluid;
+
+    public Block blockAdvancedWorkbench;
 
 	public void create(BurpTechConfig configuration)
 	{
         // create blocks
 		addIlluminatedCocoa(configuration);
+        addNetherCoalBlocks(configuration);
+        addNetherFuelBlocks(configuration);
 
         blockAdvancedWorkbench = new BlockAdvancedWorkbench(configuration.blockAdvancedWorkbench.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("blockAdvancedWorkbench");
 
-		blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
-
-        fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
-        FluidRegistry.registerFluid(fluidNetherFluid);
-
-        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
-
         // block registry
         GameRegistry.registerBlock(blockAdvancedWorkbench, "blockAdvancedWorkbench");
-		GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
-        GameRegistry.registerBlock(blockNetherFluid, "blockNetherFluid");
 
         // tile entities
         GameRegistry.registerTileEntity(TileEntityAdvancedWorkbench.class, "AdvancedWorkbench");
-
-        // harvesting
-        MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
-
-        // facades
-        BuildcraftIntegration.addFacade(blockNetherCoal.blockID, 0);
-
-        // multi part??? not sure how to do this tbh or if you even need to with solid blocks.
 	}
 
-    private void addOres(BurpTechConfig configuration)
+    private void addNetherCoalBlocks(BurpTechConfig configuration)
     {
-        blockOres = (new BlockOres(configuration.blockOres.getInt())).setUnlocalizedName("blockOres");
+        if (!configuration.enableNetherTechSolidFuels.getBoolean(true))
+            return;
 
-        GameRegistry.registerBlock(blockOres, ItemBlockOres.class, "blockOres");
+        blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
+        fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
+        GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
+        MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
+    }
 
-        // ore dictionary (pulled from: http://minecraftmodcustomstuff.wikia.com/wiki/Ore_Dictionary - more here: http://www.minecraftforge.net/wiki/Common_Oredict_names)
-        for (int i = 0; i < BlockOres.ORES.length; i++)
-        {
-            OreDictionary.registerOre(BlockOres.ORES[i], new ItemStack(blockOres, 1, i));
-        }
+    private void addNetherFuelBlocks(BurpTechConfig configuration)
+    {
+        if (!configuration.enableNetherTechLiquidFuels.getBoolean(true))
+            return;
 
-        MinecraftForge.setBlockHarvestLevel(blockOres, 0, "pickaxe", 1);
-        MinecraftForge.setBlockHarvestLevel(blockOres, 1, "pickaxe", 1);
-        MinecraftForge.setBlockHarvestLevel(blockOres, 2, "pickaxe", 2);
-        MinecraftForge.setBlockHarvestLevel(blockOres, 3, "pickaxe", 2);
-        MinecraftForge.setBlockHarvestLevel(blockOres, 4, "pickaxe", 2);
+        FluidRegistry.registerFluid(fluidNetherFluid);
+        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
+        GameRegistry.registerBlock(blockNetherFluid, "blockNetherFluid");
     }
 
 	private void addIlluminatedCocoa(BurpTechConfig configuration)
@@ -93,4 +76,5 @@ public class Blocks
 		Block.blocksList[cocoaPlantID] = null;
 		blockIlluminatedCocoaOff = new BlockIlluminatedCocoa(cocoaPlantID, false).setHardness(0.2F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("cocoa").setTextureName("cocoa");
 	}
+
 }

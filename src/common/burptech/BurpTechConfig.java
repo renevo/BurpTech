@@ -29,14 +29,20 @@ public class BurpTechConfig
 	
 	public Property enableNetherTechSolidFuels;
     public Property enableNetherTechLiquidFuels;
+    public Property enableNetherTechVanillaRecipes;
+    public Property enableNetherTechIndustrialcraftRecipes;
+    public Property enableNetherTechRailcraftRecipes;
+    public Property enableNetherTechBuildcraftRecipes;
+
     public Property enableCreosoteToIndustrialcraftEnergy;
+    public Property enableSaplingCokeOvenProcessing;
+
     public Property enableStoneDustCompression;
     public Property enableCompressedPlantBallEnrichment;
     public Property enableVanillaOreDoubling;
 
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
-    public Property blockOres;
     public Property blockNetherFluid;
     public Property blockAdvancedWorkbench;
 	
@@ -48,7 +54,6 @@ public class BurpTechConfig
     public Property itemBucketNetherFluid;
     public Property itemCellNetherFluid;
     public Property itemDust;
-
 
 	/*
 	 * BurpTech Items
@@ -116,9 +121,24 @@ public class BurpTechConfig
         result.enableNetherTechLiquidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "LiquidFuels", true);
         result.enableNetherTechLiquidFuels.comment = "Enables Nether Tech Liquid Fuels";
 
+        result.enableNetherTechVanillaRecipes = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "Vanilla.Recipes.Enabled", false);
+        result.enableNetherTechVanillaRecipes.comment = "Enables the vanilla Nether Coal Recipe";
+
+        result.enableNetherTechIndustrialcraftRecipes = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "Industrialcraft.Recipes.Enabled", true);
+        result.enableNetherTechIndustrialcraftRecipes.comment = "Enables the Industrialcraft Nether Fuel and Coal recipes - only valid if Industrialcraft is loaded";
+
+        result.enableNetherTechRailcraftRecipes = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "Railcraft.Recipes.Enabled", true);
+        result.enableNetherTechRailcraftRecipes.comment = "Enables the Railcraft Nether Fuel and Coal recipes - only valid if Railcraft is loaded";
+
+        result.enableNetherTechBuildcraftRecipes = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "Buildcraft.Recipes.Enabled", true);
+        result.enableNetherTechBuildcraftRecipes.comment = "Enables the Buildcraft Nether Fuel - only valid if Buildcraft is loaded";
+
         // integration
         result.enableCreosoteToIndustrialcraftEnergy = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "SemiFluid.Generator.Creosote.Enabled", true);
         result.enableCreosoteToIndustrialcraftEnergy.comment = "Enables Creosote to be used in a Semi-Fluid Generator";
+
+        result.enableSaplingCokeOvenProcessing = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Coke.Oven.Sapplings.Enabled", true);
+        result.enableSaplingCokeOvenProcessing.comment = "Enables 16x saplings to be processed in a coke oven to produce charcoal and creosote";
 
         result.enableStoneDustCompression = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Compressor.StoneDust.Enabled", true);
         result.enableStoneDustCompression.comment = "Enables Compressing 8x Industrialcraft Stone Dust into Stone";
