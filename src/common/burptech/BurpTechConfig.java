@@ -32,6 +32,7 @@ public class BurpTechConfig
     public Property enableCreosoteToIndustrialcraftEnergy;
     public Property enableStoneDustCompression;
     public Property enableCompressedPlantBallEnrichment;
+    public Property enableVanillaOreDoubling;
 
 	public Property blockIlluminatedCocoa;
 	public Property blockNetherCoal;
@@ -43,11 +44,11 @@ public class BurpTechConfig
 	public Property itemRucksack;
 	public Property itemPortableWorkbench;
 	public Property itemCookedEgg;
-	public Property itemNetherDust;
 	public Property itemNetherCoal;
-    public Property itemInfusedNetherDust;
     public Property itemBucketNetherFluid;
     public Property itemCellNetherFluid;
+    public Property itemDust;
+
 
 	/*
 	 * BurpTech Items
@@ -125,14 +126,17 @@ public class BurpTechConfig
         result.enableCompressedPlantBallEnrichment = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Enrichment.CompressedPlantBall.Enabled", true);
         result.enableCompressedPlantBallEnrichment.comment = "Enables using the canning machine to enrich compressed plant balls to biomass";
 
+        result.enableVanillaOreDoubling = configuration.get(Constants.CONFIG_CATEGORY_INTEGRATION, "Processing.Vanilla.OreDoubling.Enabled", false);
+        result.enableVanillaOreDoubling.comment = "When enabled will attempt to register vanilla ores for ore doubling - use this if you don't have another mod that adds it, but have Railcraft";
+
         // Items
         result.itemEnderRucksack = configuration.getItem("EnderRucksack", burptech.lib.Constants.ITEM_START + 0);
         result.itemRucksack = configuration.getItem("Rucksack", burptech.lib.Constants.ITEM_START + 1);
         result.itemPortableWorkbench = configuration.getItem("PortableWorkbench", burptech.lib.Constants.ITEM_START + 2);
         result.itemCookedEgg = configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3);
-        result.itemNetherDust = configuration.getItem("NetherDust", burptech.lib.Constants.ITEM_START + 4);
+        result.itemDust = configuration.getItem("ItemDust", burptech.lib.Constants.ITEM_START + 4);
         result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
-        result.itemInfusedNetherDust = configuration.getItem("InfusedNetherDust", burptech.lib.Constants.ITEM_START + 6);
+        // REMOVED
         result.itemBucketNetherFluid = configuration.getItem("BucketNetherFluid", burptech.lib.Constants.ITEM_START + 7);
         result.itemCellNetherFluid = configuration.getItem("CellNetherFluid", burptech.lib.Constants.ITEM_START + 8);
 

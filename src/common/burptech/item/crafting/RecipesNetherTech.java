@@ -41,7 +41,7 @@ public class RecipesNetherTech
 
         BucketHandler.INSTANCE.buckets.put(BurpTechCore.configuration.blocks.blockNetherFluid, BurpTechCore.configuration.items.bucketNetherFluid);
 
-        Integration.addFluidEnrichment(new ItemStack(BurpTechCore.configuration.items.netherDust), FluidRegistry.getFluidStack("lava", FluidContainerRegistry.BUCKET_VOLUME), FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME));
+        Integration.addFluidEnrichment(BurpTechCore.configuration.items.netherDust.copy(), FluidRegistry.getFluidStack("lava", FluidContainerRegistry.BUCKET_VOLUME), FluidRegistry.getFluidStack("nether", FluidContainerRegistry.BUCKET_VOLUME));
 
         Integration.addFuel("nether", 10, 32, 32000, 5, 20000);
 
@@ -55,7 +55,7 @@ public class RecipesNetherTech
     	if (!BurpTechCore.configuration.enableNetherTechSolidFuels.getBoolean(true))
     		return;
     	
-		if (!Integration.addCrushableItem(new ItemStack(Block.netherrack), new ItemStack(BurpTechCore.configuration.items.netherDust)))
+		if (!Integration.addCrushableItem(new ItemStack(Block.netherrack), BurpTechCore.configuration.items.netherDust.copy()))
 		{
 			// add vanilla recipe for nether coal if no mods are present to support it
 			GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal), 
@@ -64,7 +64,7 @@ public class RecipesNetherTech
 			// find out if we have charcoal dust, if so, use it for our recipe
 			ArrayList<ItemStack> charcoals = OreDictionary.getOres("dustCharcoal");
 
-            if (!Integration.addCompressedItem(new ItemStack(BurpTechCore.configuration.items.infusedNetherDust), new ItemStack(BurpTechCore.configuration.items.netherCoal)))
+            if (!Integration.addCompressedItem(BurpTechCore.configuration.items.infusedNetherDust.copy(), new ItemStack(BurpTechCore.configuration.items.netherCoal)))
             {
                 GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BurpTechCore.configuration.items.netherCoal),
                         new Object[] {"###", "#C#", "###", '#', "dustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
@@ -73,10 +73,10 @@ public class RecipesNetherTech
                         new Object[] {"###", "#C#", "###", '#', "itemDustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
             } else
             {
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BurpTechCore.configuration.items.infusedNetherDust),
+                GameRegistry.addRecipe(new ShapedOreRecipe(BurpTechCore.configuration.items.infusedNetherDust.copy(),
                         new Object[] {"###", "#C#", "###", '#', "dustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
 
-                GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BurpTechCore.configuration.items.infusedNetherDust),
+                GameRegistry.addRecipe(new ShapedOreRecipe(BurpTechCore.configuration.items.infusedNetherDust.copy(),
                         new Object[] {"###", "#C#", "###", '#', "itemDustNetherrack", 'C', charcoals.size() == 0 ? new ItemStack(Item.coal, 1, 1) : "dustCharcoal" }));
             }
 		}

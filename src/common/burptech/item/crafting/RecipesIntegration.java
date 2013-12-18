@@ -2,8 +2,13 @@ package burptech.item.crafting;
 
 import burptech.BurpTechCore;
 import burptech.integration.IndustrialcraftIntegration;
+import burptech.integration.Integration;
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fluids.*;
 
 public class RecipesIntegration {
@@ -63,6 +68,23 @@ public class RecipesIntegration {
                     }
                 }
             }
+        }
+
+        if (BurpTechCore.configuration.enableVanillaOreDoubling.getBoolean(false))
+        {
+            // iron
+            ItemStack ironDust = BurpTechCore.configuration.items.ironDust.copy();
+            ironDust.stackSize = 2;
+
+            if (Integration.addCrushableItem(new ItemStack(Block.oreIron), ironDust))
+                FurnaceRecipes.smelting().addSmelting(ironDust.itemID, ironDust.getItemDamage(), new ItemStack(Item.ingotIron), 0.7F);
+
+            // gold
+            ItemStack goldDust = BurpTechCore.configuration.items.goldDust.copy();
+            goldDust.stackSize = 2;
+
+            if (Integration.addCrushableItem(new ItemStack(Block.oreGold), goldDust))
+                FurnaceRecipes.smelting().addSmelting(goldDust.itemID, goldDust.getItemDamage(), new ItemStack(Item.ingotGold), 1F);
         }
     }
 }
