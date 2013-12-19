@@ -43,7 +43,7 @@ public class Items
 		enderRucksack = new ItemRucksack(configuration.itemEnderRucksack.getInt(), true).setUnlocalizedName("enderRucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
 		rucksack = new ItemRucksack(configuration.itemRucksack.getInt(), false).setUnlocalizedName("rucksack").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);
 		portableWorkbench = new ItemPortableWorkbench(configuration.itemPortableWorkbench.getInt()).setUnlocalizedName("portableWorkbench").setMaxStackSize(1).setCreativeTab(CreativeTabs.tabTools);;
-		cookedEgg = new ItemFood(configuration.itemCookedEgg.getInt(), 2, .1F, false).setUnlocalizedName("cookedEgg").setTextureName(Constants.MOD_ID + ":" + "egg_cooked").setMaxStackSize(16);
+		cookedEgg = new ItemFood(configuration.itemCookedEgg.getInt(), 4, .3F, false).setUnlocalizedName("cookedEgg").setTextureName(Constants.MOD_ID + ":" + "egg_cooked").setMaxStackSize(64);
 		netherCoal = new Item(configuration.itemNetherCoal.getInt()).setUnlocalizedName("netherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal");
         bucketNetherFluid = new ItemBucket(configuration.itemBucketNetherFluid.getInt(), configuration.blockNetherFluid.getInt()).setUnlocalizedName("bucketNetherFluid").setCreativeTab(CreativeTabs.tabMisc).setTextureName(Constants.MOD_ID + ":" + "nether_fluid_bucket").setContainerItem(Item.bucketEmpty);
         cellNetherFluid = new Item(configuration.itemCellNetherFluid.getInt()).setUnlocalizedName("cellNetherFluid").setCreativeTab(CreativeTabs.tabMisc).setTextureName(Constants.MOD_ID + ":" + "nether_fluid_cell");
