@@ -4,6 +4,8 @@ import burptech.BurpTechCore;
 import burptech.CommonProxy;
 import burptech.client.gui.GuiPortableWorkbench;
 import burptech.integration.NeiIntegration;
+import burptech.lib.VersionChecker;
+import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -18,6 +20,9 @@ public class ClientProxy extends CommonProxy
          addNeiSupport();
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        if (BurpTechCore.configuration.enableCheckForUpdates.getBoolean(true))
+            TickRegistry.registerTickHandler(new VersionChecker(), Side.CLIENT);
     }
 
 	private void addNeiSupport()

@@ -12,6 +12,8 @@ import net.minecraftforge.common.*;
  */
 public class BurpTechConfig 
 {
+    public Property enableCheckForUpdates;
+
 	public Property disableEndermanGriefing;
 	public Property enableSlimeSpawningRestrictions;
 	public Property enableNetherSpawningRestrictions;
@@ -78,7 +80,10 @@ public class BurpTechConfig
 		File configurationFile = new File(configFolder.getAbsolutePath() + "/" + Constants.MOD_NAME + ".cfg");
 		Configuration configuration = new Configuration(configurationFile);
 		configuration.load();
-		
+
+        result.enableCheckForUpdates = configuration.get(Constants.CONFIG_CATEGORY_GENERAL, "Enable Update Checks", true);
+        result.enableCheckForUpdates.comment = "Check for updates when the game starts, and then adds chat messages if updates are available";
+
 		// Tweaks
 		result.disableEndermanGriefing = configuration.get(Constants.CONFIG_CATEGORY_TWEAKS, "DisableEndermanGriefing", true);
 		result.disableEndermanGriefing.comment = "Disables Enderman from picking up any blocks other than vanilla flowers";

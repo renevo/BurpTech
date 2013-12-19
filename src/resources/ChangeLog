@@ -1,0 +1,15 @@
+v1.6.4.50
+Added Cobblestone Generator
+Added Gold and Iron Ore Processing to Railcraft for Packs without another mod that does it.
+Added an entirely new Tech Tree for Nether Tech and Railcraft.
+Added Sapplings to Creosote processing to Coke Oven.
+
+v1.6.4.39
+Added Biomass processing for Compressed Plantballs in the canning machine (uses same conversion ratios as forestry)
+Changed stone dust from smelting 1 to 1 to compressing 8 to 1
+Nether Fuel will now spread fire when placed in the world.
+Fixed a recipe issue with the ender rucksack.
+
+v1.6.4.38
+Added Industrialcraft Experimental Options (Stonedust, Creosote)
+

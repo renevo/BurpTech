@@ -1,31 +1,31 @@
 {
   "modinfoversion": 2,
   "modlist" :
-[
-{
-  "modid": "BurpTechCore",
-  "name": "BurpTech",
-  "description": "BurpTech - it's what for dinner... Rather that noise after dinner",
-  "version": "@VERSION@",
-  "mcversion": "1.6.4",
-  "url": "http://renevo.github.io/BurpTech",
-   "logoFile": "/assets/BurpTechCore/textures/logo.png",
-  "authorList": 
-  [
-    "RenEvo",
-	"Acatera",
-	"Maikar"
-  ],
-  "credits": "Thanks Burpcrafters and fans!!!",
-  "requiredMods": 
-  [
-    "Forge@[9.11.1,)"
-  ],
-  "dependencies": 
-  [
-    "after:*"
-  ],
-  "useDependencyInformation" : "true"
-}
-]
+    [
+        {
+            "modid": "BurpTechCore",
+            "name": "BurpTech",
+            "description": "BurpTech - it's what for dinner... Rather that noise after dinner",
+            "version": "@VERSION@",
+            "mcversion": "1.6.4",
+            "url": "http://renevo.github.io/BurpTech",
+            "logoFile": "/assets/BurpTechCore/textures/logo.png",
+            "authorList":
+            [
+                "RenEvo",
+                "Acatera",
+                "Maikar"
+            ],
+            "credits": "UniversalElectricity, Buildcraft, Barrels, Pahimar, and all open source mods",
+            "requiredMods":
+            [
+                "Forge@[9.11.1,)"
+            ],
+            "dependencies":
+            [
+                "after:*"
+            ],
+            "useDependencyInformation" : "true"
+        }
+    ]
 }

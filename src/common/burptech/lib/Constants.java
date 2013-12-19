@@ -30,7 +30,8 @@ public final class Constants
      * MOD CHANNEL NAME - used for networking
      */
     public static final String MOD_CHANNEL_NAME = MOD_ID;
-     
+
+    public static final String CONFIG_CATEGORY_GENERAL = "General";
     /**
      * Configuration Category for Tweaks
      */
