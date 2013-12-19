@@ -35,7 +35,7 @@ public class Blocks
         addNetherCoalBlocks(configuration);
         addNetherFuelBlocks(configuration);
 
-        if (configuration.recipeAdvancedWorkbench.getBoolean(false))
+        if (configuration.recipeAdvancedWorkbench.getBoolean(true))
         {
             blockAdvancedWorkbench = new BlockAdvancedWorkbench(configuration.blockAdvancedWorkbench.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("blockAdvancedWorkbench");
             GameRegistry.registerBlock(blockAdvancedWorkbench, "blockAdvancedWorkbench");

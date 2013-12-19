@@ -125,7 +125,7 @@ public class BurpTechConfig
         result.recipeCobbleGenerator = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobble Generator", true);
         result.recipeCobbleGenerator.comment = "Enables the cobblestone generator block";
 
-        result.recipeAdvancedWorkbench = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Advanced Workbench", false);
+        result.recipeAdvancedWorkbench = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Advanced Workbench", true);
         result.recipeAdvancedWorkbench.comment = "Enables the advanced workbench";
 		
 		// Nether Tech

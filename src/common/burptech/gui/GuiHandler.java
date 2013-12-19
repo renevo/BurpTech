@@ -30,7 +30,7 @@ public class GuiHandler implements IGuiHandler
 					return new ContainerRucksack(player.inventory, player.getInventoryEnderChest());
 
             case Constants.GUI_ADVANCED_WORKBENCH_ID:
-                return new ContainerAdvancedWorkbench((TileEntityAdvancedWorkbench)world.getBlockTileEntity(x,y,z));
+                return new ContainerAdvancedWorkbench(player.inventory, (TileEntityAdvancedWorkbench)world.getBlockTileEntity(x,y,z));
 		}
 		
 		
@@ -55,7 +55,7 @@ public class GuiHandler implements IGuiHandler
 					return new GuiRucksack(player.inventory, player.getInventoryEnderChest());
 
             case Constants.GUI_ADVANCED_WORKBENCH_ID:
-                return new GuiAdvancedWorkbench((TileEntityAdvancedWorkbench)world.getBlockTileEntity(x, y, z));
+                return new GuiAdvancedWorkbench(player.inventory, (TileEntityAdvancedWorkbench)world.getBlockTileEntity(x, y, z));
 
 		}
 		return null;

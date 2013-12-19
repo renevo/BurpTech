@@ -1,24 +1,26 @@
 package burptech.gui;
 
 import burptech.BurpTechCore;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCraftResult;
-import net.minecraft.inventory.InventoryCrafting;
-import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotCrafting;
+import cpw.mods.fml.relauncher.*;
+import invtweaks.api.container.*;
+import net.minecraft.entity.player.*;
+import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
 
+import java.util.*;
+
+@ChestContainer(rowSize=9, isLargeChest=false) /** inventory tweaks support **/
 public class ContainerPortableWorkbench extends Container 
 {
 
 	public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
     public IInventory craftResult = new InventoryCraftResult();
     private World worldObj;
+
+    @SideOnly(Side.CLIENT)
+    private java.util.Map<ContainerSection, List<Slot>> slotMap;
 
     public ContainerPortableWorkbench(InventoryPlayer par1InventoryPlayer, World world)
     {
@@ -155,4 +157,40 @@ public class ContainerPortableWorkbench extends Container
         return var2;
     }
 
+    /*
+     * Provided for advanced inventory tweaks support
+     */
+    @SideOnly(Side.CLIENT)
+    @ContainerSectionCallback
+    public java.util.Map<ContainerSection, List<Slot>> getSlotMap()
+    {
+        if (slotMap != null)
+            return slotMap;
+
+        slotMap = new EnumMap<ContainerSection, List<Slot>>(ContainerSection.class);
+
+        // craft result 0
+        // IGNORE
+
+        // craft matrix 1-9
+        // IGNORE
+
+        // player inventory
+        List<Slot> playerInventory = new ArrayList<Slot>();
+        for (int i = 10; i < 37; i++)
+        {
+            playerInventory.add(getSlot(i));
+        }
+        slotMap.put(ContainerSection.INVENTORY_NOT_HOTBAR, playerInventory);
+
+        // player hot bar
+        List<Slot> playerHotBar = new ArrayList<Slot>();
+        for (int i = 37; i < 46; i++)
+        {
+            playerHotBar.add(getSlot(i));
+        }
+        slotMap.put(ContainerSection.INVENTORY_HOTBAR, playerHotBar);
+
+        return slotMap;
+    }
 }

@@ -2,6 +2,7 @@ package burptech.client;
 
 import burptech.BurpTechCore;
 import burptech.CommonProxy;
+import burptech.client.gui.GuiAdvancedWorkbench;
 import burptech.client.gui.GuiPortableWorkbench;
 import burptech.integration.NeiIntegration;
 import burptech.lib.VersionChecker;
@@ -32,6 +33,10 @@ public class ClientProxy extends CommonProxy
     		NeiIntegration.registerCraftingContainers(GuiPortableWorkbench.class);
     	}
 
+        if (BurpTechCore.configuration.recipeAdvancedWorkbench.getBoolean(true))
+        {
+            NeiIntegration.registerCraftingContainers(GuiAdvancedWorkbench.class);
+        }
     }
 
     @ForgeSubscribe

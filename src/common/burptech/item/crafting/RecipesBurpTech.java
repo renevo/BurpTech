@@ -55,5 +55,12 @@ public class RecipesBurpTech
             GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.blocks.blockCobbleGenerator),
                     new Object[] {"CCC", "CHC", "CPC", 'C', Block.cobblestone, 'H', Block.hopperBlock, 'P', Block.pistonBase});
         }
+
+        if (BurpTechCore.configuration.recipeAdvancedWorkbench.getBoolean(true))
+        {
+            // TODO: Change this recipe later?
+            GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.blocks.blockAdvancedWorkbench),
+                    new Object[] {"C", "W", 'C', Block.chest, 'W', Block.workbench});
+        }
     }
 }

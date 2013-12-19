@@ -1,20 +1,21 @@
 package burptech.gui;
 
-import invtweaks.api.container.ChestContainer;
-import burptech.item.RucksackInventory;
-import burptech.item.ItemRucksack;
+import cpw.mods.fml.relauncher.*;
+import invtweaks.api.container.*;
+import burptech.item.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryEnderChest;
-import net.minecraft.inventory.Slot;
+import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
+
+import java.util.*;
 
 @ChestContainer(rowSize=9, isLargeChest=false) /** inventory tweaks support **/
 public class ContainerRucksack extends Container
 {
 	private int numRows;
     private IInventory container;
+    @SideOnly(Side.CLIENT)
+    private java.util.Map<ContainerSection, List<Slot>> slotMap;
 
     public ContainerRucksack(IInventory playerIInventory, IInventory container)
     {
@@ -115,5 +116,44 @@ public class ContainerRucksack extends Container
     	if (!(container instanceof InventoryEnderChest))
     		((RucksackInventory) container).onGuiClose(par1EntityPlayer);
         super.onContainerClosed(par1EntityPlayer);
+    }
+
+    /*
+     * Provided for advanced inventory tweaks support
+     */
+    @SideOnly(Side.CLIENT)
+    @ContainerSectionCallback
+    public java.util.Map<ContainerSection, List<Slot>> getSlotMap()
+    {
+        if (slotMap != null)
+            return slotMap;
+
+        slotMap = new EnumMap<ContainerSection, List<Slot>>(ContainerSection.class);
+
+        // internal storage
+        List<Slot> internalStorageSlots = new ArrayList<Slot>();
+        for (int i = 0; i < 27; i++)
+        {
+            internalStorageSlots.add(getSlot(i));
+        }
+        slotMap.put(ContainerSection.CHEST, internalStorageSlots);
+
+        // player inventory
+        List<Slot> playerInventory = new ArrayList<Slot>();
+        for (int i = 27; i < 55; i++)
+        {
+            playerInventory.add(getSlot(i));
+        }
+        slotMap.put(ContainerSection.INVENTORY_NOT_HOTBAR, playerInventory);
+
+        // player hot bar
+        List<Slot> playerHotBar = new ArrayList<Slot>();
+        for (int i = 55; i < 63; i++)
+        {
+            playerHotBar.add(getSlot(i));
+        }
+        slotMap.put(ContainerSection.INVENTORY_HOTBAR, playerHotBar);
+
+        return slotMap;
     }
 }

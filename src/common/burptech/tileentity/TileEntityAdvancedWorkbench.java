@@ -4,6 +4,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -13,7 +14,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import java.util.Random;
 
-public class TileEntityAdvancedWorkbench extends TileEntity implements IInventory
+public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInventory
 {
     private Random random = new Random();
     public ItemStack[] inventoryContents = new ItemStack[37];
@@ -443,6 +444,50 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements IInventor
         {
             tagCompound.setString("CustomName", this.inventoryName);
         }
+    }
+
+    /**
+     * Returns an array containing the indices of the slots that can be accessed by automation on the given side of this
+     * block.
+     */
+    @Override
+    public int[] getAccessibleSlotsFromSide(int side)
+    {
+        return new int[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,36};
+    }
+
+    /**
+     * Returns true if automation can insert the given item in the given slot from the given side. Args: Slot, item,
+     * side
+     */
+    @Override
+    public boolean canInsertItem(int slot, ItemStack item, int side)
+    {
+        if (isCraftingGrid(slot) || isCraftingResult(slot))
+            return false;
+
+        return true;
+    }
+
+    /**
+     * Returns true if automation can extract the given item in the given slot from the given side. Args: Slot, item,
+     * side
+     */
+    @Override
+    public boolean canExtractItem(int slot, ItemStack item, int side)
+    {
+        // only allow extracting from the crafting result
+        if (!isCraftingResult(slot))
+            return false;
+
+        // slot is the one we can extract from, say yes
+        if (item == null)
+            return true;
+
+        ItemStack result = getCraftingResult();
+
+        // check for an item match
+        return isCraftingResult(slot) && result != null && result.isItemEqual(item);
     }
 
     /**
