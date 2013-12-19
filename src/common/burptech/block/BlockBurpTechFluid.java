@@ -113,6 +113,7 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
     public boolean canDisplace(IBlockAccess world, int x, int y, int z) {
         if (world.getBlockMaterial(x, y, z).isLiquid())
             return false;
+
         return super.canDisplace(world, x, y, z);
     }
 
@@ -120,32 +121,36 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
     public boolean displaceIfPossible(World world, int x, int y, int z) {
         if (world.getBlockMaterial(x, y, z).isLiquid())
             return false;
+
         return super.displaceIfPossible(world, x, y, z);
     }
 
     @Override
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    public void updateTick(World world, int x, int y, int z, Random random)
     {
+        // if you don't call this, the liquid does not flow....
+        super.updateTick(world, x, y, z, random);
+
         // if this block can set fires, lets do the same logic that the lava does here
         if (!canSetFires)
             return;
 
-        int l = par5Random.nextInt(3);
+        int nextRandom = random.nextInt(3);
         int i1;
         int j1;
 
-        for (i1 = 0; i1 < l; ++i1)
+        for (i1 = 0; i1 < nextRandom; ++i1)
         {
-            par2 += par5Random.nextInt(3) - 1;
-            ++par3;
-            par4 += par5Random.nextInt(3) - 1;
-            j1 = par1World.getBlockId(par2, par3, par4);
+            x += random.nextInt(3) - 1;
+            ++y;
+            z += random.nextInt(3) - 1;
+            j1 = world.getBlockId(x, y, z);
 
             if (j1 == 0)
             {
-                if (this.isFlammable(par1World, par2 - 1, par3, par4) || this.isFlammable(par1World, par2 + 1, par3, par4) || this.isFlammable(par1World, par2, par3, par4 - 1) || this.isFlammable(par1World, par2, par3, par4 + 1) || this.isFlammable(par1World, par2, par3 - 1, par4) || this.isFlammable(par1World, par2, par3 + 1, par4))
+                if (this.isFlammable(world, x - 1, y, z) || this.isFlammable(world, x + 1, y, z) || this.isFlammable(world, x, y, z - 1) || this.isFlammable(world, x, y, z + 1) || this.isFlammable(world, x, y - 1, z) || this.isFlammable(world, x, y + 1, z))
                 {
-                    par1World.setBlock(par2, par3, par4, Block.fire.blockID);
+                    world.setBlock(x, y, z, Block.fire.blockID);
                     return;
                 }
             }
@@ -155,19 +160,19 @@ public class BlockBurpTechFluid extends BlockFluidClassic {
             }
         }
 
-        if (l == 0)
+        if (nextRandom == 0)
         {
-            i1 = par2;
-            j1 = par4;
+            i1 = x;
+            j1 = z;
 
             for (int k1 = 0; k1 < 3; ++k1)
             {
-                par2 = i1 + par5Random.nextInt(3) - 1;
-                par4 = j1 + par5Random.nextInt(3) - 1;
+                x = i1 + random.nextInt(3) - 1;
+                z = j1 + random.nextInt(3) - 1;
 
-                if (par1World.isAirBlock(par2, par3 + 1, par4) && this.isFlammable(par1World, par2, par3, par4))
+                if (world.isAirBlock(x, y + 1, z) && this.isFlammable(world, x, y, z))
                 {
-                    par1World.setBlock(par2, par3 + 1, par4, Block.fire.blockID);
+                    world.setBlock(x, y + 1, z, Block.fire.blockID);
                 }
             }
         }

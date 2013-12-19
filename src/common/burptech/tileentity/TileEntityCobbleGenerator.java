@@ -1,6 +1,7 @@
 package burptech.tileentity;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -24,8 +25,8 @@ public class TileEntityCobbleGenerator extends TileEntity
 
         tickCount = 0;
 
-        boolean hasWater = hasBlockAsNeighbor(Block.waterStill.blockID);
-        boolean hasLava = hasBlockAsNeighbor(Block.lavaStill.blockID);
+        boolean hasWater = hasMaterialAsNeighbor(Material.water);
+        boolean hasLava = hasMaterialAsNeighbor(Material.lava);
         boolean hasRedstone = worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord);
 
         if (hasWater && hasLava && !hasRedstone)
@@ -49,32 +50,32 @@ public class TileEntityCobbleGenerator extends TileEntity
         worldObj.playSoundEffect((double) ((float) xCoord + 0.5F), (double) ((float) yCoord + 0.5F), (double) ((float) zCoord + 0.5F), "random.fizz", 0.25F, 2.6F + (worldObj.rand.nextFloat() - worldObj.rand.nextFloat()) * 0.8F);
     }
 
-    private boolean hasBlockAsNeighbor(int blockId)
+    private boolean hasMaterialAsNeighbor(Material material)
     {
-        int locatedBlockId = 0;
+        Material locatedMaterial;
 
-        locatedBlockId = worldObj.getBlockId(xCoord - 1, yCoord, zCoord);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord - 1, yCoord, zCoord);
+        if (locatedMaterial == material)
             return true;
 
-        locatedBlockId = worldObj.getBlockId(xCoord + 1, yCoord, zCoord);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord + 1, yCoord, zCoord);
+        if (locatedMaterial == material)
             return true;
 
-        locatedBlockId = worldObj.getBlockId(xCoord, yCoord - 1, zCoord);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord, yCoord - 1, zCoord);
+        if (locatedMaterial == material)
             return true;
 
-        locatedBlockId = worldObj.getBlockId(xCoord, yCoord + 1, zCoord);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord, yCoord + 1, zCoord);
+        if (locatedMaterial == material)
             return true;
 
-        locatedBlockId = worldObj.getBlockId(xCoord, yCoord, zCoord - 1);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord, yCoord, zCoord - 1);
+        if (locatedMaterial == material)
             return true;
 
-        locatedBlockId = worldObj.getBlockId(xCoord, yCoord, zCoord + 1);
-        if (locatedBlockId == blockId)
+        locatedMaterial = worldObj.getBlockMaterial(xCoord, yCoord, zCoord + 1);
+        if (locatedMaterial == material)
             return true;
 
 

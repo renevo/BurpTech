@@ -37,7 +37,6 @@ public class BurpTechCore
         guiHandler = new GuiHandler();
 
         MinecraftForge.EVENT_BUS.register(BucketHandler.INSTANCE);
-        MinecraftForge.EVENT_BUS.register(proxy);
 
         // load up language translations
         TranslationHelper.loadLanguages("/assets/" + Constants.MOD_ID.toLowerCase() + "/languages/", new String[] { "en_US" });
@@ -80,6 +79,8 @@ public class BurpTechCore
     	// tweaks
     	if (configuration.disableEndermanGriefing.getBoolean(true))
     		burptech.entity.monster.tweaks.EntityEndermanTweaks.enableAntiGriefing();
+
+        proxy.postInitialization();
 
         // mod integrations
         (new RecipeManager()).postInitialization();

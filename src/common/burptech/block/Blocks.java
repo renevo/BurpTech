@@ -58,7 +58,6 @@ public class Blocks
             return;
 
         blockNetherCoal = (new Block(configuration.blockNetherCoal.getInt(), Material.rock)).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockNetherCoal").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Constants.MOD_ID + ":" + "nether_coal_block");
-        fluidNetherFluid = new Fluid("nether").setDensity(800).setViscosity(1500);
         GameRegistry.registerBlock(blockNetherCoal, "blockNetherCoal");
         MinecraftForge.setBlockHarvestLevel(blockNetherCoal, 0, "pickaxe", 1);
     }
@@ -68,8 +67,10 @@ public class Blocks
         if (!configuration.enableNetherTechLiquidFuels.getBoolean(true))
             return;
 
+        fluidNetherFluid = new Fluid("nether").setDensity(3000).setViscosity(6000).setTemperature(1300).setLuminosity(15);
         FluidRegistry.registerFluid(fluidNetherFluid);
-        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(),fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
+
+        blockNetherFluid = new BlockBurpTechFluid(configuration.blockNetherFluid.getInt(), fluidNetherFluid, Material.lava).setBurning(true).setParticleColor(131,24,24).setUnlocalizedName("blockNetherFluid");
         GameRegistry.registerBlock(blockNetherFluid, "blockNetherFluid");
     }
 
