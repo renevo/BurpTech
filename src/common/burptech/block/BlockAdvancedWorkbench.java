@@ -28,8 +28,6 @@ public class BlockAdvancedWorkbench extends BlockContainer
     @SideOnly(Side.CLIENT)
     private Icon iconBottom;
     @SideOnly(Side.CLIENT)
-    private Icon iconSide;
-    @SideOnly(Side.CLIENT)
     private Icon iconFront;
 
     public BlockAdvancedWorkbench(int id)

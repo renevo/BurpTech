@@ -49,5 +49,11 @@ public class RecipesBurpTech
     	{
     		GameRegistry.addSmelting(Item.egg.itemID, new ItemStack(BurpTechCore.configuration.items.cookedEgg), 0.35F); // xp matches standard food cooking xp
     	}
+
+        if (BurpTechCore.configuration.recipeCobbleGenerator.getBoolean(true))
+        {
+            GameRegistry.addRecipe(new ItemStack(BurpTechCore.configuration.blocks.blockCobbleGenerator),
+                    new Object[] {"CCC", "CHC", "CPC", 'C', Block.cobblestone, 'H', Block.hopperBlock, 'P', Block.pistonBase});
+        }
     }
 }

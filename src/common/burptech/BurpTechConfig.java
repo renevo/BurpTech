@@ -24,6 +24,8 @@ public class BurpTechConfig
 	public Property recipePortableWorkbench;
 	public Property recipeRucksack;
 	public Property recipeEnderRucksack;
+    public Property recipeAdvancedWorkbench;
+    public Property recipeCobbleGenerator;
 	
 	public Property recipeCookedEgg;
 	
@@ -45,6 +47,7 @@ public class BurpTechConfig
 	public Property blockNetherCoal;
     public Property blockNetherFluid;
     public Property blockAdvancedWorkbench;
+    public Property blockCobbleGenerator;
 	
 	public Property itemEnderRucksack;
 	public Property itemRucksack;
@@ -113,6 +116,12 @@ public class BurpTechConfig
 		
 		result.recipeCookedEgg = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "CookedEggs", true);
 		result.recipeCookedEgg.comment = "Enables cooked eggs for food";
+
+        result.recipeCobbleGenerator = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Cobble Generator", true);
+        result.recipeCobbleGenerator.comment = "Enables the cobblestone generator block";
+
+        result.recipeAdvancedWorkbench = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Advanced Workbench", false);
+        result.recipeAdvancedWorkbench.comment = "Enables the advanced workbench";
 		
 		// Nether Tech
 		result.enableNetherTechSolidFuels = configuration.get(Constants.CONFIG_CATEGORY_NETHERTECH, "SolidFuels", true);
@@ -156,6 +165,7 @@ public class BurpTechConfig
         result.itemCookedEgg = configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3);
         result.itemDust = configuration.getItem("ItemDust", burptech.lib.Constants.ITEM_START + 4);
         result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
+
         // REMOVED
         result.itemBucketNetherFluid = configuration.getItem("BucketNetherFluid", burptech.lib.Constants.ITEM_START + 7);
         result.itemCellNetherFluid = configuration.getItem("CellNetherFluid", burptech.lib.Constants.ITEM_START + 8);
@@ -165,6 +175,7 @@ public class BurpTechConfig
 		result.blockNetherCoal = configuration.getBlock("BlockNetherCoal", Constants.BLOCK_START + 1);
         result.blockNetherFluid = configuration.getBlock("BlockNetherFluid", Constants.BLOCK_START + 2);
         result.blockAdvancedWorkbench = configuration.getBlock("BlockAdvancedWorkbench", Constants.BLOCK_START + 3);
+        result.blockCobbleGenerator = configuration.getBlock("BlockCobbleGenerator", Constants.BLOCK_START + 4);
 
         result.items = new Items();
         result.blocks = new Blocks();

@@ -1,6 +1,6 @@
 package burptech.block;
 
-import burptech.tileentity.TileEntityAdvancedWorkbench;
+import burptech.tileentity.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import burptech.BurpTechConfig;
 import burptech.BurpTechCore;
@@ -24,7 +24,9 @@ public class Blocks
     public Block blockNetherFluid;
     public Fluid fluidNetherFluid;
 
+
     public Block blockAdvancedWorkbench;
+    public Block blockCobbleGenerator;
 
 	public void create(BurpTechConfig configuration)
 	{
@@ -33,13 +35,21 @@ public class Blocks
         addNetherCoalBlocks(configuration);
         addNetherFuelBlocks(configuration);
 
-        blockAdvancedWorkbench = new BlockAdvancedWorkbench(configuration.blockAdvancedWorkbench.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("blockAdvancedWorkbench");
+        if (configuration.recipeAdvancedWorkbench.getBoolean(false))
+        {
+            blockAdvancedWorkbench = new BlockAdvancedWorkbench(configuration.blockAdvancedWorkbench.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("blockAdvancedWorkbench");
+            GameRegistry.registerBlock(blockAdvancedWorkbench, "blockAdvancedWorkbench");
+            GameRegistry.registerTileEntity(TileEntityAdvancedWorkbench.class, "AdvancedWorkbench");
+            MinecraftForge.setBlockHarvestLevel(blockAdvancedWorkbench, 0, "axe", 1);
+        }
 
-        // block registry
-        GameRegistry.registerBlock(blockAdvancedWorkbench, "blockAdvancedWorkbench");
-
-        // tile entities
-        GameRegistry.registerTileEntity(TileEntityAdvancedWorkbench.class, "AdvancedWorkbench");
+        if (configuration.recipeCobbleGenerator.getBoolean(true))
+        {
+            blockCobbleGenerator = new BlockCobbleGenerator(configuration.blockCobbleGenerator.getInt()).setHardness(5.0f).setResistance(10.0f).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("blockCobbleGenerator");
+            GameRegistry.registerBlock(blockCobbleGenerator, "blockCobbleGenerator");
+            GameRegistry.registerTileEntity(TileEntityCobbleGenerator.class, "CobblestoneGenerator");
+            MinecraftForge.setBlockHarvestLevel(blockCobbleGenerator, 0, "pickaxe", 1);
+        }
 	}
 
     private void addNetherCoalBlocks(BurpTechConfig configuration)
