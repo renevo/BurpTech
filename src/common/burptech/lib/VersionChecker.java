@@ -15,7 +15,6 @@ public class VersionChecker extends Thread implements ITickHandler
 {
     public boolean isOutdated = false;
     public String newVersion;
-    public List<String> changes = new ArrayList<String>();
     public boolean hasRan = false;
     public boolean hasDisplayed = false;
 
@@ -34,9 +33,10 @@ public class VersionChecker extends Thread implements ITickHandler
 
         hasRan = true;
 
+        String current = Constants.MOD_VERSION;
+
         try
         {
-            String current = Constants.MOD_VERSION;
             if (current.contains("@"))
                 return;
 
@@ -54,22 +54,13 @@ public class VersionChecker extends Thread implements ITickHandler
                     newVersion = version.substring(1);
                     break;
                 }
-
-                String changeLog;
-                while ((changeLog = reader.readLine()) != null)
-                {
-                    if (changeLog.length() == 0)
-                        break;
-
-                    changes.add(changeLog);
-                }
-
-                isOutdated = !current.equals(newVersion);
             }
+
+            isOutdated = !current.equals(newVersion);
         }
         catch (Throwable e)
         {
-            BurpTechCore.log.fine("Version Check Failed With: " + e.getLocalizedMessage());
+            BurpTechCore.log.info("Version Check Failed With: " + e.getLocalizedMessage());
         }
 
         if (isOutdated)
@@ -92,14 +83,7 @@ public class VersionChecker extends Thread implements ITickHandler
 
         EntityPlayer player = (EntityPlayer)tickData[0];
 
-        player.addChatMessage("Version " + newVersion + " of BurpTech available");
-        for (String change : changes)
-        {
-            if (change != null && change.length() > 0)
-                player.addChatMessage(" -" + change);
-        }
-
-        player.addChatMessage("This version checker can be disabled in the configuration file.");
+        player.addChatMessage("Version " + newVersion + " of §aBurpTech§r is available");
     }
 
     @Override

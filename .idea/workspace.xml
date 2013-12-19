@@ -11,7 +11,7 @@
     <file path="/fragment.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1383261713808" ignored="false" />
     <file path="/mcmod.info" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387479029599" ignored="false" />
     <file path="/BasicComponentsIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380262619488" ignored="false" />
-    <file path="/BurpTechCore.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387480681499" ignored="false" />
+    <file path="/BurpTechCore.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387482637558" ignored="false" />
     <file path="/Items.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387403108352" ignored="false" />
     <file path="/Blocks.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387476568764" ignored="false" />
     <file path="/NeiIntegration.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1380261472274" ignored="false" />
@@ -46,8 +46,8 @@
     <file path="/CommonProxy.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387402271935" ignored="false" />
     <file path="/BlockCobbleGenerator.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387415795019" ignored="false" />
     <file path="/TileEntityCobbleGenerator.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387477355665" ignored="false" />
-    <file path="/VersionChecker.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387481582634" ignored="false" />
-    <file path="/ChangeLog" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387481886289" ignored="false" />
+    <file path="/VersionChecker.java" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387483254056" ignored="false" />
+    <file path="/ChangeLog" changelist="f80225f9-a55b-499d-a446-839463ce8cd7" time="1387484166679" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,10 +145,10 @@
         <option value="$PROJECT_DIR$/src/resources/mcmod.info" />
         <option value="$PROJECT_DIR$/src/common/burptech/lib/Constants.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java" />
-        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/client/ClientProxy.java" />
         <option value="$PROJECT_DIR$/src/common/burptech/lib/VersionChecker.java" />
         <option value="$PROJECT_DIR$/src/resources/ChangeLog" />
+        <option value="$PROJECT_DIR$/src/common/burptech/BurpTechCore.java" />
       </list>
     </option>
   </component>
@@ -325,116 +325,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burptech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burptech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BurpTech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="burptech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -848,15 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="27" selection-start="2871" selection-end="2871" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forge/mcp/src/minecraft/net/minecraft/entity/player/EntityPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1759" column="49" selection-start="58962" selection-end="58962" vertical-scroll-proportion="0.33501685">
@@ -864,42 +745,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/lib/VersionChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.16721311">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="20" selection-start="240" selection-end="240" vertical-scroll-proportion="0.028475711">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/burptech/CommonProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="62" selection-end="62" vertical-scroll-proportion="0.11147541">
+        <state line="4" column="16" selection-start="62" selection-end="62" vertical-scroll-proportion="0.12615955">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/burptech/client/ClientProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="53" selection-start="733" selection-end="733" vertical-scroll-proportion="0.5041876">
+        <state line="23" column="53" selection-start="733" selection-end="733" vertical-scroll-proportion="0.74334604">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/common/burptech/BurpTechCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="240" selection-end="240" vertical-scroll-proportion="-1.1105528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/burptech/lib/VersionChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="36" selection-start="2907" selection-end="2907" vertical-scroll-proportion="2.2573771">
+        <state line="84" column="24" selection-start="3100" selection-end="3100" vertical-scroll-proportion="0.6530612">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#531#539#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/ChangeLog">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="28" selection-start="37" selection-end="37" vertical-scroll-proportion="0.027868852">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
