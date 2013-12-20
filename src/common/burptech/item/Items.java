@@ -2,10 +2,13 @@ package burptech.item;
 
 import burptech.*;
 import burptech.lib.*;
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.*;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 import java.util.ArrayList;
 
@@ -33,6 +36,12 @@ public class Items
 
     public Item bucketNetherFluid;
     public Item cellNetherFluid;
+
+    public Item woodSickle;
+    public Item stoneSickle;
+    public Item ironSickle;
+    public Item goldSickle;
+    public Item diamondSickle;
 
 	/*
 	 * Creates all of the item instances
@@ -109,6 +118,44 @@ public class Items
 
         tinyCharcoalDust = new ItemStack(genericDust, 1, 4);
 
+
+        addSickles(configuration);
+    }
+
+    private void addSickles(BurpTechConfig configuration)
+    {
+        if (!configuration.recipeSickle.getBoolean(false) || Loader.isModLoaded("ProjRed|Exploration"))
+            return;
+
+        if (configuration.itemWoodSickle != null)
+        {
+            woodSickle = new ItemSickle(configuration.itemWoodSickle.getInt(), EnumToolMaterial.WOOD).setUnlocalizedName("woodSickle");
+            GameRegistry.registerItem(woodSickle, "woodSickle");
+        }
+
+        if (configuration.itemStoneSickle != null)
+        {
+            stoneSickle = new ItemSickle(configuration.itemStoneSickle.getInt(), EnumToolMaterial.STONE).setUnlocalizedName("stoneSickle");
+            GameRegistry.registerItem(stoneSickle, "stoneSickle");
+        }
+
+        if (configuration.itemIronSickle != null)
+        {
+            ironSickle = new ItemSickle(configuration.itemIronSickle.getInt(), EnumToolMaterial.IRON).setUnlocalizedName("ironSickle");
+            GameRegistry.registerItem(ironSickle, "ironSickle");
+        }
+
+        if (configuration.itemGoldSickle != null)
+        {
+            goldSickle = new ItemSickle(configuration.itemGoldSickle.getInt(), EnumToolMaterial.GOLD).setUnlocalizedName("goldSickle");
+            GameRegistry.registerItem(goldSickle, "goldSickle");
+        }
+
+        if (configuration.itemDiamondSickle != null)
+        {
+            diamondSickle = new ItemSickle(configuration.itemDiamondSickle.getInt(), EnumToolMaterial.EMERALD).setUnlocalizedName("diamondSickle");
+            GameRegistry.registerItem(diamondSickle, "diamondSickle");
+        }
     }
 	
 }

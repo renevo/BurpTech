@@ -26,6 +26,8 @@ public class BurpTechConfig
 	public Property recipePortableWorkbench;
 	public Property recipeRucksack;
 	public Property recipeEnderRucksack;
+    public Property recipeSickle;
+
     public Property recipeAdvancedWorkbench;
     public Property recipeCobbleGenerator;
 	
@@ -54,6 +56,12 @@ public class BurpTechConfig
 	public Property itemEnderRucksack;
 	public Property itemRucksack;
 	public Property itemPortableWorkbench;
+    public Property itemWoodSickle;
+    public Property itemStoneSickle;
+    public Property itemIronSickle;
+    public Property itemGoldSickle;
+    public Property itemDiamondSickle;
+
 	public Property itemCookedEgg;
 	public Property itemNetherCoal;
     public Property itemBucketNetherFluid;
@@ -118,7 +126,10 @@ public class BurpTechConfig
 		
 		result.recipeEnderRucksack = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "EnderRucksack", true);
 		result.recipeEnderRucksack.comment = "Enables crafting of Ender Rucksacks";
-		
+
+        result.recipeSickle = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "Sickle", false);
+        result.recipeSickle.comment = "Adds Project Red/Red Power Style Sickles - this is automatically disabled regardless of setting if ProjectRed.Exploration is installed";
+
 		result.recipeCookedEgg = configuration.get(Constants.CONFIG_CATEGORY_RECIPES, "CookedEggs", true);
 		result.recipeCookedEgg.comment = "Enables cooked eggs for food";
 
@@ -170,10 +181,18 @@ public class BurpTechConfig
         result.itemCookedEgg = configuration.getItem("CookedEgg", burptech.lib.Constants.ITEM_START + 3);
         result.itemDust = configuration.getItem("ItemDust", burptech.lib.Constants.ITEM_START + 4);
         result.itemNetherCoal = configuration.getItem("NetherCoal", burptech.lib.Constants.ITEM_START + 5);
-
-        // REMOVED
+        // REMOVED ITEM ID
         result.itemBucketNetherFluid = configuration.getItem("BucketNetherFluid", burptech.lib.Constants.ITEM_START + 7);
         result.itemCellNetherFluid = configuration.getItem("CellNetherFluid", burptech.lib.Constants.ITEM_START + 8);
+
+        if (result.recipeSickle.getBoolean(false)) // don't load these
+        {
+            result.itemWoodSickle = configuration.getItem("ItemWoodSickle", burptech.lib.Constants.ITEM_START + 9);
+            result.itemStoneSickle = configuration.getItem("ItemStoneSickle", burptech.lib.Constants.ITEM_START + 10);
+            result.itemIronSickle = configuration.getItem("ItemIronSickle", burptech.lib.Constants.ITEM_START + 11);
+            result.itemGoldSickle = configuration.getItem("ItemGoldSickle", burptech.lib.Constants.ITEM_START + 12);
+            result.itemDiamondSickle = configuration.getItem("ItemDiamondSickle", burptech.lib.Constants.ITEM_START + 13);
+        }
 
         // Blocks
 		result.blockIlluminatedCocoa = configuration.getBlock("IlluminatedCocoaPlant", Constants.BLOCK_START + 0);
