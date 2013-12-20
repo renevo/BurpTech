@@ -2,15 +2,12 @@ package burptech.tileentity;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.*;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -18,6 +15,8 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
 {
     private Random random = new Random();
     public ItemStack[] inventoryContents = new ItemStack[37];
+    public ItemStack itemOverflow;
+
     public String inventoryName;
 
     public static boolean isCraftingGrid(int slotIndex)
@@ -179,6 +178,11 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
         if (isCraftingGrid(slotIndex) || isCraftingResult(slotIndex))
         {
             inventoryContents[36] = getCraftingResult();
+
+            if (!worldObj.isRemote && itemOverflow != null && inventoryContents[36] != null && !itemOverflow.isItemEqual(inventoryContents[36]))
+            {
+                dropInWorld(worldObj, itemOverflow, xCoord, yCoord, zCoord);
+            }
         }
 
         // this.onInventoryChanged(); // not sure if we need to call this or not?
@@ -189,7 +193,9 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
         if (canCraftItem())
         {
             if (consumeItems)
+            {
                 consumeCurrentRecipeItems();
+            }
 
             onInventoryChanged(36);
             return this.getStackInSlot(36).copy();
@@ -268,15 +274,44 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
     @Override
     public ItemStack decrStackSize(int slotIndex, int amount)
     {
+        if (amount == 0)
+            return null;
+
+        ItemStack returnStack;
+
         if (isCraftingResult(slotIndex))
         {
-            return this.craft(true);
+            // if we dont' have an item, create one
+            if (itemOverflow == null)
+                itemOverflow = this.craft(true);
+
+            // if we have one, lets give them some
+            if (itemOverflow != null)
+            {
+                if (itemOverflow.stackSize <= amount)
+                {
+                    returnStack = itemOverflow;
+                    itemOverflow = null;
+                    return returnStack;
+                }
+                else
+                {
+                    returnStack = itemOverflow.splitStack(amount);
+
+                    if (itemOverflow.stackSize == 0)
+                    {
+                        itemOverflow = null;
+                    }
+
+                    return returnStack;
+                }
+            }
+
+            return null;
         }
 
         if (this.inventoryContents[slotIndex] != null)
         {
-            ItemStack returnStack;
-
             if (this.inventoryContents[slotIndex].stackSize <= amount)
             {
                 returnStack = this.inventoryContents[slotIndex];
@@ -338,10 +373,17 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
             return;
         }
 
-        if (isCraftingResult(slotIndex) && !worldObj.isRemote)
+        if (isCraftingResult(slotIndex))
         {
-            this.inventoryContents[36] = getCraftingResult(); // not sure why we are doing this like this, need to troubleshoot
-            this.onInventoryChanged(slotIndex);
+            if (!worldObj.isRemote)
+            {
+                if (itemOverflow != null && itemStack != null && !itemOverflow.isItemEqual(itemStack))
+                {
+                    dropInWorld(worldObj, itemOverflow, xCoord, yCoord, zCoord);
+                }
+
+                itemOverflow = itemStack;
+            }
             return;
         }
 
@@ -409,6 +451,11 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
             this.inventoryName = tagCompound.getString("CustomName");
         }
 
+        if (tagCompound.hasKey("ItemOverflow"))
+        {
+            this.itemOverflow = ItemStack.loadItemStackFromNBT(tagCompound.getCompoundTag("ItemOverflow"));
+        }
+
         for (int i = 0; i < tagList.tagCount(); ++i)
         {
             NBTTagCompound slotTagCompound = (NBTTagCompound)tagList.tagAt(i);
@@ -444,6 +491,9 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
         {
             tagCompound.setString("CustomName", this.inventoryName);
         }
+
+        if (itemOverflow != null)
+            tagCompound.setCompoundTag("ItemOverflow", itemOverflow.writeToNBT(new NBTTagCompound()));
     }
 
     /**
@@ -463,10 +513,8 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
     @Override
     public boolean canInsertItem(int slot, ItemStack item, int side)
     {
-        if (isCraftingGrid(slot) || isCraftingResult(slot))
-            return false;
+        return !(isCraftingGrid(slot) || isCraftingResult(slot));
 
-        return true;
     }
 
     /**
@@ -477,17 +525,11 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
     public boolean canExtractItem(int slot, ItemStack item, int side)
     {
         // only allow extracting from the crafting result
-        if (!isCraftingResult(slot))
+        if (!isCraftingResult(slot) || item == null || item.stackSize == 0)
             return false;
 
-        // slot is the one we can extract from, say yes
-        if (item == null)
-            return true;
-
-        ItemStack result = getCraftingResult();
-
         // check for an item match
-        return isCraftingResult(slot) && result != null && result.isItemEqual(item);
+        return inventoryContents[36] != null && inventoryContents[36].isItemEqual(item);
     }
 
     /**
@@ -508,6 +550,40 @@ public class TileEntityAdvancedWorkbench extends TileEntity implements ISidedInv
                     return false;
                 }
             }, 3, 3);
+        }
+    }
+
+    public void dropInWorld(World world, ItemStack itemStack, int x, int y, int z)
+    {
+        if (itemStack != null)
+        {
+            float f = this.random.nextFloat() * 0.8F + 0.1F;
+            float f1 = this.random.nextFloat() * 0.8F + 0.1F;
+            float f2 = this.random.nextFloat() * 0.8F + 0.1F;
+
+            while (itemStack.stackSize > 0)
+            {
+                int k1 = this.random.nextInt(21) + 10;
+
+                if (k1 > itemStack.stackSize)
+                {
+                    k1 = itemStack.stackSize;
+                }
+
+                itemStack.stackSize -= k1;
+                EntityItem entityitem = new EntityItem(world, (double)((float)x + f), (double)((float)y + f1), (double)((float)z + f2), new ItemStack(itemStack.itemID, k1, itemStack.getItemDamage()));
+
+                if (itemStack.hasTagCompound())
+                {
+                    entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemStack.getTagCompound().copy());
+                }
+
+                float f3 = 0.05F;
+                entityitem.motionX = (double)((float)this.random.nextGaussian() * f3);
+                entityitem.motionY = (double)((float)this.random.nextGaussian() * f3 + 0.2F);
+                entityitem.motionZ = (double)((float)this.random.nextGaussian() * f3);
+                world.spawnEntityInWorld(entityitem);
+            }
         }
     }
 }

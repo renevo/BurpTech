@@ -9,20 +9,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
 public class BlockAdvancedWorkbench extends BlockContainer
 {
-    private Random random = new Random();
     @SideOnly(Side.CLIENT)
     private Icon iconTop;
     @SideOnly(Side.CLIENT)
@@ -123,39 +118,10 @@ public class BlockAdvancedWorkbench extends BlockContainer
                 if (TileEntityAdvancedWorkbench.isCraftingGrid(i) || TileEntityAdvancedWorkbench.isCraftingResult(i))
                     continue;
 
-                ItemStack itemStack = tileEntity.getStackInSlot(i);
-
-                if (itemStack != null)
-                {
-                    float f = this.random.nextFloat() * 0.8F + 0.1F;
-                    float f1 = this.random.nextFloat() * 0.8F + 0.1F;
-                    float f2 = this.random.nextFloat() * 0.8F + 0.1F;
-
-                    while (itemStack.stackSize > 0)
-                    {
-                        int k1 = this.random.nextInt(21) + 10;
-
-                        if (k1 > itemStack.stackSize)
-                        {
-                            k1 = itemStack.stackSize;
-                        }
-
-                        itemStack.stackSize -= k1;
-                        EntityItem entityitem = new EntityItem(world, (double)((float)x + f), (double)((float)y + f1), (double)((float)z + f2), new ItemStack(itemStack.itemID, k1, itemStack.getItemDamage()));
-
-                        if (itemStack.hasTagCompound())
-                        {
-                            entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemStack.getTagCompound().copy());
-                        }
-
-                        float f3 = 0.05F;
-                        entityitem.motionX = (double)((float)this.random.nextGaussian() * f3);
-                        entityitem.motionY = (double)((float)this.random.nextGaussian() * f3 + 0.2F);
-                        entityitem.motionZ = (double)((float)this.random.nextGaussian() * f3);
-                        world.spawnEntityInWorld(entityitem);
-                    }
-                }
+                tileEntity.dropInWorld(world, tileEntity.getStackInSlot(i), x, y, z);
             }
+
+            tileEntity.dropInWorld(world, tileEntity.itemOverflow, x, y, z);
 
             world.func_96440_m(x, y, z, blockId);
         }
